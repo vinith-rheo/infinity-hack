@@ -1,7 +1,14 @@
 import MovieCard from "@/MovieCard/MovieCard";
 import movieData from "../data.json";
 import { Input } from "@/components/ui/input";
+import { useEffect } from "react";
+import { getMovies } from "@/services";
 export default function MovieList() {
+  useEffect(() => {
+    getMovies().then((data) => {
+      console.log(data);
+    });
+  }, []);
   return (
     <>
       <Input className="w-1/2 mb-3 h-12" placeholder="Search for movies" />
