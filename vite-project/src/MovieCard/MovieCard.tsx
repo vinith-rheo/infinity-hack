@@ -1,11 +1,12 @@
-import { Card, CardContent, CardHeader } from "@/components/ui/card";
+import { Card} from "@/components/ui/card";
+import CardImageContent from "./CardImageContent";
 
 interface Genre {
     id: number;
     name: string;
 }
 
-interface MovieCardProps {
+export interface MovieCardProps {
     title: string;
     image: string;
     overview: string;
@@ -13,13 +14,10 @@ interface MovieCardProps {
 }
 export default function MovieCard(props: MovieCardProps) {
     console.log(props.image)
-  return <Card>
-    <CardHeader>
-        {props.title}
-    </CardHeader>
-    <CardContent>
-        <img src={props.image} alt={props.title} />
-        <p>{props.overview}</p>
-    </CardContent>
+  return <Card  className="rounded-xl overflow-hidden shadow-md  p-0">
+       <CardImageContent title={props.title}
+              image={`${props.image}.jpg`}
+              overview={props.overview}
+              genre={props.genre} />
   </Card>
 }
