@@ -8,7 +8,7 @@ A modern React app powered by [Vite](https://vitejs.dev/), styled using [Tailwin
 
 ## 🚀 Getting Started
 
-### Make sure you are using node v18 or above
+### Make sure you are using node v23 or above
 
 ### 1. Clone the repo
 
