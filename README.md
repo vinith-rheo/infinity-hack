@@ -8,10 +8,13 @@ A modern React app powered by [Vite](https://vitejs.dev/), styled using [Tailwin
 
 ## 🚀 Getting Started
 
+### Make sure you are using node v23 or above
+
 ### 1. Clone the repo
 
 ```bash
 git clone https://github.com/vinith-rheo/infinity-hack.git
+cd infinity-hack
 cd vite-project
 
 ### 2. Install dependencies

@@ -1,11 +1,19 @@
-import { Button } from "@/components/ui/button"
+import { Route, Routes } from "react-router";
+import MovieList from "./MovieList/MovieList";
+import Landing from "./Landing/Landing";
 
 function App() {
   return (
-    <div className="flex min-h-svh flex-col items-center justify-center bg-black">
-      <h1 className="text-3xl font-bold text-white">Welcome to Infinity Hack</h1>
-        <Button className="bg-cyan-500 m-4">{`Infinity Hack : Team (Name Undecided yet :'))`}</Button>
-    </div>
+    <>
+    <Routes>
+      <Route path="/movies" element={<MovieList />} />
+      <Route path="/" element={<Landing />} />
+    </Routes>
+      {/* <h1 className="text-3xl text-center font-bold">Cine Hub</h1>
+      <div className="flex min-h-svh flex-col items-center justify-start p-3">
+        <MovieList />
+      </div> */}
+    </>
   )
 }
 
