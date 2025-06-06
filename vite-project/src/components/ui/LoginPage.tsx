@@ -4,7 +4,7 @@ import React from "react";
 const LoginPage = () => {
   return (
     <div className="display flex items-center justify-center h-screen bg-gray-100">
-      <SignIn signUpUrl="/signup" afterSignInUrl="/movies" />
+      <SignIn signUpUrl="/signup" />
     </div>
   );
 };
