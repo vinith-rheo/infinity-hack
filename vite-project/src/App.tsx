@@ -1,11 +1,15 @@
 import { Route, Routes } from "react-router";
 import MovieList from "./MovieList/MovieList";
 import Landing from "./Landing/Landing";
+import LoginPage from "./components/ui/LoginPage";
+import SignUpPage from "./components/ui/SignUpPage";
 
 function App() {
   return (
     <>
     <Routes>
+      <Route path='signup' element={<SignUpPage />} />
+      <Route path='login' element={<LoginPage />} />
       <Route path="/movies" element={<MovieList />} />
       <Route path="/" element={<Landing />} />
     </Routes>
