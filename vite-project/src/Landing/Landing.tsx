@@ -7,7 +7,7 @@ export default function Landing() {
     <div className="flex min-h-svh flex-col items-center justify-center p-3">
       <h1 className="text-3xl text-center font-bold">Cine Hub</h1>
 
-      <Button className="mt-3" onClick={() => navigate("/movies")}>
+      <Button className="mt-3" onClick={() => navigate("/signup")}>
         Explore
       </Button>
     </div>
