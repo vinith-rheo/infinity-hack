@@ -1,10 +1,5 @@
-Here’s a complete `README.md` for a **Vite + React + TailwindCSS + shadcn/ui** project using **npm**, along with all necessary documentation links including Tailwind cheatsheet:
-
----
-
 ### 📁 `README.md`
 
-````md
 # Vite + React + Tailwind CSS + shadcn/ui Starter
 
 A modern React app powered by [Vite](https://vitejs.dev/), styled using [Tailwind CSS](https://tailwindcss.com/), and built with reusable components from [shadcn/ui](https://ui.shadcn.com).
@@ -16,9 +11,8 @@ A modern React app powered by [Vite](https://vitejs.dev/), styled using [Tailwin
 ### 1. Clone the repo
 
 ```bash
-git clone <your-repo-url>
-cd <project-directory>
-````
+git clone https://github.com/vinith-rheo/infinity-hack.git
+cd vite-project
 
 ### 2. Install dependencies
 
