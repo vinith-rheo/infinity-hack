@@ -2,14 +2,16 @@ import { Button } from "@/components/ui/button";
 import { useNavigate } from "react-router";
 import movieData from "../data.json";
 import MovieCarousel from "./MovieCarousel";
+import { useAuth } from "@clerk/clerk-react";
 
 export default function Landing() {
   const navigate = useNavigate();
+  const { isSignedIn } = useAuth();
   return (
     <>
-      <Button className="ml-3 mt-2" onClick={() => navigate("/signup")}>
-      Sign Up
-    </Button>
+      {!isSignedIn && <Button className="ml-3 mt-2" onClick={() => navigate("/signup")}>
+        Login / Sign Up
+      </Button>}
       <div className="flex items-center justify-between p-5 gap-2">
         <section className="flex flex-col items-start w-md gap-2">
           <h1 className="text-5xl">Discover films you'll love</h1>
