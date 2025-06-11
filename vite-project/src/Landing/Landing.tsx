@@ -12,7 +12,7 @@ export default function Landing() {
 const [hoveringMap, setHoveringMap] = useState<{ [colIndex: number]: boolean }>({});
 
   return (
-    <>
+    <div className="overflow-hidden">
       {!isSignedIn && 
       <div style={{ background: "var(--color-mono-black)", position: "relative", zIndex: 1000}}>
           <Header />
@@ -67,6 +67,6 @@ const [hoveringMap, setHoveringMap] = useState<{ [colIndex: number]: boolean }>(
           100% { transform: translateY(20%); }
         }
       `}</style>
-    </>
+    </div>
   );
 }
