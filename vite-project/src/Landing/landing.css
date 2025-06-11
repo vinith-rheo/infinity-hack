@@ -152,7 +152,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
-  gap: 86px;
+  gap: 40px;
 }
 
 .footer-title {
@@ -176,6 +176,8 @@
   padding-bottom: 16px;
   scrollbar-width: none;
   -ms-overflow-style: none;
+  padding: 16px 0;
+  overflow-y: hidden;
 }
 
 .movies-scroll-container::-webkit-scrollbar {
