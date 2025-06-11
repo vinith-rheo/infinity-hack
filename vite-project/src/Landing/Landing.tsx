@@ -158,6 +158,66 @@ export default function Landing() {
         </div>
       </div>
 
+
+{/* Trending Section */}
+<div className="trending-section">
+  <div className="section-header">
+    <h2 className="section-title">Trending</h2>
+  </div>
+  
+  <div className="trending-movies-grid">
+    {/* First row */}
+    <div className="trending-movies-row">
+      {movieData.slice(10, 16).map((movie) => (
+        <Card key={movie.id} className="trending-movie-card">
+          <img 
+            src={`/assets/${movie.id}.jpg`}
+            alt={movie.title}
+            className="trending-movie-poster"
+            onError={(e) => {
+              e.currentTarget.src = 'https://via.placeholder.com/175x250/333/cccccc?text=No+Poster';
+            }}
+          />
+          <div className="trending-movie-info">
+            <CardTitle className="trending-movie-title">{movie.title}</CardTitle>
+            <CardDescription className="trending-movie-meta">
+              <span className="release-date">
+                {new Date(movie.release_date).toLocaleDateString()}
+              </span>
+              <span className="duration">120 min</span>
+            </CardDescription>
+          </div>
+        </Card>
+      ))}
+    </div>
+    
+    {/* Second row */}
+    <div className="trending-movies-row">
+      {movieData.slice(16, 21).map((movie) => (
+        <Card key={movie.id} className="trending-movie-card">
+          <img 
+            src={`/assets/${movie.id}.jpg`}
+            alt={movie.title}
+            className="trending-movie-poster"
+            onError={(e) => {
+              e.currentTarget.src = 'https://via.placeholder.com/175x250/333/cccccc?text=No+Poster';
+            }}
+          />
+          <div className="trending-movie-info">
+            <CardTitle className="trending-movie-title">{movie.title}</CardTitle>
+            <CardDescription className="trending-movie-meta">
+              <span className="release-date">
+                {new Date(movie.release_date).toLocaleDateString()}
+              </span>
+              <span className="duration">120 min</span>
+            </CardDescription>
+          </div>
+        </Card>
+      ))}
+    </div>
+  </div>
+</div>
+
       {/* Regular Footer */}
       <footer className="site-footer">
         <div className="footer-container">
