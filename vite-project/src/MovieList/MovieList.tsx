@@ -22,6 +22,7 @@ export default function MovieList() {
         {movieData.map((movie) => {
           return (
             <MovieCard
+            id={movie.id}
               key={movie.id}
               movie={movie}
             />

@@ -3,6 +3,7 @@ import MovieList from "./MovieList/MovieList";
 import Landing from "./Landing/Landing";
 import LoginPage from "./components/ui/LoginPage";
 import SignUpPage from "./components/ui/SignUpPage";
+import MovieOverview from "./MovieOverview/MovieOverview";
 
 function App() {
   return (
@@ -12,6 +13,8 @@ function App() {
       <Route path='login' element={<LoginPage />} />
       <Route path="/movies" element={<MovieList />} />
       <Route path="/" element={<Landing />} />
+      <Route path="/movies/movie/:id" element={<MovieOverview/>} />
+      
     </Routes>
       {/* <h1 className="text-3xl text-center font-bold">Cine Hub</h1>
       <div className="flex min-h-svh flex-col items-center justify-start p-3">

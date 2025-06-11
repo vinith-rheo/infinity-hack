@@ -3,8 +3,10 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Star } from "lucide-react";
 import { useState } from "react";
+import { useNavigate } from "react-router";
 
-type Movie = {
+export type Movie = {
+  id:number;
   title: string;
   tagline: string;
   genres: { id: number; name: string }[];
@@ -20,6 +22,7 @@ const MovieCard = ({ movie }: { movie: Movie }) => {
 
   const [fullOverview,setFullOverview]=useState<string>(movie.overview);
   const [toggleOverview,setToggleOverview]=useState<boolean>(false);
+  const navigate =useNavigate();
 
   const shortOverview= fullOverview.substring(0,40);
 
@@ -35,7 +38,7 @@ const MovieCard = ({ movie }: { movie: Movie }) => {
       />
       
       <div className="relative z-20 flex-1 p-4 flex flex-col justify-between" >
-        <div className="cursor-pointer" onClick={() => window.open("https://www.youtube.com/watch?v=l_ddxKWNZqI", "_blank")}>
+        <div className="cursor-pointer" onClick={() => navigate(`movie/${movie.id}`)}>
         <CardHeader className="p-0 mb-4">
           <CardTitle className="text-2xl font-bold text-[bisque]">{movie.title}</CardTitle>
           <p className="text-muted-foreground text-sm">{movie.tagline}</p>
