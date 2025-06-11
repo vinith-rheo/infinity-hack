@@ -73,7 +73,7 @@ const MovieOverview = () => {
          <p className="ml-8 mt-6  font-medium text-[38px] leading-[100%] tracking-[0] font-inter">
           Cast
         </p>
-        <div className="flex flex-row justify-start flex-wrap gap-4 mt-4  p-2">
+        <div className="flex flex-row justify-start flex-wrap gap-4 mt-4 ml-4 p-2">
          {cast.map((member)=>{
           return <CastCard name={member.name} role={member.role} image={member.image} />
          })}
