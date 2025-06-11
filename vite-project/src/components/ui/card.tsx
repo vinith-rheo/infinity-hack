@@ -12,7 +12,6 @@ function Card({ className, ...props }: React.ComponentProps<"div">) {
       )}
       style={{ backgroundColor:"black", borderColor:"turquoise"}}
       {...props}
-      onClick={() => window.open("https://www.youtube.com/watch?v=l_ddxKWNZqI", "_blank")}
     />
   )
 }

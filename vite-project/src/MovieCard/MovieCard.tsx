@@ -2,6 +2,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Star } from "lucide-react";
+import { useState } from "react";
 
 type Movie = {
   title: string;
@@ -16,16 +17,27 @@ type Movie = {
 };
 
 const MovieCard = ({ movie }: { movie: Movie }) => {
+
+  const [fullOverview,setFullOverview]=useState<string>(movie.overview);
+  const [toggleOverview,setToggleOverview]=useState<boolean>(false);
+
+  const shortOverview= fullOverview.substring(0,40);
+
+
+
   return (
-    <Card className="max-w-3xl mx-auto overflow-hidden rounded-2xl shadow-lg flex flex-col sm:flex-row">
+    <Card className="relative max-w-3xl mx-auto overflow-hidden rounded-2xl shadow-lg flex flex-col sm:flex-row">
       <img
         src={`/assets/326.jpg`}
         alt={movie.title}
-        className="w-full sm:w-1/3 h-auto object-cover"
+        className="absolute inset-0 w-full h-full object-cover z-0"
+        
       />
-      <div className="flex-1 p-4 flex flex-col justify-between">
+      
+      <div className="relative z-20 flex-1 p-4 flex flex-col justify-between" >
+        <div className="cursor-pointer" onClick={() => window.open("https://www.youtube.com/watch?v=l_ddxKWNZqI", "_blank")}>
         <CardHeader className="p-0 mb-4">
-          <CardTitle className="text-2xl font-bold">{movie.title}</CardTitle>
+          <CardTitle className="text-2xl font-bold text-[bisque]">{movie.title}</CardTitle>
           <p className="text-muted-foreground text-sm">{movie.tagline}</p>
         </CardHeader>
 
@@ -36,9 +48,12 @@ const MovieCard = ({ movie }: { movie: Movie }) => {
             </Badge>
           ))}
         </div>
+        </div>
 
-        <CardContent className="p-0 text-sm text-muted-foreground mb-4 line-clamp-4">
-          {movie.overview}
+        <CardContent onClick={(e)=>{
+          setToggleOverview(!toggleOverview)
+        }} className="p-0 text-sm text-muted-foreground mb-4 line-clamp-4 cursor-pointer">
+          {toggleOverview?fullOverview:shortOverview}
         </CardContent>
 
         <div className="flex justify-between text-sm text-muted-foreground mb-2">

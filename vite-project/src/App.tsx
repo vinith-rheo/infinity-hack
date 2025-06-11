@@ -6,7 +6,7 @@ import SignUpPage from "./components/ui/SignUpPage";
 
 function App() {
   return (
-    <>
+    <div className="min-h-screen bg-black text-white">
     <Routes>
       <Route path='signup' element={<SignUpPage />} />
       <Route path='login' element={<LoginPage />} />
@@ -17,7 +17,7 @@ function App() {
       <div className="flex min-h-svh flex-col items-center justify-start p-3">
         <MovieList />
       </div> */}
-    </>
+    </div>
   )
 }
 
