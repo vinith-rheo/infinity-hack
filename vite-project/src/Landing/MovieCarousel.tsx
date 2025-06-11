@@ -4,7 +4,7 @@ import {
   CarouselContent,
   CarouselItem,
 } from "@/components/ui/carousel";
-import './movieCarousal.css';
+import '../styles/movieCarousal.css';
 
 type Movie = {
   id: number;

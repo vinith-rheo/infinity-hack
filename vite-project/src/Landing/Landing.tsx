@@ -6,7 +6,7 @@ import { useAuth } from "@clerk/clerk-react";
 import { useState } from "react";
 import Header from "./Header";
 import { Card, CardDescription, CardTitle } from "@/components/ui/card";
-import "./landing.css";
+import "../styles/landing.css";
 
 export default function Landing() {
   const navigate = useNavigate();
