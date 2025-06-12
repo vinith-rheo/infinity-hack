@@ -3,9 +3,8 @@ import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router';
 import movieData from "../data.json";
 import { Badge } from '@/components/ui/badge';
-import { Card } from '@/components/ui/card';
-import MovieCard from '@/MovieCard/MovieCard';
 import CastCard from './CastCard';
+import ReviewCard from './ReviewCard';
 
 const cast = [
   {
@@ -34,19 +33,58 @@ const cast = [
     image: 'data:image/jpeg;base64,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',
   },
 ];
+const reviews = [
+  {
+    name: "Sarah L.",
+    initials: "SL",
+    date: "Oct 18, 2023",
+    rating: 4.0,
+    review: `This film beautifully captures the essence of creativity intertwined with a meaningful mission. Each scene showcases characters tackling complex challenges with cutting-edge technology, all while their endeavors resonate with the goal of enhancing the lives of others. This film beautifully captures the essence of creativity intertwined with a meaningful mission...`,
+  },
+  {
+    name: "John Smith",
+    initials: "JS",
+    date: "Oct 20, 2023",
+    rating: 4.5,
+    review: `A thrilling adventure that pushes the boundaries of imagination. The protagonist’s journey through uncharted territories is both inspiring and thought-provoking. The film masterfully combines action with a deep exploration of human resilience...`,
+  },
+  {
+    name: "Mary K.",
+    initials: "MK",
+    date: "Oct 22, 2023",
+    rating: 3.7,
+    review: `An engaging story that tackles social issues through a unique lens. While the pacing could have been better, the performances were outstanding and the message resonated strongly with the audience...`,
+  },
+  {
+    name: "Brian Lee",
+    initials: "BL",
+    date: "Oct 25, 2023",
+    rating: 5.0,
+    review: `A masterpiece that redefines storytelling. The cinematography is breathtaking, and the soundtrack complements the emotional depth of the narrative perfectly. Each character’s arc is carefully crafted...`,
+  },
+  {
+    name: "Kathy T.",
+    initials: "KT",
+    date: "Oct 27, 2023",
+    rating: 4.2,
+    review: `A heartwarming tale that celebrates friendship and perseverance. The film’s humor and poignant moments strike a perfect balance, making it enjoyable for audiences of all ages...`,
+  },
+];
 const MovieOverview = () => {
-    const {id:movieId}= useParams();
-    const [movieList,setMovieList]=useState(movieData);
-    const [filteredMovie,setFilteredMovie]=useState(movieData?.filter((movie)=>{return(movie?.id)==Number(movieId) }))
+   // const {id:movieId}= useParams();
+   const movieId="68481e9b5f0d1269f68af7b0";
+   const [movieList,setMovieList]=useState(movieData);
+   const [filteredMovie,setFilteredMovie]=useState(movieData?.filter((movie)=>{return(movie?._id)==(movieId) }))
+   console.log(movieData,filteredMovie)
 
   return (
     <div className="min-h-screen overflow-auto bg-black">
-      <div className="relative  w-full h-[500px]">
+      <div className="relative  w-full h-[600px]">
         <img
-          className=" absolute inset-0 w-full h-[500px]"
+          className=" absolute inset-0 w-full h-[600px]"
           src={`/assets/${filteredMovie[0].id}.jpg`}
         />
-        <div className="absolute top-1/2 transform -translate-y-1/2">
+        <div className="absolute top-[50%] w-[70%] transform -translate-y-0">
           <h1 className="font-medium text-[64px] leading-[100%] tracking-[0] font-inter">
             {filteredMovie[0].original_title}
           </h1>
@@ -60,7 +98,7 @@ const MovieOverview = () => {
               </Badge>
             ))}
           </div>
-          <span className="flex flex-wrap">
+          <span className="flex flex-wrap mt-2">
             <p className="ml-2 font-medium text-[20px] leading-[100%] tracking-[0] font-inter">
               Directed by:
             </p>
@@ -78,8 +116,19 @@ const MovieOverview = () => {
           return <CastCard name={member.name} role={member.role} image={member.image} />
          })}
         </div>
+         <div className='flex flex-wrap justify-start gap-4 mt-8 p-2 flex-col'>
+         <p className="ml-8 mt-6  font-medium text-[38px] leading-[100%] tracking-[0] font-inter">
+          Reviews
+        </p>
+        <div className="flex flex-col justify-start flex-wrap gap-4 mt-4 ml-4 p-2">
+         {reviews.map((member)=>{
+          return <ReviewCard name={member.name} review={member.review} rating={member.rating} initials={member.initials} date={member.date} />
+         })}
+        </div>
+       </div>
        </div>
       </div>
+     
     </div>
   );
 }

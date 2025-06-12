@@ -44,7 +44,7 @@ export default function MovieList() {
     
                   key={movie.id}
                   movie={{
-                    id:movie.id,
+                    id:movie._id,
                     genres: [],
                     title: movie.title,
                     tagline: movie.tagline,

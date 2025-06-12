@@ -6,7 +6,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router";
 
 export type Movie = {
-  id:number;
+  id:string;
   title: string;
   tagline: string;
   genres: { id: number; name: string }[];

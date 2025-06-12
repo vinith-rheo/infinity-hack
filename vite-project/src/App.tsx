@@ -14,7 +14,7 @@ function App() {
       <Route path="/movies" element={<MovieList />} />
       <Route path="/" element={<Landing />} />
       <Route path="/movies/movie/:id" element={<MovieOverview/>} />
-      
+       <Route path="/abc" element={<MovieOverview/>} />
     </Routes>
       {/* <h1 className="text-3xl text-center font-bold">Cine Hub</h1>
       <div className="flex min-h-svh flex-col items-center justify-start p-3">
