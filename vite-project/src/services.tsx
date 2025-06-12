@@ -27,7 +27,7 @@ export interface Movie {
   vote_count: number;
 }
 
-const BACKEND_URL = import.meta.env.BACKEND_URL;
+const BACKEND_URL = import.meta.env.VITE_BACKEND_URL;
 
 export async function getMovies(page: number, limit: number, sort?: string): Promise<Movie[]> {
   const sortQuery = sort ? `&sort_by=${sort}` : "";
