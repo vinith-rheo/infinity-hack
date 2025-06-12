@@ -26,8 +26,11 @@ export interface Movie {
   vote_average: number;
   vote_count: number;
 }
-export async function getMovies(): Promise<Movie[]> {
-  const response = await fetch("/api/movies/list");
+export async function getMovies(page: number, limit: number, sort?: string): Promise<Movie[]> {
+  const sortQuery = sort ? `&sort_by=${sort}` : "";
+  const response = await fetch(
+    `/api/movies/list?page=${page}&limit=${limit}${sortQuery}`
+  );
   const data = await response.json();
   return data.movies;
 }

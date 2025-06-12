@@ -1,1175 +1,562 @@
 [
   {
-    "adult": false,
-    "belongs_to_collection": {
-      "id": 10194,
-      "name": "Toy Story Collection",
-      "poster_path": "/7G9915LfUQ2lVfwMEEhDsn3kT4B.jpg",
-      "backdrop_path": "/9FBwqcd9IRruEDUrTdcaafOMKUq.jpg"
-    },
-    "budget": 30000000,
-    "genres": [
-      {
-        "id": 16,
-        "name": "Animation"
-      },
-      {
-        "id": 35,
-        "name": "Comedy"
-      },
-      {
-        "id": 10751,
-        "name": "Family"
-      }
-    ],
-    "homepage": "http://toystory.disney.com/toy-story",
-    "id": 862,
-    "imdb_id": "tt0114709",
+    "_id": "68481ea45f0d1269f68b0367",
+    "adult": "False",
+    "belongs_to_collection": "",
+    "budget": 160000000,
+    "genres": [{"id": 28, "name": "Action"}, {"id": 53, "name": "Thriller"}, {"id": 878, "name": "Science Fiction"}, {"id": 9648, "name": "Mystery"}, {"id": 12, "name": "Adventure"}],
+    "homepage": "http://inceptionmovie.warnerbros.com/",
+    "id": 27205,
+    "imdb_id": "tt1375666",
     "original_language": "en",
-    "original_title": "Toy Story",
-    "overview": "Led by Woody, Andy's toys live happily in his room until Andy's birthday brings Buzz Lightyear onto the scene. Afraid of losing his place in Andy's heart, Woody plots against Buzz. But when circumstances separate Buzz and Woody from their owner, the duo eventually learns to put aside their differences.",
-    "popularity": 21.946943,
-    "poster_path": "/rhIRbceoE9lR4veEXuwCC2wARtG.jpg",
-    "production_companies": [
-      {
-        "name": "Pixar Animation Studios",
-        "id": 3
-      }
-    ],
-    "production_countries": [
-      {
-        "iso_3166_1": "US",
-        "name": "United States of America"
-      }
-    ],
-    "release_date": "1995-10-30",
-    "revenue": 373554033,
-    "runtime": 81,
-    "spoken_languages": [
-      {
-        "iso_639_1": "en",
-        "name": "English"
-      }
-    ],
+    "original_title": "Inception",
+    "overview": "Cobb, a skilled thief who commits corporate espionage by infiltrating the subconscious of his targets is offered a chance to regain his old life as payment for a task considered to be impossible: \"inception\", the implantation of another person's idea into a target's subconscious.",
+    "popularity": 29.108149,
+    "poster_path": "/qmDpIHrmpJINaRKAfWQfftjCdyi.jpg",
+    "poster_url": "https://movieflix.blob.core.windows.net/images/posters/27205.jpg?se=2025-06-12T02%3A51%3A58Z&sp=r&sv=2025-05-05&sr=b&sig=jfTgzIMrjgQkDPyW5auIf%2BE9Qd8LucohaLSGpHdxDJw%3D",
+    "production_companies": [{"name": "Legendary Pictures", "id": 923}, {"name": "Warner Bros.", "id": 6194}, {"name": "Syncopy", "id": 9996}],
+    "production_countries": [{"iso_3166_1": "GB", "name": "United Kingdom"}, {"iso_3166_1": "US", "name": "United States of America"}],
+    "release_date": "2010-07-14",
+    "revenue": 825532764,
+    "runtime": 148.0,
+    "spoken_languages": [{"iso_639_1": "en", "name": "English"}],
     "status": "Released",
-    "tagline": "Toy Story",
-    "title": "Toy Story",
-    "video": false,
-    "vote_average": 7.7,
-    "vote_count": 5415
+    "tagline": "Your mind is the scene of the crime.",
+    "title": "Inception",
+    "video": "False",
+    "vote_average": 8.1,
+    "vote_count": 14075
   },
   {
-    "adult": false,
-    "belongs_to_collection": null,
-    "budget": 65000000,
-    "genres": [
-      {
-        "id": 12,
-        "name": "Adventure"
-      },
-      {
-        "id": 14,
-        "name": "Fantasy"
-      },
-      {
-        "id": 10751,
-        "name": "Family"
-      }
-    ],
-    "homepage": null,
-    "id": 326,
-    "imdb_id": "tt0113497",
+    "_id": "68481e9b5f0d1269f68af7b0",
+    "adult": "False",
+    "belongs_to_collection": "{\"id\": 263, \"name\": \"The Dark Knight Collection\", \"poster_path\": \"/bqS2lMgGkuodIXtDILFWTSWDDpa.jpg\", \"backdrop_path\": \"/xfKot7lqaiW4XpL5TtDlVBA9ei9.jpg\"}",
+    "budget": 185000000,
+    "genres": [{"id": 18, "name": "Drama"}, {"id": 28, "name": "Action"}, {"id": 80, "name": "Crime"}, {"id": 53, "name": "Thriller"}],
+    "homepage": "http://thedarkknight.warnerbros.com/dvdsite/",
+    "id": 155,
+    "imdb_id": "tt0468569",
     "original_language": "en",
-    "original_title": "Jumanji",
-    "overview": "When siblings Judy and Peter discover an enchanted board game that opens the door to a magical world, they unwittingly invite Alan -- an adult who's been trapped inside the game for 26 years -- into their living room. Alan's only hope for freedom is to finish the game, which proves risky as all three find themselves running from giant rhinoceroses, evil monkeys and other terrifying creatures.",
-    "popularity": 17.015539,
-    "poster_path": "/vzmL6fP7aPKNKPRTFnZmiUfciyV.jpg",
-    "production_companies": [
-      {
-        "name": "TriStar Pictures",
-        "id": 559
-      },
-      {
-        "name": "Teitler Film",
-        "id": 2550
-      },
-      {
-        "name": "Interscope Communications",
-        "id": 10201
-      }
-    ],
-    "production_countries": [
-      {
-        "iso_3166_1": "US",
-        "name": "United States of America"
-      }
-    ],
-    "release_date": "1995-12-15",
-    "revenue": 262797249,
-    "runtime": 104,
-    "spoken_languages": [
-      {
-        "iso_639_1": "en",
-        "name": "English"
-      },
-      {
-        "iso_639_1": "fr",
-        "name": "Français"
-      }
-    ],
+    "original_title": "The Dark Knight",
+    "overview": "Batman raises the stakes in his war on crime. With the help of Lt. Jim Gordon and District Attorney Harvey Dent, Batman sets out to dismantle the remaining criminal organizations that plague the streets. The partnership proves to be effective, but they soon find themselves prey to a reign of chaos unleashed by a rising criminal mastermind known to the terrified citizens of Gotham as the Joker.",
+    "popularity": 123.167259,
+    "poster_path": "/1hRoyzDtpgMU7Dz4JF22RANzQO7.jpg",
+    "poster_url": "https://movieflix.blob.core.windows.net/images/posters/155.jpg?se=2025-06-12T02%3A51%3A58Z&sp=r&sv=2025-05-05&sr=b&sig=q/p8zOPzbaHTNvpSvSqR7qQtfU13xD1z9sYuJoNNyR8%3D",
+    "production_companies": [{"name": "DC Comics", "id": 429}, {"name": "Legendary Pictures", "id": 923}, {"name": "Warner Bros.", "id": 6194}, {"name": "DC Entertainment", "id": 9993}, {"name": "Syncopy", "id": 9996}],
+    "production_countries": [{"iso_3166_1": "GB", "name": "United Kingdom"}, {"iso_3166_1": "US", "name": "United States of America"}],
+    "release_date": "2008-07-16",
+    "revenue": 1004558444,
+    "runtime": 152.0,
+    "spoken_languages": [{"iso_639_1": "en", "name": "English"}, {"iso_639_1": "zh", "name": "普通话"}],
     "status": "Released",
-    "tagline": "Roll the dice and unleash the excitement!",
-    "title": "Jumanji",
-    "video": false,
+    "tagline": "Why So Serious?",
+    "title": "The Dark Knight",
+    "video": "False",
+    "vote_average": 8.3,
+    "vote_count": 12269
+  },
+  {
+    "_id": "68481ea15f0d1269f68affc6",
+    "adult": "False",
+    "belongs_to_collection": "{\"id\": 87096, \"name\": \"Avatar Collection\", \"poster_path\": \"/nslJVsO58Etqkk17oXMuVK4gNOF.jpg\", \"backdrop_path\": \"/9s4BM48NweGFrIRE6haIul0YJ9f.jpg\"}",
+    "budget": 237000000,
+    "genres": [{"id": 28, "name": "Action"}, {"id": 12, "name": "Adventure"}, {"id": 14, "name": "Fantasy"}, {"id": 878, "name": "Science Fiction"}],
+    "homepage": "http://www.avatarmovie.com/",
+    "id": 19995,
+    "imdb_id": "tt0499549",
+    "original_language": "en",
+    "original_title": "Avatar",
+    "overview": "In the 22nd century, a paraplegic Marine is dispatched to the moon Pandora on a unique mission, but becomes torn between following orders and protecting an alien civilization.",
+    "popularity": 185.070892,
+    "poster_path": "/kmcqlZGaSh20zpTbuoF0Cdn07dT.jpg",
+    "poster_url": "https://movieflix.blob.core.windows.net/images/posters/19995.jpg?se=2025-06-12T02%3A51%3A58Z&sp=r&sv=2025-05-05&sr=b&sig=BN5C0njoJGYRY4n5fohQZdPy3wYoVS6lUxGLG3vAdII%3D",
+    "production_companies": [{"name": "Ingenious Film Partners", "id": 289}, {"name": "Twentieth Century Fox Film Corporation", "id": 306}, {"name": "Dune Entertainment", "id": 444}, {"name": "Lightstorm Entertainment", "id": 574}],
+    "production_countries": [{"iso_3166_1": "US", "name": "United States of America"}, {"iso_3166_1": "GB", "name": "United Kingdom"}],
+    "release_date": "2009-12-10",
+    "revenue": 2787965087,
+    "runtime": 162.0,
+    "spoken_languages": [{"iso_639_1": "en", "name": "English"}, {"iso_639_1": "es", "name": "Español"}],
+    "status": "Released",
+    "tagline": "Enter the World of Pandora.",
+    "title": "Avatar",
+    "video": "False",
+    "vote_average": 7.2,
+    "vote_count": 12114
+  },
+  {
+    "_id": "68481eaa5f0d1269f68b0c89",
+    "adult": "False",
+    "belongs_to_collection": "{\"id\": 86311, \"name\": \"The Avengers Collection\", \"poster_path\": \"/qJawKUQcIBha507UahUlX0keOT7.jpg\", \"backdrop_path\": \"/zuW6fOiusv4X9nnW3paHGfXcSll.jpg\"}",
+    "budget": 220000000,
+    "genres": [{"id": 878, "name": "Science Fiction"}, {"id": 28, "name": "Action"}, {"id": 12, "name": "Adventure"}],
+    "homepage": "http://marvel.com/avengers_movie/",
+    "id": 24428,
+    "imdb_id": "tt0848228",
+    "original_language": "en",
+    "original_title": "The Avengers",
+    "overview": "When an unexpected enemy emerges and threatens global safety and security, Nick Fury, director of the international peacekeeping agency known as S.H.I.E.L.D., finds himself in need of a team to pull the world back from the brink of disaster. Spanning the globe, a daring recruitment effort begins!",
+    "popularity": 89.887648,
+    "poster_path": "/cezWGskPY5x7GaglTTRN4Fugfb8.jpg",
+    "poster_url": "https://movieflix.blob.core.windows.net/images/posters/24428.jpg?se=2025-06-12T02%3A51%3A58Z&sp=r&sv=2025-05-05&sr=b&sig=uvN8wBRlHwzfk6htILBFzjO%2BSVXljj3/Lu9PbSqOpGI%3D",
+    "production_companies": [{"name": "Paramount Pictures", "id": 4}, {"name": "Marvel Studios", "id": 420}],
+    "production_countries": [{"iso_3166_1": "US", "name": "United States of America"}],
+    "release_date": "2012-04-25",
+    "revenue": 1519557910,
+    "runtime": 143.0,
+    "spoken_languages": [{"iso_639_1": "en", "name": "English"}],
+    "status": "Released",
+    "tagline": "Some assembly required.",
+    "title": "The Avengers",
+    "video": "False",
+    "vote_average": 7.4,
+    "vote_count": 12000
+  },
+  {
+    "_id": "68481ebf5f0d1269f68b2eb3",
+    "adult": "False",
+    "belongs_to_collection": "{\"id\": 448150, \"name\": \"Deadpool Collection\", \"poster_path\": \"/30c5jO7YEXuF8KiWXLg9m28GWDA.jpg\", \"backdrop_path\": \"/hBQOWY8qWXJVFAc8yLTh1teIu43.jpg\"}",
+    "budget": 58000000,
+    "genres": [{"id": 28, "name": "Action"}, {"id": 12, "name": "Adventure"}, {"id": 35, "name": "Comedy"}],
+    "homepage": "http://www.foxmovies.com/movies/deadpool",
+    "id": 293660,
+    "imdb_id": "tt1431045",
+    "original_language": "en",
+    "original_title": "Deadpool",
+    "overview": "Deadpool tells the origin story of former Special Forces operative turned mercenary Wade Wilson, who after being subjected to a rogue experiment that leaves him with accelerated healing powers, adopts the alter ego Deadpool. Armed with his new abilities and a dark, twisted sense of humor, Deadpool hunts down the man who nearly destroyed his life.",
+    "popularity": 187.860492,
+    "poster_path": "/inVq3FRqcYIRl2la8iZikYYxFNR.jpg",
+    "poster_url": "https://movieflix.blob.core.windows.net/images/posters/293660.jpg?se=2025-06-12T02%3A51%3A58Z&sp=r&sv=2025-05-05&sr=b&sig=GHUYyUPNeK1XsvwoPa9DMQG1MsgyDEAVD40POcP1l%2Bg%3D",
+    "production_companies": [{"name": "Twentieth Century Fox Film Corporation", "id": 306}, {"name": "Marvel Entertainment", "id": 7505}, {"name": "The Donners' Company", "id": 11307}, {"name": "TSG Entertainment", "id": 22213}, {"name": "Kinberg Genre", "id": 78091}],
+    "production_countries": [{"iso_3166_1": "US", "name": "United States of America"}],
+    "release_date": "2016-02-09",
+    "revenue": 783112979,
+    "runtime": 108.0,
+    "spoken_languages": [{"iso_639_1": "en", "name": "English"}],
+    "status": "Released",
+    "tagline": "Witness the beginning of a happy ending",
+    "title": "Deadpool",
+    "video": "False",
+    "vote_average": 7.4,
+    "vote_count": 11444
+  },
+  {
+    "_id": "68481eb95f0d1269f68b204f",
+    "adult": "False",
+    "belongs_to_collection": "",
+    "budget": 165000000,
+    "genres": [{"id": 12, "name": "Adventure"}, {"id": 18, "name": "Drama"}, {"id": 878, "name": "Science Fiction"}],
+    "homepage": "http://www.interstellarmovie.net/",
+    "id": 157336,
+    "imdb_id": "tt0816692",
+    "original_language": "en",
+    "original_title": "Interstellar",
+    "overview": "Interstellar chronicles the adventures of a group of explorers who make use of a newly discovered wormhole to surpass the limitations on human space travel and conquer the vast distances involved in an interstellar voyage.",
+    "popularity": 32.213481,
+    "poster_path": "/nBNZadXqJSdt05SHLqgT0HuC5Gm.jpg",
+    "poster_url": "https://movieflix.blob.core.windows.net/images/posters/157336.jpg?se=2025-06-12T02%3A51%3A58Z&sp=r&sv=2025-05-05&sr=b&sig=LdSyCgC8H9lz9/MWE6qzyyus6CN9eXDXwhD/PQEqTNU%3D",
+    "production_companies": [{"name": "Paramount Pictures", "id": 4}, {"name": "Legendary Pictures", "id": 923}, {"name": "Warner Bros.", "id": 6194}, {"name": "Syncopy", "id": 9996}, {"name": "Lynda Obst Productions", "id": 13769}],
+    "production_countries": [{"iso_3166_1": "CA", "name": "Canada"}, {"iso_3166_1": "US", "name": "United States of America"}, {"iso_3166_1": "GB", "name": "United Kingdom"}],
+    "release_date": "2014-11-05",
+    "revenue": 675120017,
+    "runtime": 169.0,
+    "spoken_languages": [{"iso_639_1": "en", "name": "English"}],
+    "status": "Released",
+    "tagline": "Mankind was born on Earth. It was never meant to die here.",
+    "title": "Interstellar",
+    "video": "False",
+    "vote_average": 8.1,
+    "vote_count": 11187
+  },
+  {
+    "_id": "68481eb35f0d1269f68b1541",
+    "adult": "False",
+    "belongs_to_collection": "",
+    "budget": 100000000,
+    "genres": [{"id": 18, "name": "Drama"}, {"id": 37, "name": "Western"}],
+    "homepage": "http://unchainedmovie.com/",
+    "id": 68718,
+    "imdb_id": "tt1853728",
+    "original_language": "en",
+    "original_title": "Django Unchained",
+    "overview": "With the help of a German bounty hunter, a freed slave sets out to rescue his wife from a brutal Mississippi plantation owner.",
+    "popularity": 19.785025,
+    "poster_path": "/5WJnxuw41sddupf8cwOxYftuvJG.jpg",
+    "poster_url": "https://movieflix.blob.core.windows.net/images/posters/68718.jpg?se=2025-06-12T02%3A51%3A58Z&sp=r&sv=2025-05-05&sr=b&sig=AnMT7N9pd2gKhCfSruhzATT%2BQAIWwJ95Y5psjqoa%2Bvk%3D",
+    "production_companies": [{"name": "Columbia Pictures", "id": 5}, {"name": "The Weinstein Company", "id": 308}],
+    "production_countries": [{"iso_3166_1": "US", "name": "United States of America"}],
+    "release_date": "2012-12-25",
+    "revenue": 425368238,
+    "runtime": 165.0,
+    "spoken_languages": [{"iso_639_1": "en", "name": "English"}, {"iso_639_1": "fr", "name": "Français"}, {"iso_639_1": "de", "name": "Deutsch"}],
+    "status": "Released",
+    "tagline": "Life, liberty and the pursuit of vengeance.",
+    "title": "Django Unchained",
+    "video": "False",
+    "vote_average": 7.8,
+    "vote_count": 10297
+  },
+  {
+    "_id": "68481ebc5f0d1269f68b23b8",
+    "adult": "False",
+    "belongs_to_collection": "{\"id\": 284433, \"name\": \"Guardians of the Galaxy Collection\", \"poster_path\": \"/iL8mukexAqEg0xK783rG561tdd8.jpg\", \"backdrop_path\": \"/jdyyjulTBU8YUYAUvQFj6U1g2Pj.jpg\"}",
+    "budget": 170000000,
+    "genres": [{"id": 28, "name": "Action"}, {"id": 878, "name": "Science Fiction"}, {"id": 12, "name": "Adventure"}],
+    "homepage": "http://marvel.com/guardians",
+    "id": 118340,
+    "imdb_id": "tt2015381",
+    "original_language": "en",
+    "original_title": "Guardians of the Galaxy",
+    "overview": "Light years from Earth, 26 years after being abducted, Peter Quill finds himself the prime target of a manhunt after discovering an orb wanted by Ronan the Accuser.",
+    "popularity": 53.291601,
+    "poster_path": "/y31QB9kn3XSudA15tV7UWQ9XLuW.jpg",
+    "poster_url": "https://movieflix.blob.core.windows.net/images/posters/118340.jpg?se=2025-06-12T02%3A51%3A58Z&sp=r&sv=2025-05-05&sr=b&sig=PXpcvw668n20OIU6HENWcrgNGl0IQaMEb/EPaHgyefo%3D",
+    "production_companies": [{"name": "Marvel Studios", "id": 420}, {"name": "Moving Picture Company (MPC)", "id": 20478}, {"name": "Bulletproof Cupid", "id": 54850}, {"name": "Revolution Sun Studios", "id": 76043}],
+    "production_countries": [{"iso_3166_1": "GB", "name": "United Kingdom"}, {"iso_3166_1": "US", "name": "United States of America"}],
+    "release_date": "2014-07-30",
+    "revenue": 773328629,
+    "runtime": 121.0,
+    "spoken_languages": [{"iso_639_1": "en", "name": "English"}],
+    "status": "Released",
+    "tagline": "All heroes start somewhere.",
+    "title": "Guardians of the Galaxy",
+    "video": "False",
+    "vote_average": 7.9,
+    "vote_count": 10014
+  },
+  {
+    "_id": "68481e7f5f0d1269f68ad20a",
+    "adult": "False",
+    "belongs_to_collection": "",
+    "budget": 63000000,
+    "genres": [{"id": 18, "name": "Drama"}],
+    "homepage": "http://www.foxmovies.com/movies/fight-club",
+    "id": 550,
+    "imdb_id": "tt0137523",
+    "original_language": "en",
+    "original_title": "Fight Club",
+    "overview": "A ticking-time-bomb insomniac and a slippery soap salesman channel primal male aggression into a shocking new form of therapy. Their concept catches on, with underground \"fight clubs\" forming in every town, until an eccentric gets in the way and ignites an out-of-control spiral toward oblivion.",
+    "popularity": 63.869599,
+    "poster_path": "/adw6Lq9FiC9zjYEpOqfq03ituwp.jpg",
+    "poster_url": "https://movieflix.blob.core.windows.net/images/posters/550.jpg?se=2025-06-12T02%3A51%3A58Z&sp=r&sv=2025-05-05&sr=b&sig=G7KGIxh3zZTzTc9oZuCCkp%2BITUf2PzFYoaeBJvt5lHU%3D",
+    "production_companies": [{"name": "Twentieth Century Fox Film Corporation", "id": 306}, {"name": "Regency Enterprises", "id": 508}, {"name": "Fox 2000 Pictures", "id": 711}, {"name": "Taurus Film", "id": 20555}, {"name": "Linson Films", "id": 54050}, {"name": "Atman Entertainment", "id": 54051}, {"name": "Knickerbocker Films", "id": 54052}],
+    "production_countries": [{"iso_3166_1": "DE", "name": "Germany"}, {"iso_3166_1": "US", "name": "United States of America"}],
+    "release_date": "1999-10-15",
+    "revenue": 100853753,
+    "runtime": 139.0,
+    "spoken_languages": [{"iso_639_1": "en", "name": "English"}],
+    "status": "Released",
+    "tagline": "Mischief. Mayhem. Soap.",
+    "title": "Fight Club",
+    "video": "False",
+    "vote_average": 8.3,
+    "vote_count": 9678
+  },
+  {
+    "_id": "68481ead5f0d1269f68b0e33",
+    "adult": "False",
+    "belongs_to_collection": "{\"id\": 131635, \"name\": \"The Hunger Games Collection\", \"poster_path\": \"/ttbKy12hDjSHQcM7sCoeW1WsDlW.jpg\", \"backdrop_path\": \"/zWiiLNg8yXv0he3tCH6XignPaYV.jpg\"}",
+    "budget": 75000000,
+    "genres": [{"id": 878, "name": "Science Fiction"}, {"id": 12, "name": "Adventure"}, {"id": 14, "name": "Fantasy"}],
+    "homepage": "http://www.thehungergames.movie/",
+    "id": 70160,
+    "imdb_id": "tt1392170",
+    "original_language": "en",
+    "original_title": "The Hunger Games",
+    "overview": "Every year in the ruins of what was once North America, the nation of Panem forces each of its twelve districts to send a teenage boy and girl to compete in the Hunger Games.  Part twisted entertainment, part government intimidation tactic, the Hunger Games are a nationally televised event in which \"Tributes\" must fight with one another until one survivor remains.  Pitted against highly-trained Tributes who have prepared for these Games their entire lives, Katniss is forced to rely upon her sharp instincts as well as the mentorship of drunken former victor Haymitch Abernathy.  If she's ever to return home to District 12, Katniss must make impossible choices in the arena that weigh survival against humanity and life against love. The world will be watching.",
+    "popularity": 20.031667,
+    "poster_path": "/iLJdwmzrHFjFwI5lvYAT1gcpRuA.jpg",
+    "poster_url": "https://movieflix.blob.core.windows.net/images/posters/70160.jpg?se=2025-06-12T02%3A51%3A58Z&sp=r&sv=2025-05-05&sr=b&sig=j6b3h0XRSFw5z140fSEtm9OlHS6qJ3Nx/ljO1ncWVZE%3D",
+    "production_companies": [{"name": "Lionsgate", "id": 1632}, {"name": "Color Force", "id": 5420}],
+    "production_countries": [{"iso_3166_1": "US", "name": "United States of America"}],
+    "release_date": "2012-03-12",
+    "revenue": 691210692,
+    "runtime": 142.0,
+    "spoken_languages": [{"iso_639_1": "en", "name": "English"}],
+    "status": "Released",
+    "tagline": "May The Odds Be Ever In Your Favor.",
+    "title": "The Hunger Games",
+    "video": "False",
     "vote_average": 6.9,
-    "vote_count": 2413
+    "vote_count": 9634
   },
   {
-    "adult": false,
-    "belongs_to_collection": {
-      "id": 119050,
-      "name": "Grumpy Old Men Collection",
-      "poster_path": "/nLvUdqgPgm3F85NMCii9gVFUcet.jpg",
-      "backdrop_path": "/hypTnLot2z8wpFS7qwsQHW1uV8u.jpg"
-    },
-    "budget": 0,
-    "genres": [
-      {
-        "id": 10749,
-        "name": "Romance"
-      },
-      {
-        "id": 35,
-        "name": "Comedy"
-      }
-    ],
-    "homepage": null,
-    "id": 331,
-    "imdb_id": "tt0113228",
+    "_id": "68481ebf5f0d1269f68b2ea8",
+    "adult": "False",
+    "belongs_to_collection": "{\"id\": 8945, \"name\": \"Mad Max Collection\", \"poster_path\": \"/jZowUf4okNYuSlgj5iURE7CDMho.jpg\", \"backdrop_path\": \"/zI0q2ENcQOLECbe0gAEGlncVh2j.jpg\"}",
+    "budget": 150000000,
+    "genres": [{"id": 28, "name": "Action"}, {"id": 12, "name": "Adventure"}, {"id": 878, "name": "Science Fiction"}, {"id": 53, "name": "Thriller"}],
+    "homepage": "http://www.madmaxmovie.com/",
+    "id": 76341,
+    "imdb_id": "tt1392190",
     "original_language": "en",
-    "original_title": "Grumpier Old Men",
-    "overview": "A family wedding reignites the ancient feud between next-door neighbors and fishing buddies John and Max. Meanwhile, a sultry Italian divorcée opens a restaurant at the local bait shop, alarming the locals who worry she'll scare the fish away. But she's less interested in seafood than she is in cooking up a hot time with Max.",
-    "popularity": 11.7129,
-    "poster_path": "/6ksm1sjKMFLbO7UY2i6G1ju9SML.jpg",
-    "production_companies": [
-      {
-        "name": "Warner Bros.",
-        "id": 6194
-      },
-      {
-        "name": "Lancaster Gate",
-        "id": 19464
-      }
-    ],
-    "production_countries": [
-      {
-        "iso_3166_1": "US",
-        "name": "United States of America"
-      }
-    ],
-    "release_date": "1995-12-22",
-    "revenue": 0,
-    "runtime": 101,
-    "spoken_languages": [
-      {
-        "iso_639_1": "en",
-        "name": "English"
-      }
-    ],
+    "original_title": "Mad Max: Fury Road",
+    "overview": "An apocalyptic story set in the furthest reaches of our planet, in a stark desert landscape where humanity is broken, and most everyone is crazed fighting for the necessities of life. Within this world exist two rebels on the run who just might be able to restore order. There's Max, a man of action and a man of few words, who seeks peace of mind following the loss of his wife and child in the aftermath of the chaos. And Furiosa, a woman of action and a woman who believes her path to survival may be achieved if she can make it across the desert back to her childhood homeland.",
+    "popularity": 29.36178,
+    "poster_path": "/kqjL17yufvn9OVLyXYpvtyrFfak.jpg",
+    "poster_url": "https://movieflix.blob.core.windows.net/images/posters/76341.jpg?se=2025-06-12T02%3A51%3A58Z&sp=r&sv=2025-05-05&sr=b&sig=%2B4P/EF8VjWgKFmNiwze0NH14qB%2BGRqovVekP1aWTrXo%3D",
+    "production_companies": [{"name": "Village Roadshow Pictures", "id": 79}, {"name": "Kennedy Miller Productions", "id": 2537}, {"name": "Warner Bros.", "id": 6194}],
+    "production_countries": [{"iso_3166_1": "AU", "name": "Australia"}, {"iso_3166_1": "US", "name": "United States of America"}],
+    "release_date": "2015-05-13",
+    "revenue": 378858340,
+    "runtime": 120.0,
+    "spoken_languages": [{"iso_639_1": "en", "name": "English"}],
     "status": "Released",
-    "tagline": "Still Yelling. Still Fighting. Still Ready for Love.",
-    "title": "Grumpier Old Men",
-    "video": false,
+    "tagline": "What a Lovely Day.",
+    "title": "Mad Max: Fury Road",
+    "video": "False",
+    "vote_average": 7.3,
+    "vote_count": 9629
+  },
+  {
+    "_id": "68481ead5f0d1269f68b0e3b",
+    "adult": "False",
+    "belongs_to_collection": "{\"id\": 263, \"name\": \"The Dark Knight Collection\", \"poster_path\": \"/bqS2lMgGkuodIXtDILFWTSWDDpa.jpg\", \"backdrop_path\": \"/xfKot7lqaiW4XpL5TtDlVBA9ei9.jpg\"}",
+    "budget": 250000000,
+    "genres": [{"id": 28, "name": "Action"}, {"id": 80, "name": "Crime"}, {"id": 18, "name": "Drama"}, {"id": 53, "name": "Thriller"}],
+    "homepage": "http://www.thedarkknightrises.com/",
+    "id": 49026,
+    "imdb_id": "tt1345836",
+    "original_language": "en",
+    "original_title": "The Dark Knight Rises",
+    "overview": "Following the death of District Attorney Harvey Dent, Batman assumes responsibility for Dent's crimes to protect the late attorney's reputation and is subsequently hunted by the Gotham City Police Department. Eight years later, Batman encounters the mysterious Selina Kyle and the villainous Bane, a new terrorist leader who overwhelms Gotham's finest. The Dark Knight resurfaces to protect a city that has branded him an enemy.",
+    "popularity": 20.58258,
+    "poster_path": "/dEYnvnUfXrqvqeRSqvIEtmzhoA8.jpg",
+    "poster_url": "https://movieflix.blob.core.windows.net/images/posters/49026.jpg?se=2025-06-12T02%3A51%3A58Z&sp=r&sv=2025-05-05&sr=b&sig=3XB5nW%2B/hLBktLwp/ywyigTBez8EtZMUtH6vwf24s0I%3D",
+    "production_companies": [{"name": "Legendary Pictures", "id": 923}, {"name": "Warner Bros.", "id": 6194}, {"name": "DC Entertainment", "id": 9993}, {"name": "Syncopy", "id": 9996}],
+    "production_countries": [{"iso_3166_1": "US", "name": "United States of America"}],
+    "release_date": "2012-07-16",
+    "revenue": 1084939099,
+    "runtime": 165.0,
+    "spoken_languages": [{"iso_639_1": "en", "name": "English"}],
+    "status": "Released",
+    "tagline": "The Legend Ends",
+    "title": "The Dark Knight Rises",
+    "video": "False",
+    "vote_average": 7.6,
+    "vote_count": 9263
+  },
+  {
+    "_id": "68481e7f5f0d1269f68ad089",
+    "adult": "False",
+    "belongs_to_collection": "{\"id\": 2344, \"name\": \"The Matrix Collection\", \"poster_path\": \"/lh4aGpd3U9rm9B8Oqr6CUgQLtZL.jpg\", \"backdrop_path\": \"/RhUxjzNojIJsdZSYTn0CQvdKsn.jpg\"}",
+    "budget": 63000000,
+    "genres": [{"id": 28, "name": "Action"}, {"id": 878, "name": "Science Fiction"}],
+    "homepage": "http://www.warnerbros.com/matrix",
+    "id": 603,
+    "imdb_id": "tt0133093",
+    "original_language": "en",
+    "original_title": "The Matrix",
+    "overview": "Set in the 22nd century, The Matrix tells the story of a computer hacker who joins a group of underground insurgents fighting the vast and powerful computers who now rule the earth.",
+    "popularity": 33.366332,
+    "poster_path": "/hEpWvX6Bp79eLxY1kX5ZZJcme5U.jpg",
+    "poster_url": "https://movieflix.blob.core.windows.net/images/posters/603.jpg?se=2025-06-12T02%3A51%3A58Z&sp=r&sv=2025-05-05&sr=b&sig=i8r0oN2oj6iTUFwklIOcr4IOuzkaf3qf9J3MqWU5hQE%3D",
+    "production_companies": [{"name": "Village Roadshow Pictures", "id": 79}, {"name": "Groucho II Film Partnership", "id": 372}, {"name": "Silver Pictures", "id": 1885}, {"name": "Warner Bros.", "id": 6194}],
+    "production_countries": [{"iso_3166_1": "AU", "name": "Australia"}, {"iso_3166_1": "US", "name": "United States of America"}],
+    "release_date": "1999-03-30",
+    "revenue": 463517383,
+    "runtime": 136.0,
+    "spoken_languages": [{"iso_639_1": "en", "name": "English"}],
+    "status": "Released",
+    "tagline": "Welcome to the Real World.",
+    "title": "The Matrix",
+    "video": "False",
+    "vote_average": 7.9,
+    "vote_count": 9079
+  },
+  {
+    "_id": "68481eb35f0d1269f68b184d",
+    "adult": "False",
+    "belongs_to_collection": "{\"id\": 131292, \"name\": \"Iron Man Collection\", \"poster_path\": \"/fbeJ7f0aD4A112Bc1tnpzyn82xO.jpg\", \"backdrop_path\": \"/rI8zOWkRQJdlAyQ6WJOSlYK6JxZ.jpg\"}",
+    "budget": 200000000,
+    "genres": [{"id": 28, "name": "Action"}, {"id": 12, "name": "Adventure"}, {"id": 878, "name": "Science Fiction"}],
+    "homepage": "http://marvel.com/ironman3",
+    "id": 68721,
+    "imdb_id": "tt1300854",
+    "original_language": "en",
+    "original_title": "Iron Man 3",
+    "overview": "When Tony Stark's world is torn apart by a formidable terrorist called the Mandarin, he starts an odyssey of rebuilding and retribution.",
+    "popularity": 23.721243,
+    "poster_path": "/1Ilv6ryHUv6rt9zIsbSEJUmmbEi.jpg",
+    "poster_url": "https://movieflix.blob.core.windows.net/images/posters/68721.jpg?se=2025-06-12T02%3A51%3A58Z&sp=r&sv=2025-05-05&sr=b&sig=3%2BQ%2B39gAVdlE7HxxfWxZ1ytyEDL9XDZthSQ9bkZXvbM%3D",
+    "production_companies": [{"name": "Marvel Studios", "id": 420}],
+    "production_countries": [{"iso_3166_1": "CN", "name": "China"}, {"iso_3166_1": "US", "name": "United States of America"}],
+    "release_date": "2013-04-18",
+    "revenue": 1215439994,
+    "runtime": 130.0,
+    "spoken_languages": [{"iso_639_1": "en", "name": "English"}],
+    "status": "Released",
+    "tagline": "Unleash the power behind the armor.",
+    "title": "Iron Man 3",
+    "video": "False",
+    "vote_average": 6.8,
+    "vote_count": 8951
+  },
+  {
+    "_id": "68481e9b5f0d1269f68af81b",
+    "adult": "False",
+    "belongs_to_collection": "{\"id\": 131292, \"name\": \"Iron Man Collection\", \"poster_path\": \"/fbeJ7f0aD4A112Bc1tnpzyn82xO.jpg\", \"backdrop_path\": \"/rI8zOWkRQJdlAyQ6WJOSlYK6JxZ.jpg\"}",
+    "budget": 140000000,
+    "genres": [{"id": 28, "name": "Action"}, {"id": 878, "name": "Science Fiction"}, {"id": 12, "name": "Adventure"}],
+    "homepage": "http://www.ironmanmovie.com/",
+    "id": 1726,
+    "imdb_id": "tt0371746",
+    "original_language": "en",
+    "original_title": "Iron Man",
+    "overview": "After being held captive in an Afghan cave, billionaire engineer Tony Stark creates a unique weaponized suit of armor to fight evil.",
+    "popularity": 22.073099,
+    "poster_path": "/848chlIWVT41VtAAgyh9bWymAYb.jpg",
+    "poster_url": "https://movieflix.blob.core.windows.net/images/posters/1726.jpg?se=2025-06-12T02%3A51%3A58Z&sp=r&sv=2025-05-05&sr=b&sig=SHRKvF6W6L6Yh7b9OXCaicR/yp4AFOtQQlGcDvMEqIM%3D",
+    "production_companies": [{"name": "Paramount Pictures", "id": 4}, {"name": "Marvel Studios", "id": 420}],
+    "production_countries": [{"iso_3166_1": "US", "name": "United States of America"}],
+    "release_date": "2008-04-30",
+    "revenue": 585174222,
+    "runtime": 126.0,
+    "spoken_languages": [{"iso_639_1": "en", "name": "English"}, {"iso_639_1": "fa", "name": "فارسی"}, {"iso_639_1": "ur", "name": "اردو"}, {"iso_639_1": "ar", "name": "العربية"}],
+    "status": "Released",
+    "tagline": "Heroes aren't born. They're built.",
+    "title": "Iron Man",
+    "video": "False",
+    "vote_average": 7.4,
+    "vote_count": 8951
+  },
+  {
+    "_id": "68481e855f0d1269f68ad9ee",
+    "adult": "False",
+    "belongs_to_collection": "{\"id\": 119, \"name\": \"The Lord of the Rings Collection\", \"poster_path\": \"/p4UokEk2XnjjRTdXGe6DLYXlbI1.jpg\", \"backdrop_path\": \"/bccR2CGTWVVSZAG0yqmy3DIvhTX.jpg\"}",
+    "budget": 93000000,
+    "genres": [{"id": 12, "name": "Adventure"}, {"id": 14, "name": "Fantasy"}, {"id": 28, "name": "Action"}],
+    "homepage": "http://www.lordoftherings.net/",
+    "id": 120,
+    "imdb_id": "tt0120737",
+    "original_language": "en",
+    "original_title": "The Lord of the Rings: The Fellowship of the Ring",
+    "overview": "Young hobbit Frodo Baggins, after inheriting a mysterious ring from his uncle Bilbo, must leave his home in order to keep it from falling into the hands of its evil creator. Along the way, a fellowship is formed to protect the ringbearer and make sure that the ring arrives at its final destination: Mt. Doom, the only place where it can be destroyed.",
+    "popularity": 32.070725,
+    "poster_path": "/bxVxZb5O9OxCO0oRUNdCnpy9NST.jpg",
+    "poster_url": "https://movieflix.blob.core.windows.net/images/posters/120.jpg?se=2025-06-12T02%3A51%3A58Z&sp=r&sv=2025-05-05&sr=b&sig=IuztryuE7pCGNeDXQ%2BPkzGX53xSEX1eOcqZNYWJusrk%3D",
+    "production_companies": [{"name": "WingNut Films", "id": 11}, {"name": "New Line Cinema", "id": 12}, {"name": "The Saul Zaentz Company", "id": 5237}],
+    "production_countries": [{"iso_3166_1": "NZ", "name": "New Zealand"}, {"iso_3166_1": "US", "name": "United States of America"}],
+    "release_date": "2001-12-18",
+    "revenue": 871368364,
+    "runtime": 178.0,
+    "spoken_languages": [{"iso_639_1": "en", "name": "English"}],
+    "status": "Released",
+    "tagline": "One ring to rule them all",
+    "title": "The Lord of the Rings: The Fellowship of the Ring",
+    "video": "False",
+    "vote_average": 8.0,
+    "vote_count": 8892
+  },
+  {
+    "_id": "68481ebe5f0d1269f68b28eb",
+    "adult": "False",
+    "belongs_to_collection": "{\"id\": 328, \"name\": \"Jurassic Park Collection\", \"poster_path\": \"/qIm2nHXLpBBdMxi8dvfrnDkBUDh.jpg\", \"backdrop_path\": \"/pJjIH9QN0OkHFV9eue6XfRVnPkr.jpg\"}",
+    "budget": 150000000,
+    "genres": [{"id": 28, "name": "Action"}, {"id": 12, "name": "Adventure"}, {"id": 878, "name": "Science Fiction"}, {"id": 53, "name": "Thriller"}],
+    "homepage": "http://www.jurassicworld.com/",
+    "id": 135397,
+    "imdb_id": "tt0369610",
+    "original_language": "en",
+    "original_title": "Jurassic World",
+    "overview": "Twenty-two years after the events of Jurassic Park, Isla Nublar now features a fully functioning dinosaur theme park, Jurassic World, as originally envisioned by John Hammond.",
+    "popularity": 32.790475,
+    "poster_path": "/jjBgi2r5cRt36xF6iNUEhzscEcb.jpg",
+    "poster_url": "https://movieflix.blob.core.windows.net/images/posters/135397.jpg?se=2025-06-12T02%3A51%3A58Z&sp=r&sv=2025-05-05&sr=b&sig=UeSnB2E08nNrN5r/1YJ1evgO0PKVUcTKWz4oC/fdv%2B0%3D",
+    "production_companies": [{"name": "Universal Studios", "id": 13}, {"name": "Amblin Entertainment", "id": 56}, {"name": "Legendary Pictures", "id": 923}, {"name": "Fuji Television Network", "id": 3341}, {"name": "Dentsu", "id": 6452}],
+    "production_countries": [{"iso_3166_1": "US", "name": "United States of America"}],
+    "release_date": "2015-06-09",
+    "revenue": 1513528810,
+    "runtime": 124.0,
+    "spoken_languages": [{"iso_639_1": "en", "name": "English"}],
+    "status": "Released",
+    "tagline": "The park is open.",
+    "title": "Jurassic World",
+    "video": "False",
     "vote_average": 6.5,
-    "vote_count": 92
+    "vote_count": 8842
   },
   {
-    "adult": false,
-    "belongs_to_collection": null,
-    "budget": 0,
-    "genres": [
-      {
-        "id": 35,
-        "name": "Comedy"
-      }
-    ],
-    "homepage": null,
-    "id": 338,
-    "imdb_id": "tt0113228",
+    "_id": "68481e775f0d1269f68ac813",
+    "adult": "False",
+    "belongs_to_collection": "",
+    "budget": 8000000,
+    "genres": [{"id": 53, "name": "Thriller"}, {"id": 80, "name": "Crime"}],
+    "homepage": "",
+    "id": 680,
+    "imdb_id": "tt0110912",
     "original_language": "en",
-    "original_title": "Waiting to Exhale",
-    "overview": "Cheated on, mistreated and stepped on, four friends try to find true love and happiness while balancing their personal and professional lives.",
-    "popularity": 9.123456,
-    "poster_path": "/6ksm1sjKMFLbO7UY2i6G1ju9SML.jpg",
-    "production_companies": [
-      {
-        "name": "20th Century Fox",
-        "id": 25
-      },
-      {
-        "name": "Fox 2000 Pictures",
-        "id": 114
-      }
-    ],
-    "production_countries": [
-      {
-        "iso_3166_1": "US",
-        "name": "United States of America"
-      }
-    ],
-    "release_date": "1995-12-22",
-    "revenue": 0,
-    "runtime": 127,
-    "spoken_languages": [
-      {
-        "iso_639_1": "en",
-        "name": "English"
-      }
-    ],
+    "original_title": "Pulp Fiction",
+    "overview": "A burger-loving hit man, his philosophical partner, a drug-addled gangster's moll and a washed-up boxer converge in this sprawling, comedic crime caper. Their adventures unfurl in three stories that ingeniously trip back and forth in time.",
+    "popularity": 140.950236,
+    "poster_path": "/dM2w364MScsjFf8pfMbaWUcWrR.jpg",
+    "poster_url": "https://movieflix.blob.core.windows.net/images/posters/680.jpg?se=2025-06-12T02%3A51%3A58Z&sp=r&sv=2025-05-05&sr=b&sig=mywsX1o8Bn9z2bzwx85WjM79R9wTQHsYnygrI9YxgME%3D",
+    "production_companies": [{"name": "Miramax Films", "id": 14}, {"name": "A Band Apart", "id": 59}, {"name": "Jersey Films", "id": 216}],
+    "production_countries": [{"iso_3166_1": "US", "name": "United States of America"}],
+    "release_date": "1994-09-10",
+    "revenue": 213928762,
+    "runtime": 154.0,
+    "spoken_languages": [{"iso_639_1": "en", "name": "English"}, {"iso_639_1": "es", "name": "Español"}, {"iso_639_1": "fr", "name": "Français"}],
     "status": "Released",
-    "tagline": "",
-    "title": "",
-    "video": false,
-    "vote_average": 6.5,
-    "vote_count": 92
-  },
-    {
-    "adult": false,
-    "belongs_to_collection": {
-      "id": 10194,
-      "name": "Toy Story Collection",
-      "poster_path": "/7G9915LfUQ2lVfwMEEhDsn3kT4B.jpg",
-      "backdrop_path": "/9FBwqcd9IRruEDUrTdcaafOMKUq.jpg"
-    },
-    "budget": 30000000,
-    "genres": [
-      {
-        "id": 16,
-        "name": "Animation"
-      },
-      {
-        "id": 35,
-        "name": "Comedy"
-      },
-      {
-        "id": 10751,
-        "name": "Family"
-      }
-    ],
-    "homepage": "http://toystory.disney.com/toy-story",
-    "id": 862,
-    "imdb_id": "tt0114709",
-    "original_language": "en",
-    "original_title": "Toy Story",
-    "overview": "Led by Woody, Andy's toys live happily in his room until Andy's birthday brings Buzz Lightyear onto the scene. Afraid of losing his place in Andy's heart, Woody plots against Buzz. But when circumstances separate Buzz and Woody from their owner, the duo eventually learns to put aside their differences.",
-    "popularity": 21.946943,
-    "poster_path": "/rhIRbceoE9lR4veEXuwCC2wARtG.jpg",
-    "production_companies": [
-      {
-        "name": "Pixar Animation Studios",
-        "id": 3
-      }
-    ],
-    "production_countries": [
-      {
-        "iso_3166_1": "US",
-        "name": "United States of America"
-      }
-    ],
-    "release_date": "1995-10-30",
-    "revenue": 373554033,
-    "runtime": 81,
-    "spoken_languages": [
-      {
-        "iso_639_1": "en",
-        "name": "English"
-      }
-    ],
-    "status": "Released",
-    "tagline": "Toy Story",
-    "title": "Toy Story",
-    "video": false,
-    "vote_average": 7.7,
-    "vote_count": 5415
+    "tagline": "Just because you are a character doesn't mean you have character.",
+    "title": "Pulp Fiction",
+    "video": "False",
+    "vote_average": 8.3,
+    "vote_count": 8670
   },
   {
-    "adult": false,
-    "belongs_to_collection": null,
-    "budget": 65000000,
-    "genres": [
-      {
-        "id": 12,
-        "name": "Adventure"
-      },
-      {
-        "id": 14,
-        "name": "Fantasy"
-      },
-      {
-        "id": 10751,
-        "name": "Family"
-      }
-    ],
-    "homepage": null,
-    "id": 326,
-    "imdb_id": "tt0113497",
+    "_id": "68481eb05f0d1269f68b14f2",
+    "adult": "False",
+    "belongs_to_collection": "{\"id\": 121938, \"name\": \"The Hobbit Collection\", \"poster_path\": \"/hm2VtxeCBqWJnPNmvXPPXiHydyp.jpg\", \"backdrop_path\": \"/7wO7MSnP5UcwR2cTHdJFF1vP4Ie.jpg\"}",
+    "budget": 250000000,
+    "genres": [{"id": 12, "name": "Adventure"}, {"id": 14, "name": "Fantasy"}, {"id": 28, "name": "Action"}],
+    "homepage": "http://www.thehobbit.com/",
+    "id": 49051,
+    "imdb_id": "tt0903624",
     "original_language": "en",
-    "original_title": "Jumanji",
-    "overview": "When siblings Judy and Peter discover an enchanted board game that opens the door to a magical world, they unwittingly invite Alan -- an adult who's been trapped inside the game for 26 years -- into their living room. Alan's only hope for freedom is to finish the game, which proves risky as all three find themselves running from giant rhinoceroses, evil monkeys and other terrifying creatures.",
-    "popularity": 17.015539,
-    "poster_path": "/vzmL6fP7aPKNKPRTFnZmiUfciyV.jpg",
-    "production_companies": [
-      {
-        "name": "TriStar Pictures",
-        "id": 559
-      },
-      {
-        "name": "Teitler Film",
-        "id": 2550
-      },
-      {
-        "name": "Interscope Communications",
-        "id": 10201
-      }
-    ],
-    "production_countries": [
-      {
-        "iso_3166_1": "US",
-        "name": "United States of America"
-      }
-    ],
-    "release_date": "1995-12-15",
-    "revenue": 262797249,
-    "runtime": 104,
-    "spoken_languages": [
-      {
-        "iso_639_1": "en",
-        "name": "English"
-      },
-      {
-        "iso_639_1": "fr",
-        "name": "Français"
-      }
-    ],
+    "original_title": "The Hobbit: An Unexpected Journey",
+    "overview": "Bilbo Baggins, a hobbit enjoying his quiet life, is swept into an epic quest by Gandalf the Grey and thirteen dwarves who seek to reclaim their mountain home from Smaug, the dragon.",
+    "popularity": 23.253089,
+    "poster_path": "/ysX7vDmSh5O19vFjAi56WL7l4nk.jpg",
+    "poster_url": "https://movieflix.blob.core.windows.net/images/posters/49051.jpg?se=2025-06-12T02%3A51%3A58Z&sp=r&sv=2025-05-05&sr=b&sig=Xq%2BHkXThMGwOxLt9x6OXPNl/pQwhb1MJG1u5SP%2B0PTY%3D",
+    "production_companies": [{"name": "WingNut Films", "id": 11}, {"name": "New Line Cinema", "id": 12}, {"name": "Warner Bros. Pictures", "id": 174}, {"name": "Metro-Goldwyn-Mayer (MGM)", "id": 8411}],
+    "production_countries": [{"iso_3166_1": "NZ", "name": "New Zealand"}, {"iso_3166_1": "US", "name": "United States of America"}],
+    "release_date": "2012-11-26",
+    "revenue": 1021103568,
+    "runtime": 169.0,
+    "spoken_languages": [{"iso_639_1": "en", "name": "English"}],
     "status": "Released",
-    "tagline": "Roll the dice and unleash the excitement!",
-    "title": "Jumanji",
-    "video": false,
-    "vote_average": 6.9,
-    "vote_count": 2413
+    "tagline": "From the smallest beginnings come the greatest legends.",
+    "title": "The Hobbit: An Unexpected Journey",
+    "video": "False",
+    "vote_average": 7.0,
+    "vote_count": 8427
   },
   {
-    "adult": false,
-    "belongs_to_collection": {
-      "id": 119050,
-      "name": "Grumpy Old Men Collection",
-      "poster_path": "/nLvUdqgPgm3F85NMCii9gVFUcet.jpg",
-      "backdrop_path": "/hypTnLot2z8wpFS7qwsQHW1uV8u.jpg"
-    },
-    "budget": 0,
-    "genres": [
-      {
-        "id": 10749,
-        "name": "Romance"
-      },
-      {
-        "id": 35,
-        "name": "Comedy"
-      }
-    ],
-    "homepage": null,
-    "id": 331,
-    "imdb_id": "tt0113228",
+    "_id": "68481e775f0d1269f68ac829",
+    "adult": "False",
+    "belongs_to_collection": "",
+    "budget": 25000000,
+    "genres": [{"id": 18, "name": "Drama"}, {"id": 80, "name": "Crime"}],
+    "homepage": "",
+    "id": 278,
+    "imdb_id": "tt0111161",
     "original_language": "en",
-    "original_title": "Grumpier Old Men",
-    "overview": "A family wedding reignites the ancient feud between next-door neighbors and fishing buddies John and Max. Meanwhile, a sultry Italian divorcée opens a restaurant at the local bait shop, alarming the locals who worry she'll scare the fish away. But she's less interested in seafood than she is in cooking up a hot time with Max.",
-    "popularity": 11.7129,
-    "poster_path": "/6ksm1sjKMFLbO7UY2i6G1ju9SML.jpg",
-    "production_companies": [
-      {
-        "name": "Warner Bros.",
-        "id": 6194
-      },
-      {
-        "name": "Lancaster Gate",
-        "id": 19464
-      }
-    ],
-    "production_countries": [
-      {
-        "iso_3166_1": "US",
-        "name": "United States of America"
-      }
-    ],
-    "release_date": "1995-12-22",
-    "revenue": 0,
-    "runtime": 101,
-    "spoken_languages": [
-      {
-        "iso_639_1": "en",
-        "name": "English"
-      }
-    ],
+    "original_title": "The Shawshank Redemption",
+    "overview": "Framed in the 1940s for the double murder of his wife and her lover, upstanding banker Andy Dufresne begins a new life at the Shawshank prison, where he puts his accounting skills to work for an amoral warden. During his long stretch in prison, Dufresne comes to be admired by the other inmates -- including an older prisoner named Red -- for his integrity and unquenchable sense of hope.",
+    "popularity": 51.645403,
+    "poster_path": "/9O7gLzmreU0nGkIB6K3BsJbzvNv.jpg",
+    "poster_url": "https://movieflix.blob.core.windows.net/images/posters/278.jpg?se=2025-06-12T02%3A51%3A58Z&sp=r&sv=2025-05-05&sr=b&sig=F4TfeE/DIc0973RGWZnnYca86Xti%2BpTYhjFaDKRMlO8%3D",
+    "production_companies": [{"name": "Castle Rock Entertainment", "id": 97}, {"name": "Warner Bros.", "id": 6194}],
+    "production_countries": [{"iso_3166_1": "US", "name": "United States of America"}],
+    "release_date": "1994-09-23",
+    "revenue": 28341469,
+    "runtime": 142.0,
+    "spoken_languages": [{"iso_639_1": "en", "name": "English"}],
     "status": "Released",
-    "tagline": "Still Yelling. Still Fighting. Still Ready for Love.",
-    "title": "Grumpier Old Men",
-    "video": false,
-    "vote_average": 6.5,
-    "vote_count": 92
-  },
-  {
-    "adult": false,
-    "belongs_to_collection": null,
-    "budget": 0,
-    "genres": [
-      {
-        "id": 35,
-        "name": "Comedy"
-      }
-    ],
-    "homepage": null,
-    "id": 338,
-    "imdb_id": "tt0113228",
-    "original_language": "en",
-    "original_title": "Waiting to Exhale",
-    "overview": "Cheated on, mistreated and stepped on, four friends try to find true love and happiness while balancing their personal and professional lives.",
-    "popularity": 9.123456,
-    "poster_path": "/6ksm1sjKMFLbO7UY2i6G1ju9SML.jpg",
-    "production_companies": [
-      {
-        "name": "20th Century Fox",
-        "id": 25
-      },
-      {
-        "name": "Fox 2000 Pictures",
-        "id": 114
-      }
-    ],
-    "production_countries": [
-      {
-        "iso_3166_1": "US",
-        "name": "United States of America"
-      }
-    ],
-    "release_date": "1995-12-22",
-    "revenue": 0,
-    "runtime": 127,
-    "spoken_languages": [
-      {
-        "iso_639_1": "en",
-        "name": "English"
-      }
-    ],
-    "status": "Released",
-    "tagline": "",
-    "title": "",
-    "video": false,
-    "vote_average": 6.5,
-    "vote_count": 92
-  },
-    {
-    "adult": false,
-    "belongs_to_collection": {
-      "id": 10194,
-      "name": "Toy Story Collection",
-      "poster_path": "/7G9915LfUQ2lVfwMEEhDsn3kT4B.jpg",
-      "backdrop_path": "/9FBwqcd9IRruEDUrTdcaafOMKUq.jpg"
-    },
-    "budget": 30000000,
-    "genres": [
-      {
-        "id": 16,
-        "name": "Animation"
-      },
-      {
-        "id": 35,
-        "name": "Comedy"
-      },
-      {
-        "id": 10751,
-        "name": "Family"
-      }
-    ],
-    "homepage": "http://toystory.disney.com/toy-story",
-    "id": 862,
-    "imdb_id": "tt0114709",
-    "original_language": "en",
-    "original_title": "Toy Story",
-    "overview": "Led by Woody, Andy's toys live happily in his room until Andy's birthday brings Buzz Lightyear onto the scene. Afraid of losing his place in Andy's heart, Woody plots against Buzz. But when circumstances separate Buzz and Woody from their owner, the duo eventually learns to put aside their differences.",
-    "popularity": 21.946943,
-    "poster_path": "/rhIRbceoE9lR4veEXuwCC2wARtG.jpg",
-    "production_companies": [
-      {
-        "name": "Pixar Animation Studios",
-        "id": 3
-      }
-    ],
-    "production_countries": [
-      {
-        "iso_3166_1": "US",
-        "name": "United States of America"
-      }
-    ],
-    "release_date": "1995-10-30",
-    "revenue": 373554033,
-    "runtime": 81,
-    "spoken_languages": [
-      {
-        "iso_639_1": "en",
-        "name": "English"
-      }
-    ],
-    "status": "Released",
-    "tagline": "Toy Story",
-    "title": "Toy Story",
-    "video": false,
-    "vote_average": 7.7,
-    "vote_count": 5415
-  },
-  {
-    "adult": false,
-    "belongs_to_collection": null,
-    "budget": 65000000,
-    "genres": [
-      {
-        "id": 12,
-        "name": "Adventure"
-      },
-      {
-        "id": 14,
-        "name": "Fantasy"
-      },
-      {
-        "id": 10751,
-        "name": "Family"
-      }
-    ],
-    "homepage": null,
-    "id": 326,
-    "imdb_id": "tt0113497",
-    "original_language": "en",
-    "original_title": "Jumanji",
-    "overview": "When siblings Judy and Peter discover an enchanted board game that opens the door to a magical world, they unwittingly invite Alan -- an adult who's been trapped inside the game for 26 years -- into their living room. Alan's only hope for freedom is to finish the game, which proves risky as all three find themselves running from giant rhinoceroses, evil monkeys and other terrifying creatures.",
-    "popularity": 17.015539,
-    "poster_path": "/vzmL6fP7aPKNKPRTFnZmiUfciyV.jpg",
-    "production_companies": [
-      {
-        "name": "TriStar Pictures",
-        "id": 559
-      },
-      {
-        "name": "Teitler Film",
-        "id": 2550
-      },
-      {
-        "name": "Interscope Communications",
-        "id": 10201
-      }
-    ],
-    "production_countries": [
-      {
-        "iso_3166_1": "US",
-        "name": "United States of America"
-      }
-    ],
-    "release_date": "1995-12-15",
-    "revenue": 262797249,
-    "runtime": 104,
-    "spoken_languages": [
-      {
-        "iso_639_1": "en",
-        "name": "English"
-      },
-      {
-        "iso_639_1": "fr",
-        "name": "Français"
-      }
-    ],
-    "status": "Released",
-    "tagline": "Roll the dice and unleash the excitement!",
-    "title": "Jumanji",
-    "video": false,
-    "vote_average": 6.9,
-    "vote_count": 2413
-  },
-  {
-    "adult": false,
-    "belongs_to_collection": {
-      "id": 119050,
-      "name": "Grumpy Old Men Collection",
-      "poster_path": "/nLvUdqgPgm3F85NMCii9gVFUcet.jpg",
-      "backdrop_path": "/hypTnLot2z8wpFS7qwsQHW1uV8u.jpg"
-    },
-    "budget": 0,
-    "genres": [
-      {
-        "id": 10749,
-        "name": "Romance"
-      },
-      {
-        "id": 35,
-        "name": "Comedy"
-      }
-    ],
-    "homepage": null,
-    "id": 331,
-    "imdb_id": "tt0113228",
-    "original_language": "en",
-    "original_title": "Grumpier Old Men",
-    "overview": "A family wedding reignites the ancient feud between next-door neighbors and fishing buddies John and Max. Meanwhile, a sultry Italian divorcée opens a restaurant at the local bait shop, alarming the locals who worry she'll scare the fish away. But she's less interested in seafood than she is in cooking up a hot time with Max.",
-    "popularity": 11.7129,
-    "poster_path": "/6ksm1sjKMFLbO7UY2i6G1ju9SML.jpg",
-    "production_companies": [
-      {
-        "name": "Warner Bros.",
-        "id": 6194
-      },
-      {
-        "name": "Lancaster Gate",
-        "id": 19464
-      }
-    ],
-    "production_countries": [
-      {
-        "iso_3166_1": "US",
-        "name": "United States of America"
-      }
-    ],
-    "release_date": "1995-12-22",
-    "revenue": 0,
-    "runtime": 101,
-    "spoken_languages": [
-      {
-        "iso_639_1": "en",
-        "name": "English"
-      }
-    ],
-    "status": "Released",
-    "tagline": "Still Yelling. Still Fighting. Still Ready for Love.",
-    "title": "Grumpier Old Men",
-    "video": false,
-    "vote_average": 6.5,
-    "vote_count": 92
-  },
-  {
-    "adult": false,
-    "belongs_to_collection": null,
-    "budget": 0,
-    "genres": [
-      {
-        "id": 35,
-        "name": "Comedy"
-      }
-    ],
-    "homepage": null,
-    "id": 338,
-    "imdb_id": "tt0113228",
-    "original_language": "en",
-    "original_title": "Waiting to Exhale",
-    "overview": "Cheated on, mistreated and stepped on, four friends try to find true love and happiness while balancing their personal and professional lives.",
-    "popularity": 9.123456,
-    "poster_path": "/6ksm1sjKMFLbO7UY2i6G1ju9SML.jpg",
-    "production_companies": [
-      {
-        "name": "20th Century Fox",
-        "id": 25
-      },
-      {
-        "name": "Fox 2000 Pictures",
-        "id": 114
-      }
-    ],
-    "production_countries": [
-      {
-        "iso_3166_1": "US",
-        "name": "United States of America"
-      }
-    ],
-    "release_date": "1995-12-22",
-    "revenue": 0,
-    "runtime": 127,
-    "spoken_languages": [
-      {
-        "iso_639_1": "en",
-        "name": "English"
-      }
-    ],
-    "status": "Released",
-    "tagline": "",
-    "title": "",
-    "video": false,
-    "vote_average": 6.5,
-    "vote_count": 92
-  },
-    {
-    "adult": false,
-    "belongs_to_collection": {
-      "id": 10194,
-      "name": "Toy Story Collection",
-      "poster_path": "/7G9915LfUQ2lVfwMEEhDsn3kT4B.jpg",
-      "backdrop_path": "/9FBwqcd9IRruEDUrTdcaafOMKUq.jpg"
-    },
-    "budget": 30000000,
-    "genres": [
-      {
-        "id": 16,
-        "name": "Animation"
-      },
-      {
-        "id": 35,
-        "name": "Comedy"
-      },
-      {
-        "id": 10751,
-        "name": "Family"
-      }
-    ],
-    "homepage": "http://toystory.disney.com/toy-story",
-    "id": 862,
-    "imdb_id": "tt0114709",
-    "original_language": "en",
-    "original_title": "Toy Story",
-    "overview": "Led by Woody, Andy's toys live happily in his room until Andy's birthday brings Buzz Lightyear onto the scene. Afraid of losing his place in Andy's heart, Woody plots against Buzz. But when circumstances separate Buzz and Woody from their owner, the duo eventually learns to put aside their differences.",
-    "popularity": 21.946943,
-    "poster_path": "/rhIRbceoE9lR4veEXuwCC2wARtG.jpg",
-    "production_companies": [
-      {
-        "name": "Pixar Animation Studios",
-        "id": 3
-      }
-    ],
-    "production_countries": [
-      {
-        "iso_3166_1": "US",
-        "name": "United States of America"
-      }
-    ],
-    "release_date": "1995-10-30",
-    "revenue": 373554033,
-    "runtime": 81,
-    "spoken_languages": [
-      {
-        "iso_639_1": "en",
-        "name": "English"
-      }
-    ],
-    "status": "Released",
-    "tagline": "Toy Story",
-    "title": "Toy Story",
-    "video": false,
-    "vote_average": 7.7,
-    "vote_count": 5415
-  },
-  {
-    "adult": false,
-    "belongs_to_collection": null,
-    "budget": 65000000,
-    "genres": [
-      {
-        "id": 12,
-        "name": "Adventure"
-      },
-      {
-        "id": 14,
-        "name": "Fantasy"
-      },
-      {
-        "id": 10751,
-        "name": "Family"
-      }
-    ],
-    "homepage": null,
-    "id": 326,
-    "imdb_id": "tt0113497",
-    "original_language": "en",
-    "original_title": "Jumanji",
-    "overview": "When siblings Judy and Peter discover an enchanted board game that opens the door to a magical world, they unwittingly invite Alan -- an adult who's been trapped inside the game for 26 years -- into their living room. Alan's only hope for freedom is to finish the game, which proves risky as all three find themselves running from giant rhinoceroses, evil monkeys and other terrifying creatures.",
-    "popularity": 17.015539,
-    "poster_path": "/vzmL6fP7aPKNKPRTFnZmiUfciyV.jpg",
-    "production_companies": [
-      {
-        "name": "TriStar Pictures",
-        "id": 559
-      },
-      {
-        "name": "Teitler Film",
-        "id": 2550
-      },
-      {
-        "name": "Interscope Communications",
-        "id": 10201
-      }
-    ],
-    "production_countries": [
-      {
-        "iso_3166_1": "US",
-        "name": "United States of America"
-      }
-    ],
-    "release_date": "1995-12-15",
-    "revenue": 262797249,
-    "runtime": 104,
-    "spoken_languages": [
-      {
-        "iso_639_1": "en",
-        "name": "English"
-      },
-      {
-        "iso_639_1": "fr",
-        "name": "Français"
-      }
-    ],
-    "status": "Released",
-    "tagline": "Roll the dice and unleash the excitement!",
-    "title": "Jumanji",
-    "video": false,
-    "vote_average": 6.9,
-    "vote_count": 2413
-  },
-  {
-    "adult": false,
-    "belongs_to_collection": {
-      "id": 119050,
-      "name": "Grumpy Old Men Collection",
-      "poster_path": "/nLvUdqgPgm3F85NMCii9gVFUcet.jpg",
-      "backdrop_path": "/hypTnLot2z8wpFS7qwsQHW1uV8u.jpg"
-    },
-    "budget": 0,
-    "genres": [
-      {
-        "id": 10749,
-        "name": "Romance"
-      },
-      {
-        "id": 35,
-        "name": "Comedy"
-      }
-    ],
-    "homepage": null,
-    "id": 331,
-    "imdb_id": "tt0113228",
-    "original_language": "en",
-    "original_title": "Grumpier Old Men",
-    "overview": "A family wedding reignites the ancient feud between next-door neighbors and fishing buddies John and Max. Meanwhile, a sultry Italian divorcée opens a restaurant at the local bait shop, alarming the locals who worry she'll scare the fish away. But she's less interested in seafood than she is in cooking up a hot time with Max.",
-    "popularity": 11.7129,
-    "poster_path": "/6ksm1sjKMFLbO7UY2i6G1ju9SML.jpg",
-    "production_companies": [
-      {
-        "name": "Warner Bros.",
-        "id": 6194
-      },
-      {
-        "name": "Lancaster Gate",
-        "id": 19464
-      }
-    ],
-    "production_countries": [
-      {
-        "iso_3166_1": "US",
-        "name": "United States of America"
-      }
-    ],
-    "release_date": "1995-12-22",
-    "revenue": 0,
-    "runtime": 101,
-    "spoken_languages": [
-      {
-        "iso_639_1": "en",
-        "name": "English"
-      }
-    ],
-    "status": "Released",
-    "tagline": "Still Yelling. Still Fighting. Still Ready for Love.",
-    "title": "Grumpier Old Men",
-    "video": false,
-    "vote_average": 6.5,
-    "vote_count": 92
-  },
-  {
-    "adult": false,
-    "belongs_to_collection": null,
-    "budget": 0,
-    "genres": [
-      {
-        "id": 35,
-        "name": "Comedy"
-      }
-    ],
-    "homepage": null,
-    "id": 338,
-    "imdb_id": "tt0113228",
-    "original_language": "en",
-    "original_title": "Waiting to Exhale",
-    "overview": "Cheated on, mistreated and stepped on, four friends try to find true love and happiness while balancing their personal and professional lives.",
-    "popularity": 9.123456,
-    "poster_path": "/6ksm1sjKMFLbO7UY2i6G1ju9SML.jpg",
-    "production_companies": [
-      {
-        "name": "20th Century Fox",
-        "id": 25
-      },
-      {
-        "name": "Fox 2000 Pictures",
-        "id": 114
-      }
-    ],
-    "production_countries": [
-      {
-        "iso_3166_1": "US",
-        "name": "United States of America"
-      }
-    ],
-    "release_date": "1995-12-22",
-    "revenue": 0,
-    "runtime": 127,
-    "spoken_languages": [
-      {
-        "iso_639_1": "en",
-        "name": "English"
-      }
-    ],
-    "status": "Released",
-    "tagline": "",
-    "title": "",
-    "video": false,
-    "vote_average": 6.5,
-    "vote_count": 92
-  },
-    {
-    "adult": false,
-    "belongs_to_collection": {
-      "id": 10194,
-      "name": "Toy Story Collection",
-      "poster_path": "/7G9915LfUQ2lVfwMEEhDsn3kT4B.jpg",
-      "backdrop_path": "/9FBwqcd9IRruEDUrTdcaafOMKUq.jpg"
-    },
-    "budget": 30000000,
-    "genres": [
-      {
-        "id": 16,
-        "name": "Animation"
-      },
-      {
-        "id": 35,
-        "name": "Comedy"
-      },
-      {
-        "id": 10751,
-        "name": "Family"
-      }
-    ],
-    "homepage": "http://toystory.disney.com/toy-story",
-    "id": 862,
-    "imdb_id": "tt0114709",
-    "original_language": "en",
-    "original_title": "Toy Story",
-    "overview": "Led by Woody, Andy's toys live happily in his room until Andy's birthday brings Buzz Lightyear onto the scene. Afraid of losing his place in Andy's heart, Woody plots against Buzz. But when circumstances separate Buzz and Woody from their owner, the duo eventually learns to put aside their differences.",
-    "popularity": 21.946943,
-    "poster_path": "/rhIRbceoE9lR4veEXuwCC2wARtG.jpg",
-    "production_companies": [
-      {
-        "name": "Pixar Animation Studios",
-        "id": 3
-      }
-    ],
-    "production_countries": [
-      {
-        "iso_3166_1": "US",
-        "name": "United States of America"
-      }
-    ],
-    "release_date": "1995-10-30",
-    "revenue": 373554033,
-    "runtime": 81,
-    "spoken_languages": [
-      {
-        "iso_639_1": "en",
-        "name": "English"
-      }
-    ],
-    "status": "Released",
-    "tagline": "Toy Story",
-    "title": "Toy Story",
-    "video": false,
-    "vote_average": 7.7,
-    "vote_count": 5415
-  },
-  {
-    "adult": false,
-    "belongs_to_collection": null,
-    "budget": 65000000,
-    "genres": [
-      {
-        "id": 12,
-        "name": "Adventure"
-      },
-      {
-        "id": 14,
-        "name": "Fantasy"
-      },
-      {
-        "id": 10751,
-        "name": "Family"
-      }
-    ],
-    "homepage": null,
-    "id": 326,
-    "imdb_id": "tt0113497",
-    "original_language": "en",
-    "original_title": "Jumanji",
-    "overview": "When siblings Judy and Peter discover an enchanted board game that opens the door to a magical world, they unwittingly invite Alan -- an adult who's been trapped inside the game for 26 years -- into their living room. Alan's only hope for freedom is to finish the game, which proves risky as all three find themselves running from giant rhinoceroses, evil monkeys and other terrifying creatures.",
-    "popularity": 17.015539,
-    "poster_path": "/vzmL6fP7aPKNKPRTFnZmiUfciyV.jpg",
-    "production_companies": [
-      {
-        "name": "TriStar Pictures",
-        "id": 559
-      },
-      {
-        "name": "Teitler Film",
-        "id": 2550
-      },
-      {
-        "name": "Interscope Communications",
-        "id": 10201
-      }
-    ],
-    "production_countries": [
-      {
-        "iso_3166_1": "US",
-        "name": "United States of America"
-      }
-    ],
-    "release_date": "1995-12-15",
-    "revenue": 262797249,
-    "runtime": 104,
-    "spoken_languages": [
-      {
-        "iso_639_1": "en",
-        "name": "English"
-      },
-      {
-        "iso_639_1": "fr",
-        "name": "Français"
-      }
-    ],
-    "status": "Released",
-    "tagline": "Roll the dice and unleash the excitement!",
-    "title": "Jumanji",
-    "video": false,
-    "vote_average": 6.9,
-    "vote_count": 2413
-  },
-  {
-    "adult": false,
-    "belongs_to_collection": {
-      "id": 119050,
-      "name": "Grumpy Old Men Collection",
-      "poster_path": "/nLvUdqgPgm3F85NMCii9gVFUcet.jpg",
-      "backdrop_path": "/hypTnLot2z8wpFS7qwsQHW1uV8u.jpg"
-    },
-    "budget": 0,
-    "genres": [
-      {
-        "id": 10749,
-        "name": "Romance"
-      },
-      {
-        "id": 35,
-        "name": "Comedy"
-      }
-    ],
-    "homepage": null,
-    "id": 331,
-    "imdb_id": "tt0113228",
-    "original_language": "en",
-    "original_title": "Grumpier Old Men",
-    "overview": "A family wedding reignites the ancient feud between next-door neighbors and fishing buddies John and Max. Meanwhile, a sultry Italian divorcée opens a restaurant at the local bait shop, alarming the locals who worry she'll scare the fish away. But she's less interested in seafood than she is in cooking up a hot time with Max.",
-    "popularity": 11.7129,
-    "poster_path": "/6ksm1sjKMFLbO7UY2i6G1ju9SML.jpg",
-    "production_companies": [
-      {
-        "name": "Warner Bros.",
-        "id": 6194
-      },
-      {
-        "name": "Lancaster Gate",
-        "id": 19464
-      }
-    ],
-    "production_countries": [
-      {
-        "iso_3166_1": "US",
-        "name": "United States of America"
-      }
-    ],
-    "release_date": "1995-12-22",
-    "revenue": 0,
-    "runtime": 101,
-    "spoken_languages": [
-      {
-        "iso_639_1": "en",
-        "name": "English"
-      }
-    ],
-    "status": "Released",
-    "tagline": "Still Yelling. Still Fighting. Still Ready for Love.",
-    "title": "Grumpier Old Men",
-    "video": false,
-    "vote_average": 6.5,
-    "vote_count": 92
-  },
-  {
-    "adult": false,
-    "belongs_to_collection": null,
-    "budget": 0,
-    "genres": [
-      {
-        "id": 35,
-        "name": "Comedy"
-      }
-    ],
-    "homepage": null,
-    "id": 338,
-    "imdb_id": "tt0113228",
-    "original_language": "en",
-    "original_title": "Waiting to Exhale",
-    "overview": "Cheated on, mistreated and stepped on, four friends try to find true love and happiness while balancing their personal and professional lives.",
-    "popularity": 9.123456,
-    "poster_path": "/6ksm1sjKMFLbO7UY2i6G1ju9SML.jpg",
-    "production_companies": [
-      {
-        "name": "20th Century Fox",
-        "id": 25
-      },
-      {
-        "name": "Fox 2000 Pictures",
-        "id": 114
-      }
-    ],
-    "production_countries": [
-      {
-        "iso_3166_1": "US",
-        "name": "United States of America"
-      }
-    ],
-    "release_date": "1995-12-22",
-    "revenue": 0,
-    "runtime": 127,
-    "spoken_languages": [
-      {
-        "iso_639_1": "en",
-        "name": "English"
-      }
-    ],
-    "status": "Released",
-    "tagline": "",
-    "title": "",
-    "video": false,
-    "vote_average": 6.5,
-    "vote_count": 92
+    "tagline": "Fear can hold you prisoner. Hope can set you free.",
+    "title": "The Shawshank Redemption",
+    "video": "False",
+    "vote_average": 8.5,
+    "vote_count": 8358
   }
-
-
-
 ]

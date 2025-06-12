@@ -7,10 +7,12 @@ import { Loader2 } from "lucide-react";
 export default function MovieList() {
   const [moviesLoading, setMoviesLoading] = useState(false);
   const [movies, setMovies] = useState<Movie[]>([]);
-
+  const [page, setPage] = useState(1);
+  const [limit, setLimit] = useState(30);
+  const [sort, setSort] = useState<string | undefined>(undefined);
   const fetchMovies = async () => {
     setMoviesLoading(true);
-    const data = await getMovies();
+    const data = await getMovies(page, limit, sort);
     setMovies(data);
     setMoviesLoading(false);
   };
