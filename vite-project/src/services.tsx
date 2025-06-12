@@ -37,3 +37,10 @@ export async function getMovies(page: number, limit: number, sort?: string): Pro
   const data = await response.json();
   return data.movies;
 }
+
+
+export async function getMovieDetails(id: string): Promise<Movie> {
+  const response = await fetch(`${BACKEND_URL}/movies/movie/${id}`);
+  const data = await response.json();
+  return data;
+}
