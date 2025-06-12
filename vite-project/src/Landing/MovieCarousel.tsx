@@ -12,9 +12,10 @@ type Movie = {
 
 type MovieCarouselProps = {
   movies: Movie[];
+  onMovieClick?: (movie: Movie) => void
 };
 
-export default function MovieCarousel({ movies }: MovieCarouselProps) {
+export default function MovieCarousel({ movies, onMovieClick }: MovieCarouselProps) {
   console.log(movies);
   return (
     <>
@@ -25,18 +26,19 @@ export default function MovieCarousel({ movies }: MovieCarouselProps) {
         duration: 40,
       }}
       orientation="vertical"
-      className="w-full max-w-xs"
-      style={{ cursor: "pointer", zIndex: "1" }}      
+      className="w-full max-w-xs gap-6"
+      style={{zIndex: "1"}}      
     >
       <CarouselContent>
         {movies.map((movie) => (
-          <CarouselItem key={movie.id} className="pt-1 basis-full">
-            <div className="p-1" style={{ backgroundColor: "var(--color-mono-black)" }}>
-              <Card>
-                <CardContent className="flex aspect-square items-center justify-center p-0">
+          <CarouselItem key={movie.id} className="pt- basis-full">
+            <div className="p-1" style={{ backgroundColor: "var(--color-mono-black)"}}>
+              <Card className="border-2 rounded-lg overflow-hidden">
+                <CardContent className="flex aspect-square items-center justify-center p-0" onClick={() => onMovieClick && onMovieClick(movie)}>
                   <img 
                     src={movie.image} 
                     className="w-full h-full object-cover rounded-lg"
+                    style={{ height: "280px" }}
                     alt={`Movie ${movie.id}`}
                   />
                 </CardContent>
