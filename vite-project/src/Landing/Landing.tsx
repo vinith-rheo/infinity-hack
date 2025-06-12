@@ -3,17 +3,26 @@ import { useNavigate } from "react-router";
 import movieData from "../data.json";
 import MovieCarousel from "./MovieCarousel";
 import { useAuth } from "@clerk/clerk-react";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Header from "./Header";
 import { Card, CardDescription, CardTitle } from "@/components/ui/card";
-import "./landing.css";
+import "../styles/landing.css";
+import { getMovies, type Movie } from "@/services";
 
 export default function Landing() {
   const navigate = useNavigate();
   const { isSignedIn } = useAuth();
   const [hoveringMap, setHoveringMap] = useState<{ [colIndex: number]: boolean }>({});
   const [selectedMovie, setSelectedMovie] = useState<any | null>(null);
+  const [trendingMovies, setTrendingMovies] = useState<Movie[]>([]);
 
+  useEffect(() => {
+    const fetchTrendingMovies = async () => {
+      const data = await getMovies(1, 12, "popularity");
+      setTrendingMovies(data);
+    };
+    fetchTrendingMovies();
+  }, []);
   const handleMovieClick = (clickedMovie: any) => {
     const originalMovie = movieData.find(movie => movie.id === clickedMovie.id);
     console.log("Selected movie:", originalMovie);
@@ -157,6 +166,41 @@ export default function Landing() {
           </div>
         </div>
       </div>
+
+
+{/* Trending Section */}
+<div className="trending-section">
+  <div className="section-header">
+    <h2 className="section-title">Trending</h2>
+  </div>
+  
+  <div className="trending-movies-grid">
+    {/* First row */}
+    <div className="trending-movies-row flex-wrap">
+      {trendingMovies.map((movie) => (
+        <Card key={movie.id} className="trending-movie-card">
+          <img 
+            src={movie.poster_url}
+            alt={movie.title}
+            className="trending-movie-poster"
+            onError={(e) => {
+              e.currentTarget.src = 'https://via.placeholder.com/175x250/333/cccccc?text=No+Poster';
+            }}
+          />
+          <div className="trending-movie-info">
+            <CardTitle className="trending-movie-title">{movie.title}</CardTitle>
+            <CardDescription className="trending-movie-meta">
+              <span className="release-date">
+                {new Date(movie.release_date).toLocaleDateString()}
+              </span>
+              <span className="duration">{movie.runtime} min</span>
+            </CardDescription>
+          </div>
+        </Card>
+      ))}
+    </div>
+  </div>
+</div>
 
       {/* Regular Footer */}
       <footer className="site-footer">

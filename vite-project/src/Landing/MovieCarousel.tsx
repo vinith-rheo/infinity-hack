@@ -1,24 +1,28 @@
-import { Card, CardContent } from "@/components/ui/card";
+import { Card, CardDescription, CardTitle } from "@/components/ui/card";
 import {
   Carousel,
   CarouselContent,
   CarouselItem,
 } from "@/components/ui/carousel";
+import '../styles/movieCarousal.css';
 
 type Movie = {
   id: number;
   image: string;
+  title: string;
+  release_date: string;
+  genres: { name: string }[];
 };
 
 type MovieCarouselProps = {
   movies: Movie[];
-  onMovieClick?: (movie: Movie) => void
+  onMovieClick?: (movie: Movie) => void;
 };
 
 export default function MovieCarousel({ movies, onMovieClick }: MovieCarouselProps) {
   console.log(movies);
+  
   return (
-    <>
     <Carousel
       opts={{
         align: "start",
@@ -26,28 +30,37 @@ export default function MovieCarousel({ movies, onMovieClick }: MovieCarouselPro
         duration: 40,
       }}
       orientation="vertical"
-      className="w-full max-w-xs gap-6"
-      style={{zIndex: "1"}}      
+      className="carousel-container"
     >
       <CarouselContent>
         {movies.map((movie) => (
-          <CarouselItem key={movie.id} className="pt- basis-full">
-            <div className="p-1" style={{ backgroundColor: "var(--color-mono-black)"}}>
-              <Card className="border-2 rounded-lg overflow-hidden">
-                <CardContent className="flex aspect-square items-center justify-center p-0" onClick={() => onMovieClick && onMovieClick(movie)}>
-                  <img 
-                    src={movie.image} 
-                    className="w-full h-full object-cover rounded-lg"
-                    style={{ height: "280px" }}
-                    alt={`Movie ${movie.id}`}
-                  />
-                </CardContent>
+          <CarouselItem key={movie.id} className="carousel-item">
+            <div className="carousel-card-wrapper">
+              <Card 
+                className="carousel-movie-card"
+                onClick={() => onMovieClick && onMovieClick(movie)}
+              >
+                <img 
+                  src={movie.image} 
+                  className="carousel-movie-poster"
+                  alt={movie.title || `Movie ${movie.id}`}
+                />
+                {/* <div className="carousel-movie-info-overlay">
+                  <CardTitle className="carousel-movie-title">
+                    {movie.title}
+                  </CardTitle>
+                  <CardDescription className="carousel-movie-meta">
+                    {movie.release_date && new Date(movie.release_date).getFullYear()} 
+                    {movie.genres && movie.genres.length > 0 && (
+                      <> • {movie.genres.slice(0, 2).map(g => g.name).join(', ')}</>
+                    )}
+                  </CardDescription>
+                </div> */}
               </Card>
             </div>
           </CarouselItem>
         ))}
       </CarouselContent>
     </Carousel>
-    </>
   );
 }

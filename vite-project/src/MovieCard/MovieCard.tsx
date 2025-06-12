@@ -11,7 +11,7 @@ export type Movie = {
   tagline: string;
   genres: { id: number; name: string }[];
   overview: string;
-  poster_path: string;
+  poster_url: string;
   vote_average: number;
   release_date: string;
   runtime: number;
@@ -31,7 +31,7 @@ const MovieCard = ({ movie }: { movie: Movie }) => {
   return (
     <Card className="relative max-w-3xl mx-auto overflow-hidden rounded-2xl shadow-lg flex flex-col sm:flex-row">
       <img
-        src={`/assets/326.jpg`}
+        src={movie.poster_url}
         alt={movie.title}
         className="absolute inset-0 w-full h-full object-cover z-0"
         

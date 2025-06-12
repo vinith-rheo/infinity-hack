@@ -152,7 +152,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
-  gap: 86px;
+  gap: 40px;
 }
 
 .footer-title {
@@ -176,6 +176,8 @@
   padding-bottom: 16px;
   scrollbar-width: none;
   -ms-overflow-style: none;
+  padding: 16px 0;
+  overflow-y: hidden;
 }
 
 .movies-scroll-container::-webkit-scrollbar {
@@ -317,6 +319,142 @@
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
+}
+
+/* Trending Section - Matching Top 10 Styles */
+.trending-section {
+  padding: 64px 76px;
+  margin-top: -20vh;
+  position: relative;
+  z-index: 1000;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(12px);
+  border-top: 1px solid rgb(55, 65, 81);
+}
+
+.section-header {
+  margin-bottom: 40px;
+}
+
+.section-title {
+  color: #EAEBEE;
+  font-family: Inter, sans-serif;
+  font-size: 38px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  width: 623px;
+}
+
+.trending-movies-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.trending-movies-row {
+  display: flex;
+  gap: 60px;
+  overflow-x: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  padding: 20px 0;
+}
+
+.trending-movies-row::-webkit-scrollbar {
+  display: none;
+}
+
+.trending-movie-card {
+  position: relative;
+  width: 175px;
+  height: 250px;
+  border-radius: 9px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+  flex-shrink: 0;
+  background: rgba(30, 30, 30, 0.7);
+  border: 1px solid rgba(60, 60, 60, 0.3);
+  padding: 0;
+}
+
+.trending-movie-card:hover {
+  transform: scale(1.05);
+}
+
+.trending-movie-poster {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.trending-movie-info {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(to top, black, transparent);
+  padding: 8px;
+}
+
+.trending-movie-title {
+  color: white;
+  font-size: 14px;
+  font-weight: 600;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-bottom: 4px;
+}
+
+.trending-movie-meta {
+  color: rgb(209, 213, 219);
+  font-size: 12px;
+  display: flex;
+  justify-content: space-between;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+  .trending-section {
+    padding: 32px 48px;
+  }
+  
+  .section-title {
+    font-size: 32px;
+    width: 100%;
+  }
+  
+  .trending-movies-row {
+    gap: 48px;
+  }
+}
+
+@media (max-width: 768px) {
+  .trending-section {
+    padding: 24px 16px;
+    margin-top: 0;
+  }
+  
+  .section-title {
+    font-size: 24px;
+  }
+  
+  .trending-movies-row {
+    gap: 40px;
+  }
+}
+
+@media (max-width: 480px) {
+  .section-title {
+    font-size: 20px;
+  }
+  
+  .trending-movie-card {
+    width: 150px;
+    height: 214px;
+  }
 }
 
 @media (min-width: 768px) {
