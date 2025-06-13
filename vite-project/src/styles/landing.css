@@ -13,14 +13,14 @@
 }
 
 /* Main Content */
-.main-content {
+/* .main-content {
   position: relative;
   z-index: 10;
   min-height: 100vh;
   width: 100%;
   height: 880px;
   flex-shrink: 0;
-}
+} */
 
 .content-wrapper {
   display: flex;
@@ -138,8 +138,8 @@
 /* Hero Footer */
 .hero-footer-wrapper {
   position: relative;
-  margin-top: -20vh;
   z-index: 1000;
+  /* margin-top: -300px; */
 }
 
 .gradient-overlay {
@@ -343,6 +343,10 @@
   margin-top: -20vh;
   position: relative;
   z-index: 1000;
+}
+
+.trending-sec2{
+    margin-top: -10vh;
 }
 
 .section-header {
@@ -617,4 +621,75 @@
   .footer-title {
     font-size: 20px;
   }
+}
+
+
+/* watchlist */
+.add-to-watchlist-button {
+  position: absolute;
+  top: 0.5rem;   /* 2 */
+  right: 0.5rem;  /* 2 */
+  padding: 0.25rem;
+  background: #fff;
+  border-radius: 50%;
+  box-shadow: 0 0 5px rgb(0 0 0 / 0.5);
+  border: none;
+  transition: background 0.3s ease, color 0.3s ease;
+  color: #888;
+  cursor: pointer;
+}
+
+.add-to-watchlist-button.active {
+  color: #fff;
+  background: #ffcc5b;  /* or whatever color you want for active state */
+}
+
+.add-to-watchlist-button:hover {
+  background: #f0f0f0;
+}
+
+
+/* Watchlist header styles */
+.watchlist-container {
+    padding: 20px;
+}
+
+.watchlist-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.watchlist-title {
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.watchlist-filters {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+
+.search-input {
+    width: 250px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .watchlist-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 20px;
+    }
+    
+    .watchlist-filters {
+        width: 100%;
+        flex-wrap: wrap;
+    }
+    
+    .search-input {
+        width: 100%;
+    }
 }
