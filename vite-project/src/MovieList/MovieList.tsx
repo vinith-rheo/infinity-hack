@@ -1,6 +1,6 @@
 import MovieCard from "@/MovieCard/MovieCard";
 import { Input } from "@/components/ui/input";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { getMovies, type Movie } from "@/services";
 import { useAuth, UserButton } from "@clerk/clerk-react";
 import { Loader2 } from "lucide-react";
@@ -10,18 +10,47 @@ import { useNavigate } from "react-router";
 export default function MovieList() {
   const [moviesLoading, setMoviesLoading] = useState(false);
   const [movies, setMovies] = useState<Movie[]>([]);
+  const [filteredMovies, setFilteredMovies] = useState<Movie[]>([]);
   const [page, setPage] = useState(1);
   const [limit, setLimit] = useState(30);
   const [sort, setSort] = useState<string | undefined>(undefined);
   const navigate = useNavigate();
   const { getToken } = useAuth();
-  const fetchMovies = async () => {
-    setMoviesLoading(true);
-    const token = await getToken();
-    const data = await getMovies(page, limit, sort, token ?? undefined);
-    setMovies(data);
-    setMoviesLoading(false);
-  };
+  const [searchText,setSearchText]=useState<string>('');
+  const debounceRef = useRef<NodeJS.Timeout | null>(null);
+
+  useEffect(()=>{
+    console.log("Cleared",searchText)
+    if(searchText){
+      const filteredMovies=movies.filter((movie)=> movie.title.includes(searchText))
+      setFilteredMovies(filteredMovies);
+    }
+    else if(searchText===''){
+      setFilteredMovies(movies)
+    }
+
+  },[searchText])
+
+   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+     const value = e.target.value;
+     if (debounceRef.current) {
+       clearTimeout(debounceRef.current);
+     }
+
+     debounceRef.current = setTimeout(() => {
+
+         setSearchText(value);
+  
+     }, 600);
+   };
+   const fetchMovies = async () => {
+     setMoviesLoading(true);
+     const token = await getToken();
+     const data = await getMovies(page, limit, sort, token ?? undefined);
+     setMovies(data);
+     setFilteredMovies(data)
+     setMoviesLoading(false);
+   };
 
   useEffect(() => {
     fetchMovies();
@@ -44,6 +73,7 @@ export default function MovieList() {
               <Input
               className="w-1/2 mb-3 h-10 bg-[#222C38]"
               placeholder="Search for movies"
+              onChange={handleChange}
             />
 
             </div>
@@ -53,7 +83,7 @@ export default function MovieList() {
           </div>
          <div className="">
            <div className="flex flex-wrap justify-center m-2 gap-8">
-            {movies.map((movie) => {
+            {filteredMovies.map((movie) => {
               return (
                 <MovieCard
     

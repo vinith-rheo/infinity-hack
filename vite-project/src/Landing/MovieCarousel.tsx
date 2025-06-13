@@ -20,7 +20,6 @@ type MovieCarouselProps = {
 };
 
 export default function MovieCarousel({ movies, onMovieClick }: MovieCarouselProps) {
-  console.log(movies);
   
   return (
     <Carousel
