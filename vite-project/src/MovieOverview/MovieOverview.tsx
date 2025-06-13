@@ -6,6 +6,7 @@ import CastCard from './CastCard';
 import ReviewCard from './ReviewCard';
 import { getMovieDetails } from '@/services';
 import type { MovieDetails } from '@/lib/types';
+import { Loader2 } from 'lucide-react';
 
 
 // const cast = [
@@ -74,7 +75,7 @@ const reviews = [
 ];
 const MovieOverview = () => {
    const {id:movieId}= useParams();
-   console.log("object",movieId)
+   const [isLoadingMovie,setIsLoadingMovie]=useState<boolean>(false);
 
    const [movie,setMovie]=useState<MovieDetails>({
   castdata: {
@@ -115,15 +116,14 @@ const MovieOverview = () => {
 
    const fetchMovies=async()=>{
    if(movieId){
-    console.log("In effect")
+    setIsLoadingMovie(true)
     const movie= await getMovieDetails(movieId);
      setMovie(movie)
-     console.log("Log",movie)
    }
+   setIsLoadingMovie(false)
    }
 
    useEffect(()=>{
-    console.log("here")
       fetchMovies()
    },[])
     const {title,poster_url,genres,overview} =movie?.movie
@@ -137,6 +137,11 @@ const MovieOverview = () => {
 });
 
   return (
+    isLoadingMovie? (
+        <div className="flex justify-center items-center h-screen">
+          <Loader2 className="w-10 h-10 animate-spin" />
+        </div>
+      ):
    
    <div className="min-h-screen overflow-auto bg-black">
       <div className="relative  w-full h-[600px]">
