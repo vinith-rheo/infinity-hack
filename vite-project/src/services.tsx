@@ -26,11 +26,21 @@ export interface Movie {
   vote_average: number;
   vote_count: number;
 }
+
+const BACKEND_URL = import.meta.env.VITE_BACKEND_URL;
+
 export async function getMovies(page: number, limit: number, sort?: string): Promise<Movie[]> {
   const sortQuery = sort ? `&sort_by=${sort}` : "";
   const response = await fetch(
-    `/api/movies/list?page=${page}&limit=${limit}${sortQuery}`
+    `${BACKEND_URL}/movies/list?page=${page}&limit=${limit}${sortQuery}`
   );
   const data = await response.json();
   return data.movies;
+}
+
+
+export async function getMovieDetails(id: string): Promise<Movie> {
+  const response = await fetch(`${BACKEND_URL}/movies/movie/${id}`);
+  const data = await response.json();
+  return data;
 }
