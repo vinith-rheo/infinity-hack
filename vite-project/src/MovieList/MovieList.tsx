@@ -20,7 +20,6 @@ export default function MovieList() {
   const debounceRef = useRef<NodeJS.Timeout | null>(null);
 
   useEffect(()=>{
-    console.log("Cleared",searchText)
     if(searchText){
       const filteredMovies=movies.filter((movie)=> movie.title.includes(searchText))
       setFilteredMovies(filteredMovies);
