@@ -7,6 +7,7 @@ import ReviewCard from './ReviewCard';
 import { getMovieDetails } from '@/services';
 import type { MovieDetails } from '@/lib/types';
 import { Loader2 } from 'lucide-react';
+import { useAuth } from '@clerk/clerk-react';
 
 
 // const cast = [
@@ -76,7 +77,7 @@ const reviews = [
 const MovieOverview = () => {
    const {id:movieId}= useParams();
    const [isLoadingMovie,setIsLoadingMovie]=useState<boolean>(false);
-
+   const { getToken } = useAuth();
    const [movie,setMovie]=useState<MovieDetails>({
   castdata: {
     cast: [],
@@ -117,7 +118,8 @@ const MovieOverview = () => {
    const fetchMovies=async()=>{
    if(movieId){
     setIsLoadingMovie(true)
-    const movie= await getMovieDetails(movieId);
+    const token=await getToken();
+    const movie= await getMovieDetails(movieId,token??'');
      setMovie(movie)
    }
    setIsLoadingMovie(false)
