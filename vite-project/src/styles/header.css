@@ -7,6 +7,7 @@
     width: 100%;
     position: relative;
     z-index: 1000;
+    background: linear-gradient(149deg, rgba(255, 0, 77, 0.09) 17.79%, rgba(31, 47, 152, 0.09) 69.78%), #111217;
 }
 
 .header-logo{
@@ -46,11 +47,13 @@
 
 .login{
     border-radius: 8px;
-    border: 1px solid #EAEBEE
+    border: 1px solid #EAEBEE;
+    cursor: pointer;
 }
 
 .signup{
     border-radius: 8px;
     background: #DF2144;
     margin-right: 20px;
+    cursor: pointer;
 }

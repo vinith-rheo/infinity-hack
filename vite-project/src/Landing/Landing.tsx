@@ -15,6 +15,7 @@ export default function Landing() {
   const [hoveringMap, setHoveringMap] = useState<{ [colIndex: number]: boolean }>({});
   const [selectedMovie, setSelectedMovie] = useState<any | null>(null);
   const [trendingMovies, setTrendingMovies] = useState<Movie[]>([]);
+  const [animate, setAnimate] = useState(false);
 
   useEffect(() => {
     const fetchTrendingMovies = async () => {
@@ -23,6 +24,13 @@ export default function Landing() {
     };
     fetchTrendingMovies();
   }, []);
+
+
+  useEffect(() => {
+    setAnimate(true);
+  }, []);
+
+
   const handleMovieClick = (clickedMovie: any) => {
     const originalMovie = movieData.find(movie => movie.id === clickedMovie.id);
     console.log("Selected movie:", originalMovie);
@@ -55,23 +63,22 @@ export default function Landing() {
       {/* Main Content */}
       <div className="main-content">
         <div className="content-wrapper">
-          {!selectedMovie && (
-            <section className="hero-section">
-              <div className="hero-text">
-                <div className="hero-title">
-                  Discover films <br />
-                  <span className="hero-gradient-text">You will love...</span>
-                </div>
-                <h2 className="hero-subtitle">
-                  Your personal movie journal — rate, review, and never lose track of
-                  what to watch next.
-                </h2>
-                <Button className="hero-button" onClick={handleExploreClick}>
-                  Explore
-                </Button>
-              </div>
-            </section>
-          )}
+        <section className="hero-section">
+          <div className={`hero-text ${animate ? "animate-up" : ''}`}>
+            <div className="hero-title">
+              Discover films
+              <span className="hero-gradient-text">You will love...</span>
+            </div>
+            <h2 className="hero-subtitle">
+              Your personal movie journal — rate, review, and never lose track of
+              what to watch next.
+            </h2>
+            <Button className="hero-button" onClick={handleExploreClick}>
+              Explore
+            </Button>
+          </div>
+        </section>
+          
           
           <div className="movie-columns">
             {[0, 1, 2, 3].map((colIndex) => {
@@ -172,6 +179,9 @@ export default function Landing() {
 <div className="trending-section">
   <div className="section-header">
     <h2 className="section-title">Trending</h2>
+    <p className="link-text">
+      See More
+    </p>
   </div>
   
   <div className="trending-movies-grid">
@@ -201,6 +211,44 @@ export default function Landing() {
     </div>
   </div>
 </div>
+
+{/* You may aslo like Section */}
+<div className="trending-section">
+  <div className="section-header">
+    <h2 className="section-title">You may also like</h2>
+    <p className="link-text">
+      See More
+    </p>
+  </div>
+  
+  <div className="trending-movies-grid">
+    {/* First row */}
+    <div className="trending-movies-row flex-wrap">
+      {trendingMovies.map((movie) => (
+        <Card key={movie.id} className="trending-movie-card">
+          <img 
+            src={movie.poster_url}
+            alt={movie.title}
+            className="trending-movie-poster"
+            onError={(e) => {
+              e.currentTarget.src = 'https://via.placeholder.com/175x250/333/cccccc?text=No+Poster';
+            }}
+          />
+          <div className="trending-movie-info">
+            <CardTitle className="trending-movie-title">{movie.title}</CardTitle>
+            <CardDescription className="trending-movie-meta">
+              <span className="release-date">
+                {new Date(movie.release_date).toLocaleDateString()}
+              </span>
+              <span className="duration">{movie.runtime} min</span>
+            </CardDescription>
+          </div>
+        </Card>
+      ))}
+    </div>
+  </div>
+</div>
+
 
       {/* Regular Footer */}
       <footer className="site-footer">
