@@ -156,7 +156,7 @@ const MovieDetailsCard: React.FC<MovieDetailsCardProps> = ({ movie = sampleMovie
                 <div className="flex items-center gap-4">
                   <div className="flex items-center gap-2">
                     <span className={`text-2xl font-bold ${getRatingColor(movie.vote_average)}`}>
-                      {movie.vote_average.toFixed(1)}
+                      {Number(movie.vote_average).toFixed(1)}
                     </span>
                     <span className="text-gray-400">/ 10</span>
                   </div>

@@ -11,7 +11,7 @@ import { getMovies, type Movie } from "@/services";
 
 export default function Landing() {
   const navigate = useNavigate();
-  const { isSignedIn } = useAuth();
+  const { isSignedIn, getToken } = useAuth();
   const [hoveringMap, setHoveringMap] = useState<{ [colIndex: number]: boolean }>({});
   const [selectedMovie, setSelectedMovie] = useState<any | null>(null);
   const [trendingMovies, setTrendingMovies] = useState<Movie[]>([]);
@@ -19,17 +19,12 @@ export default function Landing() {
 
   useEffect(() => {
     const fetchTrendingMovies = async () => {
-      const data = await getMovies(1, 12, "popularity");
+      const token =  await getToken();
+      const data = await getMovies(1, 12, "popularity", token ?? undefined);
       setTrendingMovies(data);
     };
     fetchTrendingMovies();
   }, []);
-
-
-  useEffect(() => {
-    setAnimate(true);
-  }, []);
-
 
   const handleMovieClick = (clickedMovie: any) => {
     const originalMovie = movieData.find(movie => movie.id === clickedMovie.id);
@@ -82,8 +77,8 @@ export default function Landing() {
           
           <div className="movie-columns">
             {[0, 1, 2, 3].map((colIndex) => {
-              const startIndex = colIndex * 4;
-              const endIndex = startIndex + 4;
+              const startIndex = colIndex * 5;
+              const endIndex = startIndex + 5;
               const columnMovies = movieData.slice(startIndex, endIndex);
               
               return (
