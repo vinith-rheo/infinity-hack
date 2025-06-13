@@ -7,7 +7,7 @@
     width: 100%;
     position: relative;
     z-index: 1000;
-    background: linear-gradient(149deg, rgba(255, 0, 77, 0.09) 17.79%, rgba(31, 47, 152, 0.09) 69.78%), #111217;
+    background: linear-gradient(149deg, rgba(255, 0, 77, 0.04) 17.79%, rgba(31, 47, 152, 0.04) 69.78%), #111217;
 }
 
 .header-logo{
