@@ -2,7 +2,7 @@ import MovieCard from "@/MovieCard/MovieCard";
 import { Input } from "@/components/ui/input";
 import { useEffect, useState } from "react";
 import { getMovies, type Movie } from "@/services";
-import { UserButton } from "@clerk/clerk-react";
+import { useAuth, UserButton } from "@clerk/clerk-react";
 import { Loader2 } from "lucide-react";
 export default function MovieList() {
   const [moviesLoading, setMoviesLoading] = useState(false);
@@ -10,9 +10,11 @@ export default function MovieList() {
   const [page, setPage] = useState(1);
   const [limit, setLimit] = useState(30);
   const [sort, setSort] = useState<string | undefined>(undefined);
+  const { getToken } = useAuth();
   const fetchMovies = async () => {
     setMoviesLoading(true);
-    const data = await getMovies(page, limit, sort);
+    const token = await getToken();
+    const data = await getMovies(page, limit, sort, token ?? undefined);
     setMovies(data);
     setMoviesLoading(false);
   };

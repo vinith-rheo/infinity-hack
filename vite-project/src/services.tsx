@@ -29,27 +29,43 @@ export interface Movie {
 
 const BACKEND_URL = import.meta.env.VITE_BACKEND_URL;
 
+function getAuthHeaders(token?: string): Record<string, string> {
+  return token ? { "Authorization": `Bearer ${token}` } : {};
+}
+
+async function fetchWithAuth(url: string, options: RequestInit = {}, token?: string): Promise<Response | undefined> {
+  const baseHeaders = getAuthHeaders(token);
+  const headers = {
+    ...(options.headers || {}),
+    ...baseHeaders
+  };
+  const response = await fetch(url, { ...options, headers });
+  if (response.status === 401) {
+    window.location.href = "/login";
+    return;
+  }
+  return response;
+}
+
 export async function getMovies(page: number, limit: number, sort?: string, token?: string): Promise<Movie[]> {
   const sortQuery = sort ? `&sort_by=${sort}` : "";
-  const response = await fetch(
+  const response = await fetchWithAuth(
     `${BACKEND_URL}/movies/list?page=${page}&limit=${limit}${sortQuery}`,
-    {
-      headers: {
-        "Authorization": `Bearer ${token}`
-      }
-    }
+    {},
+    token
   );
+  if (!response) return [];
   const data = await response.json();
   return data.movies;
 }
 
-
 export async function getMovieDetails(id: string, token?: string): Promise<Movie> {
-  const response = await fetch(`${BACKEND_URL}/movies/movie/${id}`, {
-    headers: {
-      "Authorization": `Bearer ${token}`
-    }
-  });
+  const response = await fetchWithAuth(
+    `${BACKEND_URL}/movies/movie/${id}`,
+    {},
+    token
+  );
+  if (!response) throw new Error("Unauthorized");
   const data = await response.json();
   return data;
 }
