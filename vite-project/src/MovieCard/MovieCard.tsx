@@ -3,7 +3,7 @@ import { useNavigate } from "react-router";
 import { getYearFromDate } from "@/lib/utils";
 
 export type Movie = {
-  id:string;
+  id:number;
   title: string;
   tagline: string;
   genres: { id: number; name: string }[];
@@ -16,10 +16,15 @@ export type Movie = {
 };
 
 const MovieCard = ({ movie }: { movie: Movie }) => {
+
+  const navigate= useNavigate();
 const{poster_url,title,release_date,runtime}=movie
   return (
     <div
       className={`w-50 flex-wrap mr-4 rounded-lg`}
+      onClick={(e)=>{
+        navigate(`/movies/movie/${movie.id}`)
+      }}
     >
       <img
         src={poster_url}

@@ -53,7 +53,7 @@ export default function MovieList() {
     
                   key={movie.id}
                   movie={{
-                    id:movie._id,
+                    id:movie.id,
                     genres: [],
                     title: movie.title,
                     tagline: movie.tagline,

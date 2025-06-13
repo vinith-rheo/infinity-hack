@@ -1,7 +1,9 @@
-interface CastCardProps {
-  name: string;
-  image: string;
-  role: string;
+
+
+interface CastCardProps{
+  name:string;
+  image:string;
+  role:string;
 }
 
 const CastCard = (props: CastCardProps) => {
