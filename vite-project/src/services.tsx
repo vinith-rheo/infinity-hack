@@ -29,18 +29,27 @@ export interface Movie {
 
 const BACKEND_URL = import.meta.env.VITE_BACKEND_URL;
 
-export async function getMovies(page: number, limit: number, sort?: string): Promise<Movie[]> {
+export async function getMovies(page: number, limit: number, sort?: string, token?: string): Promise<Movie[]> {
   const sortQuery = sort ? `&sort_by=${sort}` : "";
   const response = await fetch(
-    `${BACKEND_URL}/movies/list?page=${page}&limit=${limit}${sortQuery}`
+    `${BACKEND_URL}/movies/list?page=${page}&limit=${limit}${sortQuery}`,
+    {
+      headers: {
+        "Authorization": `Bearer ${token}`
+      }
+    }
   );
   const data = await response.json();
   return data.movies;
 }
 
 
-export async function getMovieDetails(id: string): Promise<Movie> {
-  const response = await fetch(`${BACKEND_URL}/movies/movie/${id}`);
+export async function getMovieDetails(id: string, token?: string): Promise<Movie> {
+  const response = await fetch(`${BACKEND_URL}/movies/movie/${id}`, {
+    headers: {
+      "Authorization": `Bearer ${token}`
+    }
+  });
   const data = await response.json();
   return data;
 }
