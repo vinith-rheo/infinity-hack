@@ -2,7 +2,7 @@ import { Button } from "@/components/ui/button";
 import { useNavigate } from "react-router";
 import movieData from "../data.json";
 import MovieCarousel from "./MovieCarousel";
-import { useAuth } from "@clerk/clerk-react";
+import { useAuth, UserButton } from "@clerk/clerk-react";
 import { useEffect, useState } from "react";
 import Header from "./Header";
 import { Card, CardDescription, CardTitle } from "@/components/ui/card";
@@ -49,9 +49,13 @@ export default function Landing() {
 
   return (
     <div className="landing-container">
-      {!isSignedIn && (
+      {!isSignedIn ? (
         <div className="header-wrapper">
           <Header />
+        </div>
+      ) : (
+        <div className="header-wrapper">
+            <UserButton afterSignOutUrl={"/"} />
         </div>
       )}
       
