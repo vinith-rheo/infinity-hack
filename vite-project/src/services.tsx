@@ -27,6 +27,7 @@ export interface Movie {
   video: string;
   vote_average: number;
   vote_count: number;
+  is_watchlisted?:boolean
 }
 
 const BACKEND_URL = import.meta.env.VITE_BACKEND_URL;
@@ -68,6 +69,34 @@ export async function getMovieDetails(id: string, token?: string): Promise<Movie
       "Authorization": `Bearer ${token}`
     }
   });
+  const data = await response.json();
+  return data;
+}
+
+export async function getWatchlistMovies(page: number,token?: string, search?: string, year?: string, genre?: string,): Promise<Movie[]> {
+  const response = await fetchWithAuth(
+    `${BACKEND_URL}/watchlist/get?limit=${page}&search=${search}&year=${year}&genre=${genre}`,
+    {},
+    token
+  );
+  if (!response) return [];
+  const data = await response.json();
+  return data.movies;
+}
+
+export async function setWatchList(id: number,token?: string): Promise<Movie[]> {
+  const response = await fetchWithAuth(
+    `${BACKEND_URL}/watchlist/create/`,
+    {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ movie_id: id })
+    },
+    token
+  );
+  if (!response) return [];
   const data = await response.json();
   return data;
 }
