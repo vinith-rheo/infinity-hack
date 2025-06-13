@@ -1,9 +1,11 @@
+import type { Genre, MovieDetails } from "./lib/types";
+
 export interface Movie {
   _id: string;
   adult: string;
   belongs_to_collection: string;
   budget: number;
-  genres: string;
+  genres: Genre[];
   homepage: string;
   id: number;
   imdb_id: string;
@@ -15,7 +17,7 @@ export interface Movie {
   poster_url: string;
   production_companies: string;
   production_countries: string;
-  release_date: Date;
+  release_date: string;
   revenue: number;
   runtime: number;
   spoken_languages: string;
@@ -59,13 +61,13 @@ export async function getMovies(page: number, limit: number, sort?: string, toke
   return data.movies;
 }
 
-export async function getMovieDetails(id: string, token?: string): Promise<Movie> {
-  const response = await fetchWithAuth(
-    `${BACKEND_URL}/movies/movie/${id}`,
-    {},
-    token
-  );
-  if (!response) throw new Error("Unauthorized");
+
+export async function getMovieDetails(id: string, token?: string): Promise<MovieDetails> {
+  const response = await fetch(`${BACKEND_URL}/movies/movie/${id}`, {
+    headers: {
+      "Authorization": `Bearer ${token}`
+    }
+  });
   const data = await response.json();
   return data;
 }

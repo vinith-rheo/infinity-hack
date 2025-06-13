@@ -1,10 +1,9 @@
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
-import { Star } from "lucide-react";
-import { useState } from "react";
 
-type Movie = {
+import { useNavigate } from "react-router";
+import { getYearFromDate } from "@/lib/utils";
+
+export type Movie = {
+  id:number;
   title: string;
   tagline: string;
   genres: { id: number; name: string }[];
@@ -17,67 +16,34 @@ type Movie = {
 };
 
 const MovieCard = ({ movie }: { movie: Movie }) => {
-  const [fullOverview, setFullOverview] = useState<string>(movie.overview);
-  const [toggleOverview, setToggleOverview] = useState<boolean>(false);
 
-  const shortOverview = fullOverview.substring(0, 40);
-
+  const navigate= useNavigate();
+const{poster_url,title,release_date,runtime}=movie
   return (
-    <Card className="relative max-w-3xl mx-auto overflow-hidden rounded-2xl shadow-lg flex flex-col sm:flex-row">
+    <div
+      className={`w-50 flex-wrap mr-4 rounded-lg`}
+      onClick={(e)=>{
+        navigate(`/movies/movie/${movie.id}`)
+      }}
+    >
       <img
-        src={movie.poster_url}
-        alt={movie.title}
-        className="absolute inset-0 w-full h-full object-cover z-0"
+        src={poster_url}
+        alt={title}
+        className="w-full h-60 object-cover rounded-md"
       />
 
-      <div className="relative z-20 flex-1 p-4 flex flex-col justify-between">
-        <div
-          className="cursor-pointer"
-          onClick={() =>
-            window.open("https://www.youtube.com/watch?v=l_ddxKWNZqI", "_blank")
-          }
-        >
-          <CardHeader className="p-0 mb-4">
-            <CardTitle className="text-2xl font-bold text-[bisque]">
-              {movie.title}
-            </CardTitle>
-            <p className="text-muted-foreground text-sm">{movie.tagline}</p>
-          </CardHeader>
+      <div className="p-2">
+        <h3 className="text-white text-sm mt-2 truncate">{title}</h3>
 
-          <div className="flex flex-wrap gap-2 mb-3">
-            {movie.genres.map((genre) => (
-              <Badge key={genre.id} variant="secondary">
-                {genre.name}
-              </Badge>
-            ))}
-          </div>
-        </div>
-
-        <CardContent
-          onClick={() => {
-            setToggleOverview(!toggleOverview);
-          }}
-          className="p-0 text-sm text-muted-foreground mb-4 line-clamp-4 cursor-pointer"
-        >
-          {toggleOverview ? fullOverview : shortOverview}
-        </CardContent>
-
-        <div className="flex justify-between text-sm text-muted-foreground mb-2">
-          <span>🗓 {new Date(movie.release_date).toLocaleDateString()}</span>
-          <span>⏱ {movie.runtime} mins</span>
-          <span className="flex items-center gap-1">
-            <Star className="w-4 h-4 text-yellow-500 fill-yellow-500" />
-            {Number(movie.vote_average).toFixed(1)}
-          </span>
-        </div>
-
-        <Button asChild variant="outline">
-          <a href={movie.homepage} target="_blank" rel="noopener noreferrer">
-            Visit Homepage
-          </a>
-        </Button>
+      <div className="text-gray-400 text-xs mt-1 flex justify-between items-center gap-1">
+        <span>{getYearFromDate(release_date)}</span>
+        <span>
+          <span className="text-red-500">•</span>
+        <span>{runtime}</span>
+        </span>
       </div>
-    </Card>
+      </div>
+    </div>
   );
 };
 
