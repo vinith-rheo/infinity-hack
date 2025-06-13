@@ -6,12 +6,14 @@ import { useAuth, UserButton } from "@clerk/clerk-react";
 import { Loader2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import BackIcon from '../../public/Icons/BackIcon.svg'
+import { useNavigate } from "react-router";
 export default function MovieList() {
   const [moviesLoading, setMoviesLoading] = useState(false);
   const [movies, setMovies] = useState<Movie[]>([]);
   const [page, setPage] = useState(1);
   const [limit, setLimit] = useState(30);
   const [sort, setSort] = useState<string | undefined>(undefined);
+  const navigate = useNavigate();
   const { getToken } = useAuth();
   const fetchMovies = async () => {
     setMoviesLoading(true);
@@ -36,7 +38,9 @@ export default function MovieList() {
           <div className="flex justify-between w-full pt-2 bg-[var(--color-mono-black)]">
             
             <div className="flex w-full">
-              <Button className="w-[99px] h-10 gap-1 rounded-sm border p-[8px_12px] mr-4 flex justify-start"><img className="h-3/4" src={BackIcon}/>Back</Button>
+              <Button className="w-[99px] h-10 gap-1 rounded-sm border p-[8px_12px] mr-4 flex justify-start" onClick={()=>{
+                navigate('/')
+              }}><img className="h-3/4" src={BackIcon}/>Back</Button>
               <Input
               className="w-1/2 mb-3 h-10 bg-[#222C38]"
               placeholder="Search for movies"
