@@ -44,7 +44,7 @@ const Header = ({ isSignedIn,activeTab, setActiveTab }: HeaderProps) => {
             className={`nav-link ${activeTab === 'explore' ? 'active' : 'inactive'}`}
             onClick={() => handleNavClick('explore')} // Set active tab to 'explore'
           >
-            Explore
+            Movies Recommendation
           </span>
           {isSignedIn && (
             <span 

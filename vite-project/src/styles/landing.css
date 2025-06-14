@@ -202,10 +202,11 @@
 
 .movies-list {
   display: flex;
+  gap: 48px;
 }
 
 .top10-intro-card {
-  margin-right: 98px;
+  margin-right: 60px;
 
 }
 
@@ -247,7 +248,7 @@
 /* Movie Cards */
 .movie-card-wrapper {
   position: relative;
-  margin-right: 75px;
+  margin-right: 50px;
   display: flex;
 }
 
@@ -261,7 +262,7 @@
   width: 118px;
   height: 235px;
   position: absolute;
-  left: -40px;
+  left: -60px;
   bottom: 0;
   z-index: 1;
   pointer-events: none;

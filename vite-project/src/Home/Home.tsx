@@ -287,7 +287,7 @@ const Home = ({activeTab}:props) => {
 }
 
 {/* You may aslo like Section */}
-<div className="trending-section trending-sec2">
+{!loading ? <div className="trending-section trending-sec2">
   <div className="section-header">
     <h2 className="section-title">You may also like</h2>
     <p className="link-text">
@@ -299,7 +299,21 @@ const Home = ({activeTab}:props) => {
     {/* First row */}
     <div className="trending-movies-row flex-wrap">
       {trendingMovies.map((movie) => (
-        <Card key={movie.id} className="trending-movie-card">
+        <Card 
+            key={movie.id} 
+            className="trending-movie-card"
+            onMouseEnter={() => setOnMouseOverId(movie.id)}
+            onMouseLeave={() => setOnMouseOverId(null)}
+        >
+            {(onMouseOverId === movie.id) && <img 
+            src={movie.is_watchlisted ? watchListIcon2 : watchListIcon1} // Your watchlist icon source goes here
+            alt="Add to Watchlist" 
+            className=" absolute top-2 right-2 z-10 cursor-pointer"
+            onClick={() => {
+                console.log(movie)
+              handleAddToWatchlist(movie, movie.id);
+            }}
+          />}
           <img 
             src={movie.poster_url}
             alt={movie.title}
@@ -321,7 +335,27 @@ const Home = ({activeTab}:props) => {
       ))}
     </div>
   </div>
-</div>
+</div> : 
+<div className="trending-section">
+    <div className="section-header">
+      <Skeleton className="h-8 w-32 rounded" />
+      <Skeleton className="h-4 w-20 rounded" />
+    </div>
+    
+    <div className="trending-movies-grid">
+      <div className="trending-movies-row flex-wrap">
+        {Array.from({ length: 6 }).map((_, index) => (
+          <div key={index} className="trending-movie-card">
+            <Skeleton className="h-[250px] w-[175px] rounded-lg" />
+            <div className="trending-movie-info mt-2">
+              <Skeleton className="h-4 w-24 rounded mb-1" />
+              <Skeleton className="h-3 w-16 rounded" />
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>}
 
 
       {/* Regular Footer */}

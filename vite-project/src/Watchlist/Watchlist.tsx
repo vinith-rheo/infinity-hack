@@ -159,7 +159,7 @@ return (
             <div className="watchlist-empty-icon">
             <img src={emptyLogo} alt="Empty Watchlist" className="empty-watchlist-icon" />
             </div>
-            <p className="watchlist-empty-text1">A real boo-mer of a list...</p>
+            <p className="watchlist-empty-text1">Nothing to boo-inge yet!</p>
             <p className="watchlist-empty-text">
     Your watchlist is ghost town-level quiet. Add some movies before this little guy starts binge-watching alone!        </p>
         </div>
