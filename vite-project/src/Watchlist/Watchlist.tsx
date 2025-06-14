@@ -4,10 +4,13 @@ import "./watchlist.css";
 import searchLogo from '../Landing/searchIcon.svg'
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { useEffect, useState } from "react";
-import { getWatchlistMovies, type Movie } from "@/services";
+import { getWatchlistMovies, removeWatchList, setWatchList, type Movie } from "@/services";
 import { useAuth } from "@clerk/clerk-react";
 import emptyLogo from './watchlistEmptyLogo.svg';
 import { Skeleton } from "@/components/ui/skeleton";
+import dot from '../Home/dot.svg';
+import watchListIcon1 from '../Home/watchListIconNoFill.svg';
+import watchListIcon2 from '../Home/watchListIconWithFill.svg';
 
 const WatchList = () => {
     const {  getToken } = useAuth();
@@ -17,6 +20,7 @@ const WatchList = () => {
     const [watchListMovies, setWatchlistMovies] = useState<Movie[]>([]);
     const [loading, setLoading] = useState(false);
     const [searchQuery, setSearchQuery] = useState<string>('');
+    const [onMouseOverId, setOnMouseOverId] = useState<number | null>(null);
 
     const genres = [
         { id: 1, name: "Action" },
@@ -38,7 +42,10 @@ const WatchList = () => {
         { id: 17, name: "History" },]
 
 useEffect(() => {
-  const fetchMovies = async () => {
+  fetchMovies();
+}, [selectedYear, selectedGenre, searchQuery]);
+
+const fetchMovies = async () => {
     try {
       setLoading(true);
       const token = await getToken();
@@ -55,9 +62,23 @@ useEffect(() => {
     } finally {
       setLoading(false);
     }
+}
+
+  const handleAddToWatchlist = async(movie: Movie, movieId: number) => {
+          const token =  await getToken();
+    
+        const response = await removeWatchList(movieId, token??undefined)
+        if(response) {
+           fetchMovies();
+        }
+    }
+
+
+  const formatDate = (dateString: string | number | Date) => {
+    return new Date(dateString).toLocaleDateString('en-US', {
+      year: 'numeric',
+    });
   };
-  fetchMovies();
-}, [selectedYear, selectedGenre, searchQuery]);
 
 
 
@@ -130,10 +151,24 @@ return (
       </div> )}
   
     {!loading && <div className="watchlist-grid">
-        {watchListMovies.length > 0 ? (
+        {watchListMovies?.length > 0 ? (
         <div className="watchlist-row">
             {watchListMovies.map((movie) => (
-            <Card key={movie.id} className="watchlist-card">
+            <div className="d-block">
+            <Card 
+              key={movie.id} 
+              className="watchlist-card"
+              onMouseEnter={() => setOnMouseOverId(movie.id)}
+              onMouseLeave={() => setOnMouseOverId(null)}
+            >
+              {(onMouseOverId === movie.id) && <img 
+            src={watchListIcon2 } // Your watchlist icon source goes here
+            alt="Add to Watchlist" 
+            className=" absolute top-2 right-2 z-10 cursor-pointer"
+            onClick={() => {
+              handleAddToWatchlist(movie, movie.id);
+            }}
+          />}
                 <img 
                 src={movie.poster_url}
                 alt={movie.title}
@@ -142,16 +177,19 @@ return (
                     e.currentTarget.src = 'https://via.placeholder.com/175x250/333/cccccc?text=No+Poster';
                 }}
                 />
-                <div className="watchlist-info">
-                <CardTitle className="watchlist-movie-title">{movie.title}</CardTitle>
+            </Card>
+                <div className="mt-3">
                 <CardDescription className="watchlist-movie-meta">
-                    <span className="release-date">
-                    {new Date(movie.release_date).toLocaleDateString()}
+                    <span className="watchlist-details">
+                    {formatDate(movie.release_date)}
                     </span>
-                    <span className="duration">{movie.runtime} min</span>
+                    <span className="watchlist-details" style={{display:"flex", flexDirection:"row"}}>
+                         <img src={dot} className="mr-1"/>
+                        {movie.runtime} min</span>
                 </CardDescription>
                 </div>
-            </Card>
+            </div>
+            
             ))}
         </div>
         ) : (

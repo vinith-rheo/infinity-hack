@@ -4,11 +4,15 @@ import movieData from "../data.json";
 import { Badge } from '@/components/ui/badge';
 import CastCard from './CastCard';
 import ReviewCard from './ReviewCard';
-import { getMovieDetails } from '@/services';
+import { getMovieDetails, getMovies, removeWatchList, setWatchList, type Movie } from '@/services';
 import type { MovieDetails } from '@/lib/types';
 import { Loader2 } from 'lucide-react';
 import { useAuth } from '@clerk/clerk-react';
-
+import { Skeleton } from '@/components/ui/skeleton';
+import { Card, CardDescription, CardTitle } from '@/components/ui/card';
+import watchListIcon1 from '../Home/watchListIconNoFill.svg';
+import watchListIcon2 from '../Home/watchListIconWithFill.svg';
+import dot from '../Home/dot.svg';
 
 // const cast = [
 //   {
@@ -78,6 +82,9 @@ const MovieOverview = () => {
    const {id:movieId}= useParams();
    const [isLoadingMovie,setIsLoadingMovie]=useState<boolean>(false);
    const { getToken } = useAuth();
+  const [onMouseOverId, setOnMouseOverId] = useState<number | null>(null);
+  const [loading, setLoading] = useState<boolean>(false);
+  const [recommendedMovies, setRecommendedMovies] = useState<Movie[] | null>(null)
    const [movie,setMovie]=useState<MovieDetails>({
   castdata: {
     cast: [],
@@ -128,6 +135,48 @@ const MovieOverview = () => {
    useEffect(()=>{
       fetchMovies()
    },[])
+
+   useEffect(() => {
+  
+      fetchTrendingMovies();
+    }, []);
+  
+    const fetchTrendingMovies = async () => {
+      setLoading(true);
+    const token =  await getToken();
+    const data = await getMovies(1, 12, "popularity", token ?? undefined);
+    setRecommendedMovies(data);
+    setLoading(false);
+  };
+
+     const handleAddToWatchlist = async(movie: Movie, movieId: number) => {
+              const token =  await getToken();
+        if(movie.is_watchlisted) {
+            const response = await removeWatchList(movieId, token??undefined)
+            if(response) {
+                fetchTrendingMovies();
+            }
+        }else{
+                    if(movieId){
+                const response = await setWatchList(movieId, token ?? undefined);
+                if (response) {
+                // notify.success("Movie added to watchlist");
+                fetchTrendingMovies();
+          } else {
+            console.error("Failed to add movie to watchlist");
+          }
+            }
+        
+        }
+    
+    }
+
+      const formatDate = (dateString: string | number | Date) => {
+    return new Date(dateString).toLocaleDateString('en-US', {
+      year: 'numeric',
+    });
+  };
+
     const {title,poster_url,genres,overview} =movie?.movie
 
     const cast = movie?.castdata?.cast?.map((cast) => {
@@ -194,6 +243,79 @@ const MovieOverview = () => {
         </div>
        </div>
        </div>
+             {!loading ? <div className="trending-section trending-sec2">
+  <div className="section-header">
+    <h2 className="section-title">You may also like</h2>
+    <p className="link-text">
+      See More
+    </p>
+  </div>
+  
+  <div className="trending-movies-grid">
+    {/* First row */}
+    <div className="trending-movies-row flex-wrap">
+      {recommendedMovies?.map((movie) => (
+        <div>
+        <Card 
+            key={movie.id} 
+            className="trending-movie-card"
+            onMouseEnter={() => setOnMouseOverId(movie.id)}
+            onMouseLeave={() => setOnMouseOverId(null)}
+        >
+            {(onMouseOverId === movie.id) && <img 
+            src={movie.is_watchlisted ? watchListIcon2 : watchListIcon1} // Your watchlist icon source goes here
+            alt="Add to Watchlist" 
+            className=" absolute top-2 right-2 z-10 cursor-pointer"
+            onClick={() => {
+                console.log(movie)
+              handleAddToWatchlist(movie, movie.id);
+            }}
+          />}
+          <img 
+            src={movie.poster_url}
+            alt={movie.title}
+            className="trending-movie-poster"
+            onError={(e) => {
+              e.currentTarget.src = 'https://via.placeholder.com/175x250/333/cccccc?text=No+Poster';
+            }}
+          />
+        </Card>
+          <div className="mt-3">
+            <CardDescription className="trending-movie-meta">
+              <span className="release-date">
+                {formatDate(movie.release_date)}
+              </span>
+              <span className="duration" style={{display:"flex", flexDirection:"row"}}>
+                <img src={dot} className="mr-1"/>
+                {movie.runtime} min</span>
+            </CardDescription>
+          </div>
+        </div>
+
+      ))}
+    </div>
+  </div>
+</div> : 
+<div className="trending-section">
+    <div className="section-header">
+      <Skeleton className="h-8 w-32 rounded" />
+      <Skeleton className="h-4 w-20 rounded" />
+    </div>
+    
+    <div className="trending-movies-grid">
+      <div className="trending-movies-row flex-wrap">
+        {Array.from({ length: 6 }).map((_, index) => (
+          <div key={index} className="trending-movie-card">
+            <Skeleton className="h-[250px] w-[175px] rounded-lg" />
+            <div className="trending-movie-info mt-2">
+              <Skeleton className="h-4 w-24 rounded mb-1" />
+              <Skeleton className="h-3 w-16 rounded" />
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>}
       </div>
      
     </div>
