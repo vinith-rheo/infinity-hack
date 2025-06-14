@@ -6,10 +6,11 @@ import movieData from "../data.json";
 import { Card, CardDescription, CardTitle } from "@/components/ui/card";
 import MovieCarousel from "@/Landing/MovieCarousel";
 import { useNavigate } from "react-router";
-import { getMovies, setWatchList, type Movie } from "@/services";
+import { getMovies, removeWatchList, setWatchList, type Movie } from "@/services";
 import "../styles/landing.css";
-import watchListIcon1 from './watchListIconNoFill.svg'
-import watchListIcon2 from './watchListIconWithFill.svg'
+import watchListIcon1 from './watchListIconNoFill.svg';
+import watchListIcon2 from './watchListIconWithFill.svg';
+import { Skeleton } from "@/components/ui/skeleton"
 
 interface props{
     activeTab?: string;
@@ -23,6 +24,8 @@ const Home = ({activeTab}:props) => {
     const [selectedMovie, setSelectedMovie] = useState<any | null>(null);
     const [trendingMovies, setTrendingMovies] = useState<Movie[]>([]);
     const [animate, setAnimate] = useState(false);
+    const [onMouseOverId, setOnMouseOverId] = useState<number | null>(null);
+    const [loading, setLoading] = useState<boolean>(false);
 
   useEffect(() => {
     
@@ -35,13 +38,17 @@ const Home = ({activeTab}:props) => {
   },[])
 
     useEffect(() => {
-    const fetchTrendingMovies = async () => {
+
+    fetchTrendingMovies();
+  }, []);
+
+      const fetchTrendingMovies = async () => {
+        setLoading(true);
       const token =  await getToken();
       const data = await getMovies(1, 12, "popularity", token ?? undefined);
       setTrendingMovies(data);
+      setLoading(false);
     };
-    fetchTrendingMovies();
-  }, []);
 
   const handleMovieClick = (clickedMovie: any) => {
     const originalMovie = movieData.find(movie => movie.id === clickedMovie.id);
@@ -64,15 +71,24 @@ const Home = ({activeTab}:props) => {
     navigate("/movies");
   };
 
-  const handleAddToWatchlist = async(movieId: number) => {
+  const handleAddToWatchlist = async(movie: Movie, movieId: number) => {
           const token =  await getToken();
-    if(movieId) {
-      const response = await setWatchList(movieId, token ?? undefined);
-      if (response) {
-        console.log("Movie added to watchlist:", response);
+    if(movie.is_watchlisted) {
+        const response = await removeWatchList(movieId, token??undefined)
+        if(response) {
+            fetchTrendingMovies();
+        }
+    }else{
+                if(movieId){
+            const response = await setWatchList(movieId, token ?? undefined);
+            if (response) {
+            // notify.success("Movie added to watchlist");
+            fetchTrendingMovies();
       } else {
         console.error("Failed to add movie to watchlist");
       }
+        }
+    
     }
 
 }    
@@ -198,7 +214,7 @@ const Home = ({activeTab}:props) => {
 
 
 {/* Trending Section */}
-<div className="trending-section">
+{!loading ? <div className="trending-section">
   <div className="section-header">
     <h2 className="section-title">Trending</h2>
     <p className="link-text">
@@ -210,22 +226,26 @@ const Home = ({activeTab}:props) => {
     {/* First row */}
     <div className="trending-movies-row flex-wrap">
       {trendingMovies.map((movie) => (
-        <Card key={movie.id} className="trending-movie-card">
-          {/* ${movie ? "active" : ''} */}
-          <img 
+        <Card 
+            key={movie.id} 
+            className="trending-movie-card"
+            onMouseEnter={() => setOnMouseOverId(movie.id)}
+            onMouseLeave={() => setOnMouseOverId(null)}
+        >
+          {(onMouseOverId === movie.id) && <img 
             src={movie.is_watchlisted ? watchListIcon2 : watchListIcon1} // Your watchlist icon source goes here
             alt="Add to Watchlist" 
-            className="watchlist-icon absolute top-2 right-2 "
+            className=" absolute top-2 right-2 z-10 cursor-pointer"
             onClick={() => {
                 console.log(movie)
-              handleAddToWatchlist(movie.id);
+              handleAddToWatchlist(movie, movie.id);
             }}
-          />
+          />}
           
           <img 
             src={movie.poster_url}
             alt={movie.title}
-            className="trending-movie-poster"
+            className="trending-movie-poster trending-image"
             onError={(e) => {
               e.currentTarget.src = 'https://via.placeholder.com/175x250/333/cccccc?text=No+Poster';
             }}
@@ -243,7 +263,28 @@ const Home = ({activeTab}:props) => {
       ))}
     </div>
   </div>
-</div>
+</div> : 
+<div className="trending-section">
+    <div className="section-header">
+      <Skeleton className="h-8 w-32 rounded" />
+      <Skeleton className="h-4 w-20 rounded" />
+    </div>
+    
+    <div className="trending-movies-grid">
+      <div className="trending-movies-row flex-wrap">
+        {Array.from({ length: 6 }).map((_, index) => (
+          <div key={index} className="trending-movie-card">
+            <Skeleton className="h-[250px] w-[175px] rounded-lg" />
+            <div className="trending-movie-info mt-2">
+              <Skeleton className="h-4 w-24 rounded mb-1" />
+              <Skeleton className="h-3 w-16 rounded" />
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+}
 
 {/* You may aslo like Section */}
 <div className="trending-section trending-sec2">

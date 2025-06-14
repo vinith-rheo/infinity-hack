@@ -1,6 +1,6 @@
 /* Watchlist Section */
 .watchlist-section {
-  padding: 64px 76px;
+  padding: 64px 64px;
   position: relative;
   /* z-index: 1000; */
   background: var(--color-mono-black);
@@ -114,12 +114,12 @@ line-height: normal;
 }
 
 .watchlist-row {
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
   gap: 60px;
-  overflow-x: auto;
   scrollbar-width: none;
   -ms-overflow-style: none;
-  padding: 20px 0;
+  padding: 20px 16px;
 }
 
 .watchlist-row::-webkit-scrollbar {

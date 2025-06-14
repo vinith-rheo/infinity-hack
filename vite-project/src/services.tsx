@@ -74,8 +74,14 @@ export async function getMovieDetails(id: string, token?: string): Promise<Movie
 }
 
 export async function getWatchlistMovies(page: number,token?: string, search?: string, year?: string, genre?: string,): Promise<Movie[]> {
+  const queryParams = new URLSearchParams();
+  queryParams.append("limit", page.toString());
+  if (search) queryParams.append("search", search);
+  if (year) queryParams.append("year", year);
+  if (genre) queryParams.append("genre", genre);
+
   const response = await fetchWithAuth(
-    `${BACKEND_URL}/watchlist/get?limit=${page}&search=${search}&year=${year}&genre=${genre}`,
+    `${BACKEND_URL}/watchlist/get?${queryParams.toString()}`,
     {},
     token
   );
@@ -86,13 +92,29 @@ export async function getWatchlistMovies(page: number,token?: string, search?: s
 
 export async function setWatchList(id: number,token?: string): Promise<Movie[]> {
   const response = await fetchWithAuth(
-    `${BACKEND_URL}/watchlist/create/`,
+    `${BACKEND_URL}/watchlist/create`,
     {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({ movie_id: id })
+    },
+    token
+  );
+  if (!response) return [];
+  const data = await response.json();
+  return data;
+}
+
+export async function removeWatchList(id: number,token?: string): Promise<Movie[]> {
+  const response = await fetchWithAuth(
+    `${BACKEND_URL}/watchlist/remove?movie_id=${id}`,
+    {
+      method: "DELETE",
+      headers: {
+        "Content-Type": "application/json",
+      },
     },
     token
   );

@@ -339,7 +339,7 @@
 
 /* Trending Section - Matching Top 10 Styles */
 .trending-section {
-  padding: 64px 76px;
+  padding: 64px 64px;
   margin-top: -20vh;
   position: relative;
   z-index: 1000;
@@ -392,7 +392,7 @@
   overflow-x: auto;
   scrollbar-width: none;
   -ms-overflow-style: none;
-  padding: 20px 0;
+  padding: 20px 16px;
 }
 
 .trending-movies-row::-webkit-scrollbar {
@@ -411,7 +411,14 @@
   background: rgba(30, 30, 30, 0.7);
   border: 1px solid rgba(60, 60, 60, 0.3);
   padding: 0;
-}
+  
+} 
+
+.trending-image{ 
+  &:hover {
+    filter: brightness(0.6);
+  }
+ } 
 
 .trending-movie-card:hover {
   transform: scale(1.05);
