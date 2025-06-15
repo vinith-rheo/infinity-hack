@@ -1,7 +1,6 @@
 import { Button } from "@/components/ui/button";
-import type { Movie } from "@/services";
-import { use, useEffect, useState } from "react";
-import { useAuth, UserButton } from "@clerk/clerk-react";
+import {  useEffect, useState } from "react";
+import { useAuth } from "@clerk/clerk-react";
 import movieData from "../data.json";
 import { Card, CardDescription, CardTitle } from "@/components/ui/card";
 import MovieCarousel from "@/Landing/MovieCarousel";
@@ -118,7 +117,7 @@ const Home = ({activeTab}:props) => {
               Your personal movie journal — rate, review, and never lose track of
               what to watch next.
             </h2>
-            <Button className="hero-button" onClick={handleExploreClick}>
+            <Button className="hero-button cursor-pointer" onClick={handleExploreClick}>
               Explore
             </Button>
           </div>
@@ -183,7 +182,7 @@ const Home = ({activeTab}:props) => {
                     </div>
 
                     {movieData.slice(0, 10).map((movie, index) => (
-                      <div className="d-block">  
+                      <div key={movie.id} className="d-block">  
                       <div key={movie.id} className="movie-card-wrapper">
                         <div className="movie-number">
                           {index + 1}
@@ -236,7 +235,7 @@ const Home = ({activeTab}:props) => {
     {/* First row */}
     <div className="trending-movies-row flex-wrap">
       {trendingMovies.map((movie) => (
-        <div className="d-flex">
+        <div key={movie.id} className="d-flex">
         <Card 
             key={movie.id} 
             className="trending-movie-card"

@@ -171,3 +171,28 @@ export async function removeLikedMovie(movieId: string, token?: string): Promise
   return Boolean(response?.ok);
 }
 
+export async function getMoreLikeThis(movieId: string, token?: string): Promise<Movie[]> {
+  const response = await fetchWithAuth(
+    `${BACKEND_URL}/movies/get-similar-movies/${movieId}`,
+    {},
+    token
+  );
+  if (!response) return [];
+  const data = await response.json();
+  return data;
+}
+
+export async function smartSearch(query: string, token?: string): Promise<Movie[]> {
+  const response = await fetchWithAuth(
+    `${BACKEND_URL}/movies/semantic-search`,
+    {method: "POST", 
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({query: query})},
+    token
+  );
+  if (!response) return [];
+  const data = await response.json();
+  return data.results;
+}
