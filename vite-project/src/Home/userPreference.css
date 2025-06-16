@@ -1,0 +1,52 @@
+.primary {
+    color: #EAEBEE;
+    font-family: 'Inter';
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.secondary {
+    color: #D5D5D5;
+    font-family: 'Inter';
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+/* Style for the select trigger text */
+.SelectTrigger .SelectValue span {
+    color: #EAEBEE;
+    font-family: 'Inter';
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+/* Style for select items */
+.SelectItem {
+    color: #EAEBEE;
+    font-family: 'Inter';
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+/* Style for dialog title */
+.DialogTitle {
+    color: #EAEBEE;
+    font-family: 'Inter';
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin-bottom: 1rem;
+}
+
+[data-radix-dialog-close] {
+  color: #ff3366;
+}

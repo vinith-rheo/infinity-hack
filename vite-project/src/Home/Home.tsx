@@ -10,6 +10,7 @@ import "../styles/landing.css";
 import MoviePosterCard from "@/components/MoviePosterCard";
 import { Skeleton } from "@/components/ui/skeleton"
 import dot from './dot.svg';
+import { UserPreferencesForm } from "./userPreference";
 
 interface props{
     activeTab?: string;
@@ -17,12 +18,13 @@ interface props{
 
 const Home = ({activeTab}:props) => {
     const navigate = useNavigate();
-    const { getToken } = useAuth();
+    const {isSignedIn, getToken } = useAuth();
 
     const [hoveringMap, setHoveringMap] = useState<{ [colIndex: number]: boolean }>({});
     const [trendingMovies, setTrendingMovies] = useState<Movie[]>([]);
     const [animate, setAnimate] = useState(false);
     const [loading, setLoading] = useState<boolean>(false);
+
 
   useEffect(() => {
     
@@ -69,7 +71,7 @@ const Home = ({activeTab}:props) => {
     return (
     <div className="landing-container">
       
-      
+      <UserPreferencesForm />
       {/* Main Content */}
       <div className="main-content">
         <div className="content-wrapper">
