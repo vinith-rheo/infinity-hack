@@ -90,10 +90,16 @@ const MoviePosterCard: React.FC<MoviePosterCardProps> = ({
     e.stopPropagation();
     const token = await getToken();
     try {
+     if(isDisliked === null){
+       await removeLikedMovie(movie.id, token ?? undefined);
         await likeMovie(movie.id, "Dislike", token ?? undefined);
         setIsLiked(null);
         setIsDisliked(true)
       
+     }
+     else{
+      setIsDisliked(false);
+     }
     } catch {
       toast.error("Failed to update preference");
     }
@@ -130,7 +136,7 @@ const MoviePosterCard: React.FC<MoviePosterCardProps> = ({
       <ThumbsUp fill={isLiked?'black':'transparent'} />
     </button>
     <button type="button" className="absolute top-4 left-10 z-10 cursor-pointer w-6 h-6" onClick={handleDislikeMovie}>
-      <ThumbsDown />
+      <ThumbsDown fill={isDisliked?'black':'transparent'} />
     </button>
   </div>
 ) 
