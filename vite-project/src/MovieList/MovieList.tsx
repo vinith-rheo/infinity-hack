@@ -155,7 +155,7 @@ export default function MovieList() {
               <UserButton afterSignOutUrl={"/"} />
             </span>
           </div>
-          <div className="max-w-7xl mx-auto">
+          <div className="max-w-full mx-auto">
             <div className="flex flex-wrap justify-center m-4 gap-6">
               {(aiLoading ? [] : aiResults ?? filteredMovies).map((movie) => {
                 return (

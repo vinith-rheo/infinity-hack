@@ -61,10 +61,10 @@ const Home = ({activeTab}:props) => {
   };
 
   const handleTop10MovieClick = (movie: any) => {
-    console.log("Top 10 movie clicked:", movie);
-    console.log("Movie ID:", movie.id);
-    // TODO: Navigate to details page when implemented
-    // navigate(`/movie/${movie.id}`);
+    // console.log("Top 10 movie clicked:", movie);
+    // console.log("Movie ID:", movie.id);
+    // // TODO: Navigate to details page when implemented
+    navigate(`movies/movie/${movie.id}`);
   };
 
   const handleExploreClick = () => {
@@ -172,16 +172,16 @@ const Home = ({activeTab}:props) => {
                       <Card className="intro-card">
                         <div className="intro-card-content">
                           <span className="intro-card-title">
-                            Top 10 movies this week
+                           Iconic movies of alltime
                           </span>
                           <span className="intro-card-subtitle">
-                            Check out this week's most popular movies and find out what people say about them
+                            From Iconic Heroes to Heart-Stopping Drama – Movies That Made History
                           </span>
                         </div>
                       </Card>
                     </div>
 
-                    {movieData.slice(0, 10).map((movie, index) => (
+                    {trendingMovies.slice(0, 10).map((movie, index) => (
                       <div key={movie.id} className="d-block">  
                       <div key={movie.id} className="movie-card-wrapper">
                         <div className="movie-number">
@@ -193,7 +193,7 @@ const Home = ({activeTab}:props) => {
                           onClick={() => handleTop10MovieClick(movie)}
                         >
                           <img 
-                            src={`/assets/${movie.id}.jpg`}
+                            src={movie.poster_url}
                             alt={movie.title}
                             className="movie-poster"
                             onError={(e) => {
