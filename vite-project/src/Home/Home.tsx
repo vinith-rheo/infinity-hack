@@ -189,7 +189,7 @@ const Home = ({activeTab}:props) => {
 
 
 {/* Trending Section */}
-{!loading ? <div className="trending-section">
+{!loading ? <div className=" px-20">
   <div className="section-header">
     <h2 className="section-title">Trending</h2>
     <p className="link-text">
