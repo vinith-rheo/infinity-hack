@@ -1,4 +1,3 @@
-import MovieCard from "@/MovieCard/MovieCard";
 import { Input } from "@/components/ui/input";
 import { useCallback, useEffect, useRef, useState } from "react";
 import { getMovies, smartSearch, type Movie } from "@/services";
@@ -9,6 +8,7 @@ import { useNavigate } from "react-router";
 import searchIcon from "../Landing/searchIcon.svg";
 import { motion, useAnimation } from "framer-motion";
 import { useInfiniteScroll } from "@/hooks/useInfiniteScroll";
+import MoviePosterCard from "@/components/MoviePosterCard";
 
 export default function MovieList() {
   const [moviesLoading, setMoviesLoading] = useState(false);
@@ -179,21 +179,9 @@ const loaderRef = useInfiniteScroll(loadMoreMovies, loadMore);
             <div className="flex flex-wrap justify-center m-4 gap-6">
               {(aiLoading ? [] : aiResults ?? filteredMovies).map((movie) => {
                 return (
-                  <MovieCard
-                    key={movie.id}
-                    movie={{
-                      id: movie.id,
-                      genres: [],
-                      title: movie.title,
-                      tagline: movie.tagline,
-                      overview: movie.overview,
-                      poster_url: movie.poster_url,
-                      release_date: String(movie.release_date),
-                      vote_average: movie.vote_average,
-                      runtime: movie.runtime,
-                      homepage: movie.homepage,
-                    }}
-                  />
+                  <div className="w-60">
+                    <MoviePosterCard movie={movie} />
+                  </div>
                 );
               })}
             </div>
