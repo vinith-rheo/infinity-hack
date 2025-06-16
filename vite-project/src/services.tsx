@@ -198,3 +198,18 @@ export async function smartSearch(query: string, token?: string): Promise<Movie[
   const data = await response.json();
   return data.results;
 }
+
+export async function getRecommendations(mood: string, token?: string): Promise<Movie[]> {
+  const response = await fetchWithAuth(
+    `${BACKEND_URL}/movies/recommendations`,
+    {
+      method: "POST",
+      body: JSON.stringify({mood: mood}),
+    }
+    ,
+    token
+  );
+  if (!response) return [];
+  const data = await response.json();
+  return data;
+}
