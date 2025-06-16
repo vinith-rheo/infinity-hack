@@ -178,7 +178,7 @@ return (
                 }}
                 />
             </Card>
-                <div className="mt-3">
+                <div className="mt-3 w-[172px]">
                 <CardDescription className="watchlist-movie-meta">
                     <span className="watchlist-details">
                     {formatDate(movie.release_date)}

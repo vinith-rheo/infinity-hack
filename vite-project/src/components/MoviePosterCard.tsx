@@ -99,14 +99,14 @@ const MoviePosterCard: React.FC<MoviePosterCardProps> = ({
           <img
             src={isWatchlisted ? watchListIconFilled : watchListIconEmpty}
             alt="Watchlist Toggle"
-            className="absolute top-2 right-2 z-10 cursor-pointer w-6 h-6"
+            className="absolute top-4 right-4 z-10 cursor-pointer w-6 h-6"
             onClick={handleWatchlistToggle}
           />
         )}
 
         {showLike && isHovering && (
           <button
-            className="absolute top-2 left-2 z-10 text-white"
+            className="absolute top-4 left-4 z-10 text-white"
             onClick={handleLikeToggle}
           >
             {isLiked ? (
