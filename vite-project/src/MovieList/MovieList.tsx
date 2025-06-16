@@ -7,7 +7,6 @@ import { Loader2 } from "lucide-react";
 import BackIcon from "../../public/Icons/BackIcon.svg";
 import { useNavigate } from "react-router";
 import searchIcon from "../Landing/searchIcon.svg";
-import Header from "../Landing/Header";
 import { motion, useAnimation } from "framer-motion";
 
 export default function MovieList() {
@@ -88,9 +87,6 @@ export default function MovieList() {
         </div>
       ) : (
         <div className="w-full min-h-screen bg-[var(--color-mono-black)]">
-          {/* Header */}
-          <Header isSignedIn={true} />
-
           <div className="flex justify-center w-full pt-8 px-4 bg-[var(--color-mono-black)]">
             <motion.div
               initial={{ opacity: 0, y: 40 }}
