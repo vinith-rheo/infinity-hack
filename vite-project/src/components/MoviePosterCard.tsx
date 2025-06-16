@@ -139,7 +139,7 @@ const MoviePosterCard: React.FC<MoviePosterCardProps> = ({
             }
           >
             <span>{formatDate(movie.release_date)}</span>
-            <img src={dot} className="w-1 h-1" />
+            <img src={dot} className="w-2 h-2 space-between" />
             <span>{movie.runtime} min</span>
           </CardDescription>
         </div>

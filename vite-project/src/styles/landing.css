@@ -262,12 +262,11 @@
   width: 118px;
   height: 235px;
   position: absolute;
-  left: -60px;
-  bottom: 0;
+  left: -70px;
+  bottom: 0px;
   z-index: 1;
   pointer-events: none;
 }
-
 .movie-card {
   position: relative;
   z-index: 10;

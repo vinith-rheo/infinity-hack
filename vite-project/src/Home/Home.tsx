@@ -2,14 +2,13 @@ import { Button } from "@/components/ui/button";
 import {  useEffect, useState } from "react";
 import { useAuth } from "@clerk/clerk-react";
 import movieData from "../data.json";
-import { Card, CardDescription, CardTitle } from "@/components/ui/card";
+import { Card } from "@/components/ui/card";
 import MovieCarousel from "@/Landing/MovieCarousel";
 import { useNavigate } from "react-router";
 import { getMovies, type Movie } from "@/services";
 import "../styles/landing.css";
 import MoviePosterCard from "@/components/MoviePosterCard";
 import { Skeleton } from "@/components/ui/skeleton"
-import dot from './dot.svg';
 import { UserPreferencesForm } from "./userPreference";
 
 interface props{
@@ -150,35 +149,16 @@ const Home = ({activeTab}:props) => {
                     </div>
 
                     {trendingMovies.slice(0, 10).map((movie, index) => (
-                      <div key={movie.id} className="d-block">  
-                      <div key={movie.id} className="movie-card-wrapper">
+                      <div key={movie.id} className="">  
+                      <div key={movie.id} className="relative mr-20 flex">
                         <div className="movie-number">
                           {index + 1}
                         </div>
                         
-                        <Card 
-                          className="movie-card"
-                          onClick={() => handleTop10MovieClick(movie)}
-                        >
-                          <img 
-                            src={movie.poster_url}
-                            alt={movie.title}
-                            className="movie-poster"
-                            onError={(e) => {
-                              e.currentTarget.src = 'https://via.placeholder.com/175x250/333/cccccc?text=No+Poster';
-                            }}
-                          />
-                        </Card>
-                      </div>
-                        <div className="movie-info-overlay" style={{ width: '100%', maxWidth: 'var(--card-width)'}}>
-                            <CardDescription className="movie-meta">
-                              {formatDate(movie.release_date)}
-                            </CardDescription>
-                            <CardTitle className="movie-meta" style={{display:'flex', flexDirection:'row'}}>
-                                <img src={dot} className="mr-1"/>
-                              {movie.runtime}m
-                            </CardTitle>
+                        <div className="movie-card">
+                           <MoviePosterCard movie={movie} />
                         </div>
+                      </div>
                     </div>
                     ))}
                   </div>
