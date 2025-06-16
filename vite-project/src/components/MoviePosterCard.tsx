@@ -40,7 +40,7 @@ const MoviePosterCard: React.FC<MoviePosterCardProps> = ({
   const [isWatchlisted, setIsWatchlisted] = useState<boolean>(
     movie.is_watchlisted ?? false
   );
-  const [isLiked, setIsLiked] = useState<boolean>(false);
+  const [isLiked, setIsLiked] = useState<boolean| null>(null);
   const [isHovering, setIsHovering] = useState<boolean>(false);
 
   const handleWatchlistToggle = async (
@@ -71,11 +71,13 @@ const MoviePosterCard: React.FC<MoviePosterCardProps> = ({
 
     try {
       if (!isLiked) {
-        await likeMovie(String(movie.id), "Like", token ?? undefined);
+        await likeMovie(movie.id, "Like", token ?? undefined);
+        setIsLiked(true);
       } else {
-        await removeLikedMovie(String(movie.id), token ?? undefined);
+        await removeLikedMovie(movie.id, token ?? undefined);
+        setIsLiked(null);
       }
-      setIsLiked(!isLiked);
+      
     } catch {
       toast.error("Failed to update like");
     }

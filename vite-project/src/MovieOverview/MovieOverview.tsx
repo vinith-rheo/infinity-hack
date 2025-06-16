@@ -87,6 +87,7 @@ const MovieOverview = () => {
 
   const cast = movie?.castdata?.cast?.map((c) => {
     return {
+      id:c.cast_id,
       name: c.name,
       role: c.character,
       image: c.profile_url,
@@ -139,6 +140,7 @@ const MovieOverview = () => {
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6">
             {visibleCast?.map((member) => (
               <CastCard
+                id={member.id}
                 key={member.name}
                 name={member.name}
                 role={member.role}

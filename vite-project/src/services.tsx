@@ -127,12 +127,12 @@ export async function removeWatchList(id: number,token?: string): Promise<Movie[
 
 
 
-export async function likeActor(actorId: number, token?: string): Promise<boolean> {
+export async function likeActor(actorId: number, preference: "Like" | "Dislike", token?: string): Promise<boolean> {
   const response = await fetchWithAuth(
     `${BACKEND_URL}/user/add_liked_actor`,
     {
       method: "POST",
-      body: JSON.stringify({ actor_id: actorId }),
+      body: JSON.stringify({ actor_id: actorId ,preference:preference}),
     },
     token
   );
@@ -150,7 +150,7 @@ export async function removeLikedActor(actorId: number, token?: string): Promise
   return Boolean(response?.ok);
 }
 
-export async function likeMovie(movieId: string, preference: "Like" | "Dislike", token?: string): Promise<boolean> {
+export async function likeMovie(movieId: number, preference: "Like" | "Dislike", token?: string): Promise<boolean> {
   const response = await fetchWithAuth(
     `${BACKEND_URL}/user/add_liked_movie`,
     {
@@ -162,7 +162,7 @@ export async function likeMovie(movieId: string, preference: "Like" | "Dislike",
   return Boolean(response?.ok);
 }
 
-export async function removeLikedMovie(movieId: string, token?: string): Promise<boolean> {
+export async function removeLikedMovie(movieId: number, token?: string): Promise<boolean> {
   const response = await fetchWithAuth(
     `${BACKEND_URL}/user/remove_liked_movie?movie_id=${movieId}`,
     {
