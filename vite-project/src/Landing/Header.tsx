@@ -1,4 +1,4 @@
-import { useNavigate } from "react-router";
+import { useNavigate, useLocation } from "react-router";
 import { Button } from "@/components/ui/button";
 import logo from './logo.svg';
 import searchLogo from './searchIcon.svg';
@@ -7,18 +7,14 @@ import { UserButton } from "@clerk/clerk-react";
 
 interface HeaderProps {
   isSignedIn: boolean;
-  activeTab?: string;
-  setActiveTab?: (tab: string) => void;
 }
 
-const Header = ({ isSignedIn,activeTab, setActiveTab }: HeaderProps) => {
+const Header = ({ isSignedIn }: HeaderProps) => {
   const navigate = useNavigate();
+  const location = useLocation();
 
-  const handleNavClick = (tabName: string) => {
-    if (setActiveTab) {
-      setActiveTab(tabName);
-    }
-  };
+  const isActive = (path: string) =>
+    location.pathname === path ? "active" : "inactive";
 
   return (
     <div className="header-wrapper">
@@ -28,28 +24,28 @@ const Header = ({ isSignedIn,activeTab, setActiveTab }: HeaderProps) => {
           <img 
             src={logo} 
             alt="Logo"
-            onClick={() => handleNavClick('home')}
+            onClick={() => navigate('/')}
             style={{ cursor: 'pointer' }}
           />
         </div>
         
         <div className="header-nav-links">
           <span 
-            className={`nav-link ${activeTab === 'home' ? 'active' : 'inactive'}`}
-            onClick={() => handleNavClick('home')} // Set active tab to 'home'
+            className={`nav-link ${isActive('/')}`}
+            onClick={() => navigate('/')}
           >
             Home
           </span>
           <span 
-            className={`nav-link ${activeTab === 'explore' ? 'active' : 'inactive'}`}
-            onClick={() => handleNavClick('explore')} // Set active tab to 'explore'
+            className={`nav-link ${isActive('/recommendations')}`}
+            onClick={() => navigate('/recommendations')}
           >
-            Movies Recommendation
+            Recommendations
           </span>
           {isSignedIn && (
             <span 
-              className={`nav-link ${activeTab === 'watchlist' ? 'active' : 'inactive'}`}
-              onClick={() => handleNavClick('watchlist')} // Set active tab to 'watchlist'
+              className={`nav-link ${isActive('/watchlist')}`}
+              onClick={() => navigate('/watchlist')}
             >
               Watchlist
             </span>

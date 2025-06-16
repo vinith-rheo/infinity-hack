@@ -33,7 +33,9 @@ export interface Movie {
 const BACKEND_URL = import.meta.env.VITE_BACKEND_URL;
 
 function getAuthHeaders(token?: string): Record<string, string> {
-  return token ? { "Authorization": `Bearer ${token}` } : {};
+  return token
+    ? { Authorization: `Bearer ${token}`, "Content-Type": "application/json" }
+    : { "Content-Type": "application/json" };
 }
 
 async function fetchWithAuth(url: string, options: RequestInit = {}, token?: string): Promise<Response | undefined> {

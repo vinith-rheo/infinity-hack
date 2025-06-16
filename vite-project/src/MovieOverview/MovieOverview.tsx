@@ -1,34 +1,26 @@
 import React, { useEffect, useState } from "react";
-import { useNavigate, useParams } from "react-router";
+import { useParams } from "react-router";
 import {
   getMoreLikeThis,
   getMovieDetails,
-  removeWatchList,
-  setWatchList,
   type Movie,
 } from "@/services";
 import type { MovieDetails } from "@/lib/types";
 import { Loader2 } from "lucide-react";
 import { useAuth } from "@clerk/clerk-react";
 import { Skeleton } from "@/components/ui/skeleton";
-import { Card, CardDescription } from "@/components/ui/card";
-import watchListIcon1 from "../Home/watchListIconNoFill.svg";
-import watchListIcon2 from "../Home/watchListIconWithFill.svg";
-import dot from "../Home/dot.svg";
-import { toast } from "sonner";
 import { Badge } from "@/components/ui/badge";
 import CastCard from "./CastCard";
+import MoviePosterCard from "@/components/MoviePosterCard";
 
 const MovieOverview = () => {
   const { id: movieId } = useParams();
   const [isLoadingMovie, setIsLoadingMovie] = useState<boolean>(false);
   const { getToken } = useAuth();
-  const [onMouseOverId, setOnMouseOverId] = useState<number | null>(null);
   const [youMayLikeListLoading, setYouMayLikeListLoading] =
     useState<boolean>(false);
   const [youMayLike, setYouMayLike] = useState<Movie[] | null>(null);
   const [showAllCast, setShowAllCast] = useState<boolean>(false);
-  const navigate = useNavigate();
 
   const [movie, setMovie] = useState<MovieDetails>({
     castdata: {
@@ -90,33 +82,6 @@ const MovieOverview = () => {
     fetchMovies();
     fetchYouMayLike();
   }, [movieId]);
-
-  const handleAddToWatchlist = async (movie: Movie, movieId: number) => {
-    const token = await getToken();
-    if (movie.is_watchlisted) {
-      const response = await removeWatchList(movieId, token ?? undefined);
-      if (response) {
-        toast.success("Movie removed from watchlist");
-      } else {
-        toast.error("Failed to remove movie from watchlist");
-      }
-    } else {
-      if (movieId) {
-        const response = await setWatchList(movieId, token ?? undefined);
-        if (response) {
-          toast.success("Movie added to watchlist");
-        } else {
-          toast.error("Failed to add movie to watchlist");
-        }
-      }
-    }
-  };
-
-  const formatDate = (dateString: string | number | Date) => {
-    return new Date(dateString).toLocaleDateString("en-US", {
-      year: "numeric",
-    });
-  };
 
   const { title, poster_url, genres, overview } = movie.movie;
 
@@ -200,45 +165,9 @@ const MovieOverview = () => {
             </div>
 
             <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6">
-                {youMayLike?.map((movie) => (
-                <div key={movie?.id} className="cursor-pointer group relative overflow-hidden rounded-lg">
-                    <Card
-                    className="aspect-[2/3] w-full h-full bg-gray-900/20 group-hover:scale-105 transition-transform duration-200"
-                      onMouseEnter={() => setOnMouseOverId(movie.id)}
-                      onMouseLeave={() => setOnMouseOverId(null)}
-                      onClick={() => navigate(`/movies/movie/${movie.id}`)}
-                    >
-                      {onMouseOverId === movie.id && (
-                        <img
-                          src={movie.is_watchlisted ? watchListIcon2 : watchListIcon1}
-                          alt="Add to Watchlist"
-                          className="absolute top-2 right-2 z-10 cursor-pointer w-6 h-6"
-                          onClick={(e) => {
-                            e.stopPropagation();
-                            handleAddToWatchlist(movie, movie.id);
-                          }}
-                        />
-                      )}
-                      <img
-                        src={movie.poster_url}
-                        alt={movie.title}
-                      className="w-full h-full object-cover"
-                        onError={(e) => {
-                          e.currentTarget.src = "https://via.placeholder.com/175x250/333/cccccc?text=No+Poster";
-                        }}
-                      />
-                    </Card>
-                    <div className="mt-3">
-                    <CardDescription className="trending-movie-meta text-white/80 text-sm flex items-center justify-center gap-2">
-                        <span className="release-date">
-                          {formatDate(movie.release_date)}
-                        </span>
-                      <img src={dot} className="w-1 h-1" />
-                      <span>{movie.runtime} min</span>
-                      </CardDescription>
-                    </div>
-                  </div>
-                ))}
+              {youMayLike?.map((movie) => (
+                <MoviePosterCard key={movie.id} movie={movie} />
+              ))}
             </div>
           </div>
         ) : (

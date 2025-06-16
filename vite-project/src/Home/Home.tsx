@@ -5,10 +5,9 @@ import movieData from "../data.json";
 import { Card, CardDescription, CardTitle } from "@/components/ui/card";
 import MovieCarousel from "@/Landing/MovieCarousel";
 import { useNavigate } from "react-router";
-import { getMovies, removeWatchList, setWatchList, type Movie } from "@/services";
+import { getMovies, type Movie } from "@/services";
 import "../styles/landing.css";
-import watchListIcon1 from './watchListIconNoFill.svg';
-import watchListIcon2 from './watchListIconWithFill.svg';
+import MoviePosterCard from "@/components/MoviePosterCard";
 import { Skeleton } from "@/components/ui/skeleton"
 import dot from './dot.svg';
 
@@ -21,10 +20,8 @@ const Home = ({activeTab}:props) => {
     const { getToken } = useAuth();
 
     const [hoveringMap, setHoveringMap] = useState<{ [colIndex: number]: boolean }>({});
-    const [selectedMovie, setSelectedMovie] = useState<any | null>(null);
     const [trendingMovies, setTrendingMovies] = useState<Movie[]>([]);
     const [animate, setAnimate] = useState(false);
-    const [onMouseOverId, setOnMouseOverId] = useState<number | null>(null);
     const [loading, setLoading] = useState<boolean>(false);
 
   useEffect(() => {
@@ -50,16 +47,7 @@ const Home = ({activeTab}:props) => {
       setLoading(false);
     };
 
-  const handleMovieClick = (clickedMovie: any) => {
-    const originalMovie = movieData.find(movie => movie.id === clickedMovie.id);
-    console.log("Selected movie:", originalMovie);
-    if (originalMovie) {
-      setSelectedMovie(originalMovie);
-    } else {
-      setSelectedMovie(null);
-    }
-  };
-
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const handleTop10MovieClick = (movie: any) => {
     // console.log("Top 10 movie clicked:", movie);
     // console.log("Movie ID:", movie.id);
@@ -70,28 +58,6 @@ const Home = ({activeTab}:props) => {
   const handleExploreClick = () => {
     navigate("/movies");
   };
-
-  const handleAddToWatchlist = async(movie: Movie, movieId: number) => {
-          const token =  await getToken();
-    if(movie.is_watchlisted) {
-        const response = await removeWatchList(movieId, token??undefined)
-        if(response) {
-            fetchTrendingMovies();
-        }
-    }else{
-                if(movieId){
-            const response = await setWatchList(movieId, token ?? undefined);
-            if (response) {
-            // notify.success("Movie added to watchlist");
-            fetchTrendingMovies();
-      } else {
-        console.error("Failed to add movie to watchlist");
-      }
-        }
-    
-    }
-
-}    
 
   const formatDate = (dateString: string | number | Date) => {
     return new Date(dateString).toLocaleDateString('en-US', {
@@ -233,47 +199,9 @@ const Home = ({activeTab}:props) => {
   
   <div className="trending-movies-grid">
     {/* First row */}
-    <div className="trending-movies-row flex-wrap">
+    <div className="trending-movies-row flex-wrap gap-6">
       {trendingMovies.map((movie) => (
-        <div key={movie.id} className="d-flex">
-        <Card 
-            key={movie.id} 
-            className="trending-movie-card"
-            onMouseEnter={() => setOnMouseOverId(movie.id)}
-            onMouseLeave={() => setOnMouseOverId(null)}
-        >
-          {(onMouseOverId === movie.id) && <img 
-            src={movie.is_watchlisted ? watchListIcon2 : watchListIcon1} // Your watchlist icon source goes here
-            alt="Add to Watchlist" 
-            className=" absolute top-2 right-2 z-10 cursor-pointer"
-            onClick={() => {
-                console.log(movie)
-              handleAddToWatchlist(movie, movie.id);
-            }}
-          />}
-          
-          <img 
-            src={movie.poster_url}
-            alt={movie.title}
-            className="trending-movie-poster trending-image"
-            onError={(e) => {
-              e.currentTarget.src = 'https://via.placeholder.com/175x250/333/cccccc?text=No+Poster';
-            }}
-          />
-        </Card>
-            <div className="mt-3">
-            <CardDescription className="trending-movie-meta">
-              <span className="release-date">
-                {formatDate(movie.release_date)}
-              </span>
-              
-              <span className="duration" style={{display:"flex", flexDirection:"row"}}>
-                <img src={dot} className="mr-1"/>
-                {movie.runtime} min</span>
-            </CardDescription>
-          </div>
-        </div>
-
+        <MoviePosterCard key={movie.id} movie={movie} variant="trending" />
       ))}
     </div>
   </div>
