@@ -12,7 +12,7 @@ import {
 } from "@/services";
 import watchListIconEmpty from "@/Home/watchListIconNoFill.svg";
 import watchListIconFilled from "@/Home/watchListIconWithFill.svg";
-import { Heart, HeartOff } from "lucide-react";
+import {ThumbsDown, ThumbsUp } from "lucide-react";
 import dot from "@/Home/dot.svg";
 
 interface MoviePosterCardProps {
@@ -41,6 +41,7 @@ const MoviePosterCard: React.FC<MoviePosterCardProps> = ({
     movie.is_watchlisted ?? false
   );
   const [isLiked, setIsLiked] = useState<boolean| null>(null);
+  const [isDisliked, setIsDisliked] = useState<boolean| null>(null);
   const [isHovering, setIsHovering] = useState<boolean>(false);
 
   const handleWatchlistToggle = async (
@@ -63,23 +64,38 @@ const MoviePosterCard: React.FC<MoviePosterCardProps> = ({
     }
   };
 
-  const handleLikeToggle = async (
+  const handleLikeMovie = async (
     e: React.MouseEvent<HTMLButtonElement>
   ) => {
     e.stopPropagation();
     const token = await getToken();
 
     try {
-      if (!isLiked) {
+      if (isLiked === null) {
         await likeMovie(movie.id, "Like", token ?? undefined);
         setIsLiked(true);
-      } else {
-        await removeLikedMovie(movie.id, token ?? undefined);
-        setIsLiked(null);
+      } 
+      else{
+        await removeLikedMovie(movie.id,token ?? undefined)
+        setIsLiked(false)
       }
       
     } catch {
       toast.error("Failed to update like");
+    }
+  };
+   const handleDislikeMovie = async (
+    e: React.MouseEvent<HTMLButtonElement>
+  ) => {
+    e.stopPropagation();
+    const token = await getToken();
+    try {
+        await likeMovie(movie.id, "Dislike", token ?? undefined);
+        setIsLiked(null);
+        setIsDisliked(true)
+      
+    } catch {
+      toast.error("Failed to update preference");
     }
   };
 
@@ -106,18 +122,20 @@ const MoviePosterCard: React.FC<MoviePosterCardProps> = ({
           />
         )}
 
-        {showLike && isHovering && (
-          <button
-            className="absolute top-4 left-4 z-10 text-white"
-            onClick={handleLikeToggle}
-          >
-            {isLiked ? (
-              <HeartOff className="w-6 h-6 text-red-500" />
-            ) : (
-              <Heart className="w-6 h-6" />
-            )}
-          </button>
-        )}
+ {showLike && isHovering && (
+         
+
+  <div className="absolute w-full flex space-x-2">
+    <button type="button" className="absolute top-4 left-4 z-10 cursor-pointer w-6 h-6" onClick={handleLikeMovie}>
+      <ThumbsUp fill={isLiked?'black':'transparent'} />
+    </button>
+    <button type="button" className="absolute top-4 left-10 z-10 cursor-pointer w-6 h-6" onClick={handleDislikeMovie}>
+      <ThumbsDown />
+    </button>
+  </div>
+) 
+            
+        }
 
         <img
           src={movie.poster_url}
@@ -130,7 +148,7 @@ const MoviePosterCard: React.FC<MoviePosterCardProps> = ({
         />
       </Card>
       {showMeta && (
-        <div className="mt-3">
+        <div className="mt-3 ">
           <CardDescription
             className={
               variant === "trending"

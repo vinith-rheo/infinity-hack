@@ -150,7 +150,7 @@ export async function removeLikedActor(actorId: number, token?: string): Promise
   return Boolean(response?.ok);
 }
 
-export async function likeMovie(movieId: number, preference: "Like" | "Dislike", token?: string): Promise<boolean> {
+export async function likeMovie(movieId: number, preference: "Like" | "Dislike" | null, token?: string): Promise<boolean> {
   const response = await fetchWithAuth(
     `${BACKEND_URL}/user/add_liked_movie`,
     {
