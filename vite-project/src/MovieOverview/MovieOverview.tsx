@@ -171,7 +171,7 @@ const MovieOverview = () => {
             </div>
           </div>
         ) : (
-          <div className="trending-section px-8 py-6">
+          <div className="px-8 py-6">
             <div className="section-header flex justify-between items-center mb-6">
               <Skeleton className="h-8 w-32 rounded" />
               <Skeleton className="h-4 w-20 rounded" />
