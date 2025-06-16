@@ -206,7 +206,7 @@ const Home = ({activeTab}:props) => {
     </div>
   </div>
 </div> : 
-<div className="trending-section">
+<div className="px-20">
     <div className="section-header">
       <Skeleton className="h-8 w-32 rounded" />
       <Skeleton className="h-4 w-20 rounded" />
