@@ -1,6 +1,6 @@
 import MovieCard from "@/MovieCard/MovieCard";
 import { Input } from "@/components/ui/input";
-import { useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import { getMovies, smartSearch, type Movie } from "@/services";
 import { useAuth, UserButton } from "@clerk/clerk-react";
 import { Loader2 } from "lucide-react";
@@ -8,13 +8,14 @@ import BackIcon from "../../public/Icons/BackIcon.svg";
 import { useNavigate } from "react-router";
 import searchIcon from "../Landing/searchIcon.svg";
 import { motion, useAnimation } from "framer-motion";
+import { useInfiniteScroll } from "@/hooks/useInfiniteScroll";
 
 export default function MovieList() {
   const [moviesLoading, setMoviesLoading] = useState(false);
   const [movies, setMovies] = useState<Movie[]>([]);
   const [filteredMovies, setFilteredMovies] = useState<Movie[]>([]);
-  const page = 1;
-  const limit = 30;
+  const[currentPage,setCurrentPage]=useState(1);
+  const limit = 60;
   const navigate = useNavigate();
   const { getToken } = useAuth();
   const [searchText, setSearchText] = useState<string>("");
@@ -22,6 +23,29 @@ export default function MovieList() {
   const [aiLoading, setAiLoading] = useState<boolean>(false);
   const debounceRef = useRef<NodeJS.Timeout | null>(null);
   const [inputFocused, setInputFocused] = useState(false);
+
+  const [loadMore, setLoadMore] = useState(true);
+  const loadMoreMovies = useCallback(async () => {
+    const token = await getToken();
+
+    const newMovies = await getMovies(
+      currentPage,
+      limit,
+      undefined,
+      token ?? undefined
+    );
+
+    if (newMovies.length === 0) {
+      setLoadMore(false);
+    } else {
+      setMovies((prev) => [...prev, ...newMovies]);
+      setCurrentPage((prev) => prev + 1);
+    }
+  }, [currentPage]);
+ 
+
+const loaderRef = useInfiniteScroll(loadMoreMovies, loadMore);
+
   const searchIconControls = useAnimation();
 
   useEffect(() => {
@@ -50,7 +74,7 @@ export default function MovieList() {
   const fetchMovies = async () => {
     setMoviesLoading(true);
     const token = await getToken();
-    const data = await getMovies(page, limit, undefined, token ?? undefined);
+    const data = await getMovies(currentPage, limit, undefined, token ?? undefined);
     setMovies(data);
     setFilteredMovies(data);
     setMoviesLoading(false);
@@ -151,7 +175,7 @@ export default function MovieList() {
               <UserButton afterSignOutUrl={"/"} />
             </span>
           </div>
-          <div className="max-w-full mx-auto">
+          <div id="movie-list-container" className="max-w-full mx-auto">
             <div className="flex flex-wrap justify-center m-4 gap-6">
               {(aiLoading ? [] : aiResults ?? filteredMovies).map((movie) => {
                 return (
@@ -179,6 +203,7 @@ export default function MovieList() {
               <Loader2 className="w-10 h-10 animate-spin text-white" />
             </div>
           )}
+          {loadMore && <div ref={loaderRef}></div>}
         </div>
       )}
     </>
