@@ -121,7 +121,7 @@ export function UserPreferencesForm() {
             <Label className="primary">1. What kind of movies do you love watching?</Label>
             <div className="grid grid-cols-2 gap-2">
               {genres.map((genre) => (
-                <div key={genre} className="flex items-center space-x-2 mt-1">
+                <div key={genre} className="flex items-center space-x-2 mt-2">
                   <Checkbox
                     id={`genre-${genre}`}
                     checked={selectedGenres.includes(genre)}
@@ -136,16 +136,13 @@ export function UserPreferencesForm() {
                 </div>
               ))}
             </div>
-            <p className="secondary mt-2">
-              Choose genres you never get bored of — action-packed thrillers, light-hearted romcoms, or mind-bending sci-fi.
-            </p>
           </div>
 
           <div className="space-y-2">
             <Label className="primary">2. What do you usually look for in a movie?</Label>
             <div className="space-y-2">
               {moodOptions.map((option) => (
-                <div key={option.value} className="flex items-center space-x-2 mt-1">
+                <div key={option.value} className="flex items-center space-x-2 mt-4">
                   <input
                     type="radio"
                     id={option.value}
@@ -164,9 +161,6 @@ export function UserPreferencesForm() {
                 </div>
               ))}
             </div>
-            <p className="secondary mt-2">
-              We'll suggest movies that match your mood style.
-            </p>
           </div>
           
           <div className="space-y-2">
@@ -177,7 +171,7 @@ export function UserPreferencesForm() {
             >
               <SelectTrigger 
                 id="watchTime" 
-                className="w-full primary"
+                className="w-full primary mt-3"
                 style={{ zIndex: 999 }}
               >
                 <SelectValue placeholder="Select your usual watch time..." />
@@ -190,9 +184,6 @@ export function UserPreferencesForm() {
                 ))}
               </SelectContent>
             </Select>
-            <p className="secondary">
-              Helps us recommend content that fits your routine.
-            </p>
           </div>
           
           <div className="flex justify-end">
