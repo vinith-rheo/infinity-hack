@@ -4,7 +4,9 @@ export function useInfiniteScroll(loadMore: Function, needMore: boolean) {
   const observerRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
-    if (!needMore) return;
+    
+   const el = observerRef.current;
+    if (!el || !needMore) return;
     const obs = new IntersectionObserver(
       (entries) => {
        entries.forEach((entry)=>{
@@ -13,9 +15,8 @@ export function useInfiniteScroll(loadMore: Function, needMore: boolean) {
        }
        })
       },
-      { rootMargin: "400px" }
+      { rootMargin: "200px" }
     );
-    const el = observerRef.current;
     if (el) obs.observe(el);
     return () => {
       if (el) obs.unobserve(el);

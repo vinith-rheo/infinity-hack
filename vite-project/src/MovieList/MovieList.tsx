@@ -15,13 +15,12 @@ export default function MovieList() {
   const [movies, setMovies] = useState<Movie[]>([]);
   const [filteredMovies, setFilteredMovies] = useState<Movie[]>([]);
   const[currentPage,setCurrentPage]=useState(1);
-  const limit = 60;
+  const limit = 50;
   const navigate = useNavigate();
   const { getToken } = useAuth();
   const [searchText, setSearchText] = useState<string>("");
   const [aiResults, setAiResults] = useState<Movie[] | null>(null);
   const [aiLoading, setAiLoading] = useState<boolean>(false);
-  const debounceRef = useRef<NodeJS.Timeout | null>(null);
   const [inputFocused, setInputFocused] = useState(false);
 
   const [loadMore, setLoadMore] = useState(true);
@@ -42,9 +41,10 @@ export default function MovieList() {
       setCurrentPage((prev) => prev + 1);
     }
   }, [currentPage]);
- 
 
 const loaderRef = useInfiniteScroll(loadMoreMovies, loadMore);
+
+
 
   const searchIconControls = useAnimation();
 
@@ -61,16 +61,6 @@ const loaderRef = useInfiniteScroll(loadMoreMovies, loadMore);
     }
   }, [searchText, movies]);
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const value = e.target.value;
-    if (debounceRef.current) {
-      clearTimeout(debounceRef.current);
-    }
-
-    debounceRef.current = setTimeout(() => {
-      setSearchText(value);
-    }, 600);
-  };
   const fetchMovies = async () => {
     setMoviesLoading(true);
     const token = await getToken();
@@ -145,7 +135,6 @@ const loaderRef = useInfiniteScroll(loadMoreMovies, loadMore);
                   id="movie-search"
                   className={`pl-10 pr-4 h-10 w-full bg-[#222C38]/80 text-white placeholder-white/60 rounded-lg border border-white/20 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-400/30 transition-all duration-200 shadow-sm ${inputFocused ? "ring-2 ring-indigo-400/40 border-indigo-500 shadow-lg" : ""}`}
                   placeholder="Search for movies"
-                  onChange={handleChange}
                   onFocus={() => setInputFocused(true)}
                   onBlur={() => setInputFocused(false)}
                   onKeyDown={(e) => {
@@ -179,13 +168,14 @@ const loaderRef = useInfiniteScroll(loadMoreMovies, loadMore);
             <div className="flex flex-wrap justify-center m-4 gap-6">
               {(aiLoading ? [] : aiResults ?? filteredMovies).map((movie) => {
                 return (
-                  <div ref={loaderRef}  className="w-60">
+                  <div className="w-60">
                     <MoviePosterCard movie={movie} />
                   </div>
                 );
               })}
             </div>
           </div>
+           <div ref={loaderRef} ></div>
           {aiLoading && (
             <div className="flex justify-center py-10">
               <Loader2 className="w-10 h-10 animate-spin text-white" />
