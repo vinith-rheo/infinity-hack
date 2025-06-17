@@ -54,7 +54,7 @@ const Header = ({ isSignedIn }: HeaderProps) => {
       </div>
 
       <div className="header-actions">
-        <div className="search-bar">
+        <div className="search-bar hidden">
           <input
             type="text"
             placeholder="Search..."

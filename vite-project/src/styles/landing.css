@@ -397,7 +397,6 @@ line-height: normal;
   overflow-x: auto;
   scrollbar-width: none;
   -ms-overflow-style: none;
-  padding: 20px 16px;
 }
 
 .trending-movies-row::-webkit-scrollbar {
