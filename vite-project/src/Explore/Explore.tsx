@@ -9,13 +9,13 @@ import RelaxedIcon from "../../public/Icons/RelaxedIcon.svg";
 import SuspenseIcon from "../../public/Icons/SuspenseIcon.svg";
 import ComfortIcon from "../../public/Icons/ComfortIcon.svg";
 import { useEffect, useState } from "react";
-import { getRecommendations, type Movie } from "@/services";
+import { getRecommendations, type Mood, type Movie } from "@/services";
 import { useAuth } from "@clerk/clerk-react";
 import MoviePosterCard from "@/components/MoviePosterCard";
 import { Skeleton } from "@/components/ui/skeleton";
 const Explore = () => {
 
-  const [mood, setMood] = useState<string>("");
+  const [mood, setMood] = useState<Mood>("happy");
   const [recommendations, setRecommendations] = useState<Movie[]>([]);
   const { getToken } = useAuth();
   const [loading, setLoading] = useState<boolean>(false);

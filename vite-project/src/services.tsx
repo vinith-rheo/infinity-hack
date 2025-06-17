@@ -199,7 +199,9 @@ export async function smartSearch(query: string, token?: string): Promise<Movie[
   return data.results;
 }
 
-export async function getRecommendations(mood: string, token?: string): Promise<Movie[]> {
+export type Mood = "happy" | "sad" | "love" | "motivated" | "thrilled" | "inspired" | "relaxed" | "suspense" | "scared" | "excited" | "bored" | "angry" | "comfort"
+
+export async function getRecommendations(mood: Mood, token?: string): Promise<Movie[]> {
   const response = await fetchWithAuth(
     `${BACKEND_URL}/movies/recommendations`,
     {
