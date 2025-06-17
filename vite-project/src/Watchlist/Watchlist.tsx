@@ -12,17 +12,8 @@ import dot from '../Home/dot.svg';
 import watchListIcon1 from '../Home/watchListIconNoFill.svg';
 import watchListIcon2 from '../Home/watchListIconWithFill.svg';
 
-const WatchList = () => {
-    const {  getToken } = useAuth();
 
-    const [selectedYear, setSelectedYear] = useState("all");
-    const [selectedGenre, setSelectedGenre] = useState("all");
-    const [watchListMovies, setWatchlistMovies] = useState<Movie[]>([]);
-    const [loading, setLoading] = useState(false);
-    const [searchQuery, setSearchQuery] = useState<string>('');
-    const [onMouseOverId, setOnMouseOverId] = useState<number | null>(null);
-
-    const genres = [
+export const genres = [
         { id: 1, name: "Action" },
         { id: 2, name: "Comedy" },
         { id: 3, name: "Drama" },
@@ -40,6 +31,18 @@ const WatchList = () => {
         { id: 15, name: "Crime" },
         { id: 16, name: "Family" },
         { id: 17, name: "History" },]
+
+const WatchList = () => {
+    const {  getToken } = useAuth();
+
+    const [selectedYear, setSelectedYear] = useState("all");
+    const [selectedGenre, setSelectedGenre] = useState("all");
+    const [watchListMovies, setWatchlistMovies] = useState<Movie[]>([]);
+    const [loading, setLoading] = useState(false);
+    const [searchQuery, setSearchQuery] = useState<string>('');
+    const [onMouseOverId, setOnMouseOverId] = useState<number | null>(null);
+
+ 
 
 useEffect(() => {
   fetchMovies();
