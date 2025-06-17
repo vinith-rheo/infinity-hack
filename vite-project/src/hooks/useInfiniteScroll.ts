@@ -13,7 +13,7 @@ export function useInfiniteScroll(loadMore: Function, needMore: boolean) {
        }
        })
       },
-      { rootMargin: "200px" }
+      { rootMargin: "400px" }
     );
     const el = observerRef.current;
     if (el) obs.observe(el);
