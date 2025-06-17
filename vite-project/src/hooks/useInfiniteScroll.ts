@@ -7,9 +7,11 @@ export function useInfiniteScroll(loadMore: Function, needMore: boolean) {
     if (!needMore) return;
     const obs = new IntersectionObserver(
       (entries) => {
-        if (entries[0].isIntersecting) {
-          loadMore();
-        }
+       entries.forEach((entry)=>{
+       if(entry.isIntersecting){
+        loadMore()
+       }
+       })
       },
       { rootMargin: "200px" }
     );
