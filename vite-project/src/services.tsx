@@ -213,5 +213,5 @@ export async function getRecommendations(mood: Mood, token?: string): Promise<Mo
   );
   if (!response) return [];
   const data = await response.json();
-  return data;
+  return data.results;
 }
