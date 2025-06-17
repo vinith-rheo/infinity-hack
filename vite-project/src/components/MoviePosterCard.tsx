@@ -43,6 +43,8 @@ const MoviePosterCard: React.FC<MoviePosterCardProps> = ({
   const [isLiked, setIsLiked] = useState<boolean| null>(null);
   const [isDisliked, setIsDisliked] = useState<boolean| null>(null);
   const [isHovering, setIsHovering] = useState<boolean>(false);
+  const posterPlaceHolder='https://via.placeholder.com/175x250/333/cccccc?text=No+Poster';
+  const[posterUrl,setPosterUrl]=useState(movie.poster_url);
 
   const handleWatchlistToggle = async (
     e: React.MouseEvent<HTMLImageElement>
@@ -148,8 +150,7 @@ const MoviePosterCard: React.FC<MoviePosterCardProps> = ({
           alt={movie.title}
           className="w-full h-full object-cover"
           onError={(e) => {
-            (e.currentTarget as HTMLImageElement).src =
-              "https://via.placeholder.com/175x250/333/cccccc?text=No+Poster";
+          setPosterUrl(posterPlaceHolder);
           }}
         />
       </Card>
