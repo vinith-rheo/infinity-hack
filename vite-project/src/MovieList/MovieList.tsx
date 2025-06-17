@@ -179,7 +179,7 @@ const loaderRef = useInfiniteScroll(loadMoreMovies, loadMore);
             <div className="flex flex-wrap justify-center m-4 gap-6">
               {(aiLoading ? [] : aiResults ?? filteredMovies).map((movie) => {
                 return (
-                  <div  className="w-60">
+                  <div ref={loaderRef}  className="w-60">
                     <MoviePosterCard movie={movie} />
                   </div>
                 );
